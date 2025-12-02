@@ -9,25 +9,27 @@ import java.util.*;
  *
  * @author 177748
  */
-public class GestioneLibro {
+public class GestioneLibro implements Gestione<Libro> {
     private Set<Libro> libri;
     
     public GestioneLibro(){
         libri = new TreeSet<>();
     }
     
-    public void inserisciLibro(Libro libro){
+    @Override
+    public void inserisci(Libro libro){
     
     
     }
     
-    
-    public void modificaLibro(Libro libro){
+    @Override
+    public void modifica(Libro libro){
     
     
     }
     
-    public void eliminaLibro(Libro libro){
+    @Override
+    public void elimina(Libro libro){
     
     
     }
