@@ -11,19 +11,27 @@ import java.util.TreeSet;
  *
  * @author angel
  */
-public class GestioneUtente {
+public class GestioneUtente implements Gestione<Utente>{
     private Set<Utente> utenti;
     
     public GestioneUtente(){
         utenti=new TreeSet<Utente>();
     }
     
-    public void inserisciUtente(Utente utente){
+    @Override
+    public void inserisci(Utente utente){
     
     
     }
     
-    public void modificaUtente(Utente utente){
+    @Override
+    public void modifica(Utente utente){
+    
+    
+    }
+    
+    @Override
+    public void elimina(Utente utente){
     
     
     }
@@ -36,10 +44,6 @@ public class GestioneUtente {
     //riorda i throws
     public Utente cercaUtenteCognome(String cognome){
         return null;
-    }
-    
-    public void removeUtente(Utente u){
-        
     }
     
     //metodo per slavare INTERA struttura su file
