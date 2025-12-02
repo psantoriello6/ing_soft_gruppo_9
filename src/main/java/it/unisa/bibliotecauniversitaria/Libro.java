@@ -10,7 +10,6 @@ package it.unisa.bibliotecauniversitaria;
  * @author chiara
  */
 
-
 public class Libro {
 
     private String titolo;
