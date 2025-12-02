@@ -4,23 +4,27 @@
  * and open the template in the editor.
  */
 package it.unisa.bibliotecauniversitaria;
-
+import java.io.*;
 /**
  *
  * @author chiara
  */
 
-public class Libro {
+public class Libro implements Comparable<Libro>, Serializable {
 
     private String titolo;
+    private String nomeAutore;
+    private String cognomeAutore;
     private int annoPubblicazione;
     private String codice;
     private int copieDisponibili;
 
     // COSTRUTTORE
 
-    public Libro(String titolo, int annoPubblicazione, String codice, int copieDisponibili) {
+    public Libro(String titolo, String nomeAutore, String cognomeAutore, int annoPubblicazione, String codice, int copieDisponibili) {
         this.titolo = titolo;
+        this.nomeAutore = nomeAutore;
+        this.cognomeAutore = cognomeAutore;
         this.annoPubblicazione = annoPubblicazione;
         this.codice = codice;
         this.copieDisponibili = copieDisponibili;
@@ -36,6 +40,25 @@ public class Libro {
         this.titolo = titolo;
     }
 
+    
+    public String getNomeAutore(){
+        return nomeAutore;
+    }
+    
+    public void setNomeAutore(String nomeAutore){
+        this.nomeAutore = nomeAutore;
+    
+    }
+    
+    public String getCognomeAutore(){
+        return cognomeAutore;
+    }
+    
+    public void setCognomeAutore(String cognomeAutore){
+        this.cognomeAutore = cognomeAutore;
+    
+    }
+    
     public int getAnnoPubblicazione() {
         return annoPubblicazione;
     }
@@ -61,6 +84,12 @@ public class Libro {
     }
 
     // METODI 
+    
+    @Override
+    public int compareTo(Libro l){
+        return this.titolo.compareToIgnoreCase(l.titolo);
+    
+    }
 
     public boolean hasCopieDisponibili() {
         return copieDisponibili > 0;

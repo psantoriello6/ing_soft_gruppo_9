@@ -18,15 +18,24 @@ public class GestioneUtente {
         utenti=new TreeSet<Utente>();
     }
     
+    public void inserisciUtente(Utente utente){
+    
+    
+    }
+    
+    public void modificaUtente(Utente utente){
+    
+    
+    }
     
     //riorda i throws
     public Utente cercaUtenteMatricola(String matricola){
-        
+        return null;
     }
     
     //riorda i throws
     public Utente cercaUtenteCognome(String cognome){
-        
+        return null;
     }
     
     public void removeUtente(Utente u){
