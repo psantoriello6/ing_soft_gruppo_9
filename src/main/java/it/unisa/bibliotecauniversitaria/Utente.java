@@ -64,7 +64,27 @@ public class Utente implements Serializable, Comparable<Utente> {
         if (u==null){
             return 1;
         }
+        // se vogliamo ordinarli prima per cognome e poi per nome
+        /*int c = this.getCognome().compareToIgnoreCase(u.getCognome());
+        if(c!=0){
+            return c;
+        }
+        return this.getNome().compareToIgnoreCase(u.getNome());*/
         return this.getCognome().compareToIgnoreCase(u.getCognome());
+    }
+    
+    @Override
+    public int hashCode(){
+        return 31 * Integer.hashCode(matricola);
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if (o == null) return false;
+        if (this == o) return true;
+        if (this.getClass() != o.getClass()) return false;
+        Utente u = (Utente) o;
+        return this.matricola == u.matricola;
     }
     
 }
