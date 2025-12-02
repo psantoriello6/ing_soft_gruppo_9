@@ -5,6 +5,7 @@
  */
 package it.unisa.bibliotecauniversitaria;
 import java.io.*;
+import java.util.*;
 /**
  *
  * @author chiara
@@ -102,6 +103,20 @@ public class Libro implements Comparable<Libro>, Serializable {
 
     public void incrementaCopie() {
         copieDisponibili++;
+    }
+    
+    @Override
+    public int hashCode(){
+        return Objects.hash(codice);
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if (o == null) return false;
+        if (this == o) return true;
+        if (this.getClass() != o.getClass()) return false;
+        Libro l = (Libro) o;
+        return Objects.equals(this.codice, l.codice);
     }
 
 }
