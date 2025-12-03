@@ -155,7 +155,8 @@ public class Libro implements Comparable<Libro>, Serializable {
     /**
      * @brief metodo per gestire l'ordinamento nella collezione sul titolo in ordine alfabetico.
      * @param l libro da comparare.
-     * @return 0 se i titoli sono uguali, minore di 0 se il titolo corrente viene prima nel ordine alfabetico, maggiore di 0 se viene dopo.
+     * @return 0 se i titoli sono uguali, minore di 0 se il titolo corrente viene prima nel ordine alfabetico rispetto a quello passato come parametro, 
+     *         maggiore di 0 se viene dopo rispetto a quello passato come parametro.
      */
     @Override
     public int compareTo(Libro l){
