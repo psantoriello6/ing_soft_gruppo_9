@@ -19,6 +19,8 @@ import java.util.TreeSet;
  * Questa classe GestioneUtente utilizza la collezione dati TreeSet per memorizzare e gestire gli utenti garantendo ordinamento
  * (laclasse utente implementa l'interfaccia Comparable).
  * La classe implementa i metodi inserisci, modifica, elimina, cercaUtenteMatricola, cercaUtenteCognome e salvaUtente.
+ * 
+ * @date 3 Dicembre 2025
  */
 
 public class GestioneUtente implements Gestione<Utente>{
