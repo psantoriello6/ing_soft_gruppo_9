@@ -27,12 +27,12 @@ public class Libro implements Comparable<Libro>, Serializable {
      * 
      * Libro() è il costruttore di questa classe, assegna i valori passati come parametri agli attributi.
      * 
-     * @param titolo 
-     * @param nomeAutore
-     * @param cognomeAutore
-     * @param annoPubblicazione
-     * @param codice
-     * @param copieDisponibili 
+     * @param titolo titolo del libro.
+     * @param nomeAutore nome dell'autore del libro.
+     * @param cognomeAutore cognome dell'autore del libro.
+     * @param annoPubblicazione l'anno di pubblicazione del libro.
+     * @param codice il codice identificativo del libro.
+     * @param copieDisponibili numero di copie disponibili.
      */
 
     public Libro(String titolo, String nomeAutore, String cognomeAutore, int annoPubblicazione, String codice, int copieDisponibili) {
@@ -123,6 +123,9 @@ public class Libro implements Comparable<Libro>, Serializable {
      * 
      * Il metodo consente la modifica dell'attributo solo se il codice rispetta il formato standard,
      * in caso contrario lancia un eccezione.
+     * 
+     * @pre il codice deve essere coerente con il formato standard CCDDDD.
+     * @post l'attributo codice viene modificato.
      * 
      * @param codice  codice identificativo del libro.
      */
