@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unisa.bibliotecauniversitaria;
+package it.unisa.biblioteca.model;
 import java.io.*;
 
 /**
@@ -64,13 +64,11 @@ public class Utente implements Serializable, Comparable<Utente> {
         if (u==null){
             return 1;
         }
-        // se vogliamo ordinarli prima per cognome e poi per nome
-        /*int c = this.getCognome().compareToIgnoreCase(u.getCognome());
+        int c = this.getCognome().compareToIgnoreCase(u.getCognome());
         if(c!=0){
             return c;
         }
-        return this.getNome().compareToIgnoreCase(u.getNome());*/
-        return this.getCognome().compareToIgnoreCase(u.getCognome());
+        return this.getNome().compareToIgnoreCase(u.getNome());
     }
     
     @Override
