@@ -8,7 +8,7 @@ package it.unisa.biblioteca.model;
 /**
  * @file Gestione.java
  * 
- * @brief Interfaccia generica utilizzata come modello dalle classi che gestiscono un tipo specifico di oggetto(Utente, Libro, Prestito)
+ * @brief Interfaccia generica utilizzata come modello dalle classi che gestiscono un tipo specifico di oggetto(Utente, Libro, Prestito).
  * L'interfaccia è usata dalle classi GestioneUtente, GestioneLibro e GestionePrestito.
  * Presenta i metodi inserisci, modifica ed elimina utilizzati per la gestione delle collezioni.
  * 
@@ -19,8 +19,31 @@ package it.unisa.biblioteca.model;
 
 public interface Gestione<T> {
     
+    /**
+    * @brief Inserisce un nuovo elemento nella collezione.
+    * Il metodo aggiunge alla collezione l'oggetto fornito come parametro. 
+    * Gestisce eventuali controlli sull'unicità dei dati (Utente o Libro).
+    *
+    * @param elemento Oggetto di tipo T da inserire.
+    */
     public void inserisci(T elemento);
+    
+    
+    /**
+    * @brief Modifica un elemento della collezione.
+    * Il metodo modifica l'oggetto fornito come parametro. 
+    * Gestisce eventuali controlli sull'unicità dei dati inseriti(Utente o Libro).
+    *
+    * @param elemento Oggetto di tipo T da modificare, contenente i dati aggiornati.
+    */   
     public void modifica(T elemento);
+    
+    /**
+    * @brief Elimina un elemento dalla collezione.
+    * Il metodo elimina dalla collezione l'oggetto fornito come parametro. 
+    *
+    * @param elemento Oggetto di tipo T da eliminare.
+    */      
     public void elimina(T elemento);
   
 }

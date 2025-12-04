@@ -60,7 +60,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * Questo metodo permette la modifica di un utente presente nella collezione.
      * Se la matricola modificata è già associata ad un altro utente la modifica non è permessa.
      * 
-     * @pre L'oggetto utente da modificare deve essere già presente nella condizione.
+     * @pre L'oggetto utente da modificare deve essere già presente nella collezione.
      * @post L'oggetto utente viene modificato e la collezione viene aggiornata.
      * 
      * @param utente Oggetto utente da modificare nella collezione TreeSet.
@@ -78,7 +78,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * @brief Elimina utente.
      * Questo metodo permette l'eliminazione di un utente presente nella collezione.
      * 
-     * @pre L'oggetto utente da eliminare deve essere già presente nella condizione.
+     * @pre L'oggetto utente da eliminare deve essere già presente nella collezione.
      * @post L'oggetto utente viene eliminato e la collezione viene aggiornata.
      * 
      * @param utente Oggetto utente da eliminare nella collezione TreeSet.
