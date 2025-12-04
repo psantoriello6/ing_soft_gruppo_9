@@ -6,8 +6,12 @@
 package it.unisa.biblioteca.controller;
 
 /**
- *
- * @author angel
+ * @file InterfacciaHomeController.java
+ * @brief questo file contiene i metodi e la logica per il controllo dell'interfaccia Home.
+ * 
+ * Fa da tramite tra le interazione con il bibliotecario (nella view) e i dati (nel model).
+ * 
+ * @date 03 Dicembre, 2025
  */
 public class InterfacciaHomeController {
     

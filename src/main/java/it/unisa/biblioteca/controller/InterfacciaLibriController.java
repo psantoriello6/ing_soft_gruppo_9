@@ -6,8 +6,12 @@
 package it.unisa.biblioteca.controller;
 
 /**
- *
- * @author angel
+ * @file InterfacciaLibriController.java
+ * @brief questo file contiene i metodi e la logica per il controllo dell'interfaccia per la gestione dei libri.
+ * 
+ * Fa da tramite tra le interazione con il bibliotecario (nella view) e i dati (nel model).
+ * 
+ * @date 03 Dicembre, 2025
  */
 public class InterfacciaLibriController {
     
