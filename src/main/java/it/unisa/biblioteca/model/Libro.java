@@ -190,7 +190,7 @@ public class Libro implements Comparable<Libro>, Serializable {
     /**
      * @brief metodo per gestire l'ordinamento nella collezione sul titolo in ordine alfabetico. 
      * @param o libro da comparare.
-     * @return true se l'oggetto è uguale a quello passato nel parametro(se hanno gli stessi codici), false se è diverso(se hanno codici diversi).
+     * @return true se gli oggetti hanno gli stessi codici identificativi, false se hanno codici identificativi diversi.
      */
     @Override
     public boolean equals(Object o){

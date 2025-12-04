@@ -93,11 +93,11 @@ public class Utente implements Serializable, Comparable<Utente> {
         this.email=email;
     }
     /**
-     * @brief Metodo che determina quale logica di ordinamento seguirà il TreeSet
+     * @brief Metodo che determina la logica di ordinamento del TreeSet (ordinamento naturale basato prima sul cognome e poi sul nome).
      * @param u l'utente da confrontare con questo
      * @return 
      */
-    //se vogliamo utilizzare un TreeSet (ordinato sul cognome)
+    
     @Override
     public int compareTo(Utente u){
         if(this==u){
