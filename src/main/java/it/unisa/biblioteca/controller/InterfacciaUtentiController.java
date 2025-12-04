@@ -9,6 +9,6 @@ package it.unisa.biblioteca.controller;
  *
  * @author angel
  */
-public class HomeController {
+public class InterfacciaUtentiController {
     
 }

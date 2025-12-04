@@ -8,9 +8,12 @@ import java.util.*;
 import java.time.LocalDate;
 /**
  * @file Prestito.java
- * @brief Questo file contiene l'implementazione dell'entità Prestito
+ * @brief Questa classe contiene l'implementazione dell'entità Prestito
  *
- * @author 177748
+ * La classe Prestito possiede i seguenti attributi: un attributo di tipo Utente, un attrbuto di tipo Libro e un attributo di tipo LocalDate per la data di restituzione del prestito.
+ * La classe prevede metodi setter e getter, un metodo per evidenziare il ritardo di un prestito e un metodo per ordinare i prestiti per data di restituzione prevista
+ * 
+ * @date 3 Dicembre 2025
  */
 public class Prestito implements Comparable<Prestito> {
     private Utente utente;
@@ -18,7 +21,7 @@ public class Prestito implements Comparable<Prestito> {
     private LocalDate dataRestituzione;
     
     /**
-     * @brief Costruttore della classe Prestito
+     * @brief Costruttore che inizializza un Prestito
      * 
      * @param utente L'oggetto di tipo Utente che rappresenta l'utente di cui si vuole aggiungere un prestito
      * @param libro L'oggetto di tipo Libro che rappresenta il libro che l'utente vuole prendere in prestito
@@ -33,7 +36,7 @@ public class Prestito implements Comparable<Prestito> {
     
     /**
      * 
-     * @brief metodo setter per impostare la data di restituzione del prestito
+     * @brief Metodo setter che permette di impostare la data di restituzione del prestito
      * 
      * @param dataRestituzione La data di restituzione del prestito
      */
@@ -43,7 +46,7 @@ public class Prestito implements Comparable<Prestito> {
     }
     
     /**
-     * @brief metodo getter per restituire la data di restituzione del prestito
+     * @brief Metodo getter che restituisce la data di restituzione del prestito
      *  
      * @return La data di restituzione del prestito
      */
@@ -54,7 +57,7 @@ public class Prestito implements Comparable<Prestito> {
     
     /**
      * 
-     * @brief metodo setter per impostare l'utente 
+     * @brief Metodo setter che permette di impostare un utente 
      * 
      * @param utente L'utente che vuole effettuare il prestito
      */
@@ -63,7 +66,7 @@ public class Prestito implements Comparable<Prestito> {
     }
     
     /**
-     * @brief metodo getter per restituire l'utente
+     * @brief Metodo getter che restituisce l'utente
      * 
      * @return L'utente che vuole effettuare il prestito
      */
@@ -74,7 +77,7 @@ public class Prestito implements Comparable<Prestito> {
     
     /**
      * 
-     * @brief metodo setter per impostare il libro
+     * @brief Metodo setter che permette di impostare un libro
      * 
      * @param libro Il libro che un utente vuole prendere in prestito
      */
@@ -85,7 +88,7 @@ public class Prestito implements Comparable<Prestito> {
     
     /**
      * 
-     * @brief metodo getter per restituire il libro
+     * @brief Metodo getter che restituisce un libro
      * 
      * @return Il libro che un utente vuole prendere in prestito
      */
@@ -96,10 +99,10 @@ public class Prestito implements Comparable<Prestito> {
     
     /**
      * 
-     * @brief metodo che permette di verificare se un prestito è in ritardo o meno
+     * @brief Metodo che permette di verificare se un prestito è in ritardo o meno
      * 
      * @param dataRestituzione La data di restituzione del prestito
-     * @return Il valore booleano 'true' se la data in cui il prestito è restituito è oltre la data di restituzione previsto, altrimenti il valreo booleano 'false'
+     * @return Il valore booleano 'true' se la data in cui il prestito è restituito è oltre la data di restituzione prevista, altrimenti il valreo booleano 'false'
      * 
      */
     public boolean ritardoPrestito(LocalDate dataRestituzione){
@@ -113,12 +116,12 @@ public class Prestito implements Comparable<Prestito> {
      * 
      * @param p Il prestito che si vuole ordinare
      * @return Il valore intero '1' se la data di restituzione del prestito corrente è successiva rispetto alla data di restituzione del prestito specificato come parametro; il valore intero '-1' 
-     *         se la data di restituzione del prestito corrente è precedente rispetto alla data di restituzione del prestito specificato come parametro; il valore intero '0' altrimenti
+     *         se la data di restituzione del prestito corrente è precedente rispetto alla data di restituzione del prestito specificato come parametro; il valore intero '0' se le due date sono uguali
      */
     
     @Override
     public int compareTo(Prestito p){
-        return -1;
+        return this.dataRestituzione.compareTo(p.dataRestituzione);
     
     }
     

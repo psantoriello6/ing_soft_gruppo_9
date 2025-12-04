@@ -8,11 +8,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- *
- * @author angel
- */
-
-/**
  * @file GestioneUtente.java
  * 
  * @brief Implementazione dei metodi per la gestione della collezione di oggetti Utente.
@@ -144,3 +139,4 @@ public class GestioneUtente implements Gestione<Utente>{
     }
     
 }
+

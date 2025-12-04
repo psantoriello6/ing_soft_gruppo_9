@@ -9,6 +9,6 @@ package it.unisa.biblioteca.controller;
  *
  * @author angel
  */
-public class GestionePrestitiController {
+public class InterfacciaPrestitiController {
     
 }
