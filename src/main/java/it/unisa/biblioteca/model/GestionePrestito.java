@@ -40,7 +40,7 @@ public class GestionePrestito {
      * @post Il prestito effettuato è stato registrato ed  inserito nella lista dei prestiti attivi
      */
     
-    public void inserisci(Prestito prestito){
+    public void registraPrestito(Prestito prestito){
     
     
     }
@@ -51,9 +51,9 @@ public class GestionePrestito {
      * 
      * @pre La lista dei prestiti attivi non deve essere vuota
      * 
-     * @post La restituzione del prestito è stata registrata e il prestito è stato eliminato dalla lista di prestiti attivi
+     * @post La restituzione del prestito è stata registrata e il prestito è stato eliminato dalla lista dei prestiti attivi
      */
-    public void elimina(Prestito prestito){
+    public void restituisciPrestito(Prestito prestito){
      
     }
     
