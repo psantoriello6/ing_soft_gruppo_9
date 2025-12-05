@@ -17,6 +17,13 @@ import javafx.stage.Stage;
  * @author Gruppo 9
  * @brief Classe principale che avvia l'applicazione.
  *  Estende la classe Application di JavaFX. Inizializza la finestra principale (Stage), carica la prima schermata (Home) e permette interazioni con il bibliotecario.
+ * @mainpage Documentazione Progetto Biblioteca Universitaria
+ * @section intro Introduzione
+ * Documentazione per il sistema di gestione per la Biblioteca Universitaria.
+ * Il software permette al bibliotecario di gestire:
+ * - Libri: Dati, Elenco, inserimento, ricerca e rimozione.
+ * - Utenti: Dati anagarfici, inserimento, ricerca e rimozione.
+ * - Prestiti: Registrazione prestiti e restituzioni.
  * 
  * @date 03 Dicembre, 2025
  */
