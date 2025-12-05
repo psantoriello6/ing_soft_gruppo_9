@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 /**
  * @file Main.java
+ * @author Gruppo 9
  * @brief Classe principale che avvia l'applicazione.
  *  Estende la classe Application di JavaFX. Inizializza la finestra principale (Stage), carica la prima schermata (Home) e permette interazioni con il bibliotecario.
  * 

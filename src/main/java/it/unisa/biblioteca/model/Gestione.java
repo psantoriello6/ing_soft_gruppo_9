@@ -7,6 +7,7 @@ package it.unisa.biblioteca.model;
 
 /**
  * @file Gestione.java
+ * @author Gruppo 9
  * 
  * @brief Interfaccia generica utilizzata come modello dalle classi che gestiscono un tipo specifico di oggetto(Utente, Libro).
  * L'interfaccia è usata dalle classi GestioneUtente e GestioneLibro.

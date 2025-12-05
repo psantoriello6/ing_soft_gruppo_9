@@ -9,7 +9,7 @@ import java.util.TreeSet;
 
 /**
  * @file GestioneUtente.java
- * 
+ * @author Gruppo 9
  * @brief Implementazione dei metodi per la gestione della collezione di oggetti Utente.
  * Questa classe GestioneUtente utilizza la collezione dati TreeSet per memorizzare e gestire gli utenti garantendo ordinamento
  * (laclasse utente implementa l'interfaccia Comparable).

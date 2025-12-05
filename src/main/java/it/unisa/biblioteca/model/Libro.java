@@ -1,6 +1,12 @@
 
+
+package it.unisa.biblioteca.model;
+import java.io.*;
+import java.util.*;
+
 /**
  * @file Libro.java
+ * @author Gruppo 9
  * @brief il file contiene la rappresentazione di un libro.
  * 
  * Ogni libro ha i seguenti dati: titolo, nome e cognome Autore, anno di publicazione, codice idetificativo, e numero di copie disponibili.
@@ -8,10 +14,6 @@
  * 
  * @date 03 Dicembre, 2025
  */
-package it.unisa.biblioteca.model;
-import java.io.*;
-import java.util.*;
-
 
 public class Libro implements Comparable<Libro>, Serializable {
 

@@ -8,6 +8,7 @@ package it.unisa.biblioteca.model;
 
 /**
  * @file GestioneEccezioni.java
+ * @author Gruppo 9
  * @brief Questa classe contiene l'implementazione della classe GestioneEccezione
  * 
  * La classe permette, in caso di errori di inserimento dati verificatisi nelle varie classi del Model, di lanciare un'eccezione stampando 

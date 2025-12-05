@@ -6,12 +6,8 @@
 package it.unisa.biblioteca.model;
 import java.util.*;
 /**
- *
- * @author 177748
- */
-/**
  * @file GestioneLibro.java
- * 
+ * @author Gruppo 9
  * @brief Gestione di una collezione (TreeSet) di libri che si occupa di inserimento, modifica, eliminazione, ricerca e salvataggio su un file di testo
  * 
  * @date 03/12/2025

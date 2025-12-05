@@ -7,6 +7,7 @@ package it.unisa.biblioteca.model;
 import java.util.*;
 /**
  * @file GestionePrestito.java
+ * @author Gruppo 9
  * @brief Questa classe contiene l'implementazione della classe GestionePrestito
  * 
  * La classe GestionePrestito prevede un attributo che rappresenta la lista dei prestiti, realizzata 

@@ -7,11 +7,8 @@ package it.unisa.biblioteca.model;
 import java.io.*;
 
 /**
- *
- * @author angel
- */
-/**
  * @file Utente.java
+ * @author Gruppo 9
  * @brief Si occupa di definire tutti gli attributi della classe Utente con i setter e getter.
  * Sono specificati inoltre i metodi equals e hashCode che definiscono eventuali duplicati e il metodo compareTo che determina l'ordinamento da tener conto.
  * @date 03/12/2025

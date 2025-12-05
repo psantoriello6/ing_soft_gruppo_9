@@ -8,6 +8,7 @@ import java.util.*;
 import java.time.LocalDate;
 /**
  * @file Prestito.java
+ * @author Gruppo 9
  * @brief Questa classe contiene l'implementazione dell'entità Prestito
  *
  * La classe Prestito possiede i seguenti attributi: un attributo di tipo Utente, un attrbuto di tipo Libro e un attributo di tipo LocalDate per la data di restituzione del prestito.
