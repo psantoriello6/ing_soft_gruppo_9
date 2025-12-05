@@ -1,0 +1,27 @@
+var classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro =
+[
+    [ "Libro", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a610c4b4b4d37ca1d1c275a93833ab58e", null ],
+    [ "compareTo", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a2c3b45904155667462ea754902db9752", null ],
+    [ "decrementaCopie", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a001ac806d957568ebf2085c8b2aa6e34", null ],
+    [ "equals", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a6a2fc079287ce70c32b8bfa6f9bd0f09", null ],
+    [ "getAnnoPubblicazione", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ad3d84968920528117db4d932197d6acf", null ],
+    [ "getCodice", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a848d52faecf12f619eccd0776b4a096a", null ],
+    [ "getCognomeAutore", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a1d3ca4f4257276a490fbe3371b4ab4b9", null ],
+    [ "getCopieDisponibili", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#afe0137a86b6d4dff53a6d6a106f0b60e", null ],
+    [ "getNomeAutore", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a330e6da57982570e9332beba495c49d9", null ],
+    [ "getTitolo", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a537f12c6d85d9da84b83a728ef7e3623", null ],
+    [ "hasCopieDisponibili", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a464a945a45f54a6fdcf3024e10350c92", null ],
+    [ "incrementaCopie", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a5de742dda7673a02c2eb67e6f9d58858", null ],
+    [ "setAnnoPubblicazione", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ad78c08565bd7c78fd1e07731726f0174", null ],
+    [ "setCodice", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ac86ca87cf218982fc8788485a187217d", null ],
+    [ "setCognomeAutore", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#add202131d135067883fa4eb539af8b6e", null ],
+    [ "setCopieDisponibili", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#aae218c2fc789968bbe5c4b73b840e0a4", null ],
+    [ "setNomeAutore", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ad9ae35605af2033034785fd4e4fd1ea3", null ],
+    [ "setTitolo", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a7e44b9134301393dc13de64cd958a582", null ],
+    [ "annoPubblicazione", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a497d2d6d9406cd194443c8d313f96605", null ],
+    [ "codice", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#aa568fbc2dcb6b355f5b3e01ba3548087", null ],
+    [ "cognomeAutore", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a595afe7d5c44fc912a5426159319ae43", null ],
+    [ "copieDisponibili", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a4017b8749571d6726c4fbe47cc364bba", null ],
+    [ "nomeAutore", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a06cadc05a52ad7835647ccd604d42d51", null ],
+    [ "titolo", "classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ac3f9fa8753f945d89f0d061d793f18a8", null ]
+];

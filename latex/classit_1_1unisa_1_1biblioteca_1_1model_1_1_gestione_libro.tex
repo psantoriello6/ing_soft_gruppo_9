@@ -1,0 +1,232 @@
+\doxysection{it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro Class Reference}
+\hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro}{}\label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+Inheritance diagram for it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a30429fb8158611171d79d048a69d8fe0}{Gestione\+Libro}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore che inizializza il Tree\+Set di libri. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a910a9c41af4091e0d3be329c8745e28b}{inserisci}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} libro)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di inserire un libro nel Tree\+Set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a01f4d713f48f8d1a5c9bf2a85f94337a}{modifica}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} libro)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di modificare un attributo di un libro nel Tree\+Set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a82cb4d99509d6c7eaf322e77b341d1b7}{elimina}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} libro)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di eliminare un libro nel Tree\+Set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_ab34dad500b3dd4cdc30bbc8714c7aff8}{ricerca\+Libro}} (String titolo)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di ricercare un libro nel Tree\+Set mediante il titolo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a93ce899ed17167aea32674b457fd9feb}{ricerca\+Libro}} (String nome\+Autore, String cognome\+Autore)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di ricercare un libro nel Tree\+Set mediante il nome e cognome dell\textquotesingle{}autore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a7f26a10178b5a06d5914c7b2319d5fc1}{ricerca\+Libro}} (int codice)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di ricercare un libro nel Tree\+Set mediante il codice ISBN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_aebd1b8e304d8e7516a8eff95341dec68}{salva\+Libri}} (String file)
+\begin{DoxyCompactList}\small\item\em Metodo che permette di salvare tutti i libri del Tree\+Set nel file di testo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione}{it.\+unisa.\+biblioteca.\+model.\+Gestione$<$ Libro $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_afb103d8fb653f7e5a7bbc1eeb6ca0fc8}{inserisci}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Inserisce un nuovo elemento nella collezione. Il metodo aggiunge alla collezione l\textquotesingle{}oggetto fornito come parametro. Gestisce eventuali controlli sull\textquotesingle{}unicità dei dati (\doxylink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente} o \doxylink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_aaf67cb9480267c29e8dbac20c21ca63c}{modifica}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Modifica un elemento della collezione. Il metodo modifica l\textquotesingle{}oggetto fornito come parametro. Gestisce eventuali controlli sull\textquotesingle{}unicità dei dati inseriti(\+Utente o Libro). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_a05f9b5a05f3fabbc432adac45fece29d}{elimina}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Elimina un elemento dalla collezione. Il metodo elimina dalla collezione l\textquotesingle{}oggetto fornito come parametro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Set$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_aeab38669a20d1f9a6475d979c2e90424}{libri}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a30429fb8158611171d79d048a69d8fe0}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!GestioneLibro@{GestioneLibro}}
+\index{GestioneLibro@{GestioneLibro}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{GestioneLibro()}{GestioneLibro()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a30429fb8158611171d79d048a69d8fe0} 
+it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+Gestione\+Libro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore che inizializza il Tree\+Set di libri. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a82cb4d99509d6c7eaf322e77b341d1b7}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!elimina@{elimina}}
+\index{elimina@{elimina}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{elimina()}{elimina()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a82cb4d99509d6c7eaf322e77b341d1b7} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+elimina (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}}}]{libro}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di eliminare un libro nel Tree\+Set. 
+
+\begin{DoxyPrecond}{Precondition}
+il libro che verrà inserito deve essere presente nel Tree\+Set 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+il libro sarà rimosso dal Tree\+Set 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em libro} & libro da eliminare \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a910a9c41af4091e0d3be329c8745e28b}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!inserisci@{inserisci}}
+\index{inserisci@{inserisci}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{inserisci()}{inserisci()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a910a9c41af4091e0d3be329c8745e28b} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+inserisci (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}}}]{libro}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di inserire un libro nel Tree\+Set. 
+
+\begin{DoxyPrecond}{Precondition}
+il libro che verrà inserito non dovrà essere già presente 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+il libro sarà inserito nel Tree\+Set 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em libro} & libro da inserire \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a01f4d713f48f8d1a5c9bf2a85f94337a}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!modifica@{modifica}}
+\index{modifica@{modifica}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{modifica()}{modifica()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a01f4d713f48f8d1a5c9bf2a85f94337a} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+modifica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}}}]{libro}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di modificare un attributo di un libro nel Tree\+Set. 
+
+\begin{DoxyPrecond}{Precondition}
+il libro che verrà inserito deve essere presente nel Tree\+Set 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+il libro avrà un o più attributi modificati 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em libro} & libro da modificare \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a7f26a10178b5a06d5914c7b2319d5fc1}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!ricercaLibro@{ricercaLibro}}
+\index{ricercaLibro@{ricercaLibro}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{ricercaLibro()}{ricercaLibro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a7f26a10178b5a06d5914c7b2319d5fc1} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+ricerca\+Libro (\begin{DoxyParamCaption}\item[{int}]{codice}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di ricercare un libro nel Tree\+Set mediante il codice ISBN. 
+
+\begin{DoxyPrecond}{Precondition}
+il codice deve essere esistente 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+il valore di ritorno deve essere il libro che corrisponde alla ricerca 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em codice} & attributo del libro che viene usato per la ricerca \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+il libro che corrisponde alla ricerca 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a93ce899ed17167aea32674b457fd9feb}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!ricercaLibro@{ricercaLibro}}
+\index{ricercaLibro@{ricercaLibro}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{ricercaLibro()}{ricercaLibro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_a93ce899ed17167aea32674b457fd9feb} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+ricerca\+Libro (\begin{DoxyParamCaption}\item[{String}]{nome\+Autore}{, }\item[{String}]{cognome\+Autore}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di ricercare un libro nel Tree\+Set mediante il nome e cognome dell\textquotesingle{}autore. 
+
+\begin{DoxyPrecond}{Precondition}
+il nome e cognome dell\textquotesingle{}autore devono essere esistenti 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+il valore di ritorno deve essere il libro che corrisponde alla ricerca 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Autore} & attributo del libro che viene usato per la ricerca \\
+\hline
+{\em cognome\+Autore} & attributo del libro che viene usato per la ricerca \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+il libro che corrisponde alla ricerca 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_ab34dad500b3dd4cdc30bbc8714c7aff8}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!ricercaLibro@{ricercaLibro}}
+\index{ricercaLibro@{ricercaLibro}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{ricercaLibro()}{ricercaLibro()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_ab34dad500b3dd4cdc30bbc8714c7aff8} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}} it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+ricerca\+Libro (\begin{DoxyParamCaption}\item[{String}]{titolo}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di ricercare un libro nel Tree\+Set mediante il titolo. 
+
+\begin{DoxyPrecond}{Precondition}
+il titolo deve essere esistente 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+il valore di ritorno deve essere il libro che corrisponde alla ricerca 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em titolo} & attributo del libro che viene usato per la ricerca \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+il libro che corrisponde alla ricerca 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_aebd1b8e304d8e7516a8eff95341dec68}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!salvaLibri@{salvaLibri}}
+\index{salvaLibri@{salvaLibri}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{salvaLibri()}{salvaLibri()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_aebd1b8e304d8e7516a8eff95341dec68} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+salva\+Libri (\begin{DoxyParamCaption}\item[{String}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Metodo che permette di salvare tutti i libri del Tree\+Set nel file di testo. 
+
+\begin{DoxyPostcond}{Postcondition}
+il sistema salverà la collection di libri su file 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & il file di testo su cui vengono salvati tutti i libri presenti \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_aeab38669a20d1f9a6475d979c2e90424}\index{it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}!libri@{libri}}
+\index{libri@{libri}!it.unisa.biblioteca.model.GestioneLibro@{it.unisa.biblioteca.model.GestioneLibro}}
+\doxysubsubsection{\texorpdfstring{libri}{libri}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro_aeab38669a20d1f9a6475d979c2e90424} 
+Set$<$\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}}$>$ it.\+unisa.\+biblioteca.\+model.\+Gestione\+Libro.\+libri\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/model/\mbox{\hyperlink{_gestione_libro_8java}{Gestione\+Libro.\+java}}\end{DoxyCompactItemize}

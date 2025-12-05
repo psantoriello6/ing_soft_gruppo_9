@@ -1,0 +1,207 @@
+\doxysection{it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente Class Reference}
+\hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente}{}\label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+Inheritance diagram for it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_ada34210310e2b638233aa52148606af5}{Gestione\+Utente}} ()
+\begin{DoxyCompactList}\small\item\em Costruttore. Inizializza la collezione creando un Tree\+Set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a7b9be1ca967479eb6de3a2778770e6be}{inserisci}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} utente)
+\begin{DoxyCompactList}\small\item\em Inserimento utente. Questo metodo permette l\textquotesingle{}inserimento di un utente nella collezione. Se la matricola inserita è già associata ad un altro utente l\textquotesingle{}inserimento non è permesso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a9fa22da2fd99f6970514ff931f759522}{modifica}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} utente)
+\begin{DoxyCompactList}\small\item\em Modifica utente. Questo metodo permette la modifica di un utente presente nella collezione. Se la matricola modificata è già associata ad un altro utente la modifica non è permessa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a658ab1b9391bc3091b1286b7f3de182d}{elimina}} (\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} utente)
+\begin{DoxyCompactList}\small\item\em Elimina utente. Questo metodo permette l\textquotesingle{}eliminazione di un utente presente nella collezione. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_aceb72ba853c4dc8e5e2da746052bed9e}{cerca\+Utente\+Matricola}} (String matricola)
+\begin{DoxyCompactList}\small\item\em Ricerca dell\textquotesingle{}utente tramite numero di matricola. Questo metodo permette la ricerca di un utente presente nella collezione mediante numero di matricola univoco. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a3a2610b795cf61c12097d7f9981ed330}{cerca\+Utente\+Cognome}} (String cognome)
+\begin{DoxyCompactList}\small\item\em Ricerca dell\textquotesingle{}utente tramite cognome. Questo metodo permette la ricerca di un utente presente nella collezione mediante il suo cognome. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a5186645bd746475a5abdaaae4a65ac37}{salva\+Utenti}} (String file)
+\begin{DoxyCompactList}\small\item\em Salvataggio utenti su file. Questo metodo permette il salvataggio della collezione di utenti su file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione}{it.\+unisa.\+biblioteca.\+model.\+Gestione$<$ Utente $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_afb103d8fb653f7e5a7bbc1eeb6ca0fc8}{inserisci}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Inserisce un nuovo elemento nella collezione. Il metodo aggiunge alla collezione l\textquotesingle{}oggetto fornito come parametro. Gestisce eventuali controlli sull\textquotesingle{}unicità dei dati (\doxylink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente} o \doxylink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro}{Libro}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_aaf67cb9480267c29e8dbac20c21ca63c}{modifica}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Modifica un elemento della collezione. Il metodo modifica l\textquotesingle{}oggetto fornito come parametro. Gestisce eventuali controlli sull\textquotesingle{}unicità dei dati inseriti(\+Utente o Libro). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_a05f9b5a05f3fabbc432adac45fece29d}{elimina}} (T elemento)
+\begin{DoxyCompactList}\small\item\em Elimina un elemento dalla collezione. Il metodo elimina dalla collezione l\textquotesingle{}oggetto fornito come parametro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Set$<$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a2c72ceeb30869c40d491e98f018ade02}{utenti}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_ada34210310e2b638233aa52148606af5}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!GestioneUtente@{GestioneUtente}}
+\index{GestioneUtente@{GestioneUtente}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{GestioneUtente()}{GestioneUtente()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_ada34210310e2b638233aa52148606af5} 
+it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+Gestione\+Utente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Costruttore. Inizializza la collezione creando un Tree\+Set. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a3a2610b795cf61c12097d7f9981ed330}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!cercaUtenteCognome@{cercaUtenteCognome}}
+\index{cercaUtenteCognome@{cercaUtenteCognome}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{cercaUtenteCognome()}{cercaUtenteCognome()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a3a2610b795cf61c12097d7f9981ed330} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+cerca\+Utente\+Cognome (\begin{DoxyParamCaption}\item[{String}]{cognome}{}\end{DoxyParamCaption})}
+
+
+
+Ricerca dell\textquotesingle{}utente tramite cognome. Questo metodo permette la ricerca di un utente presente nella collezione mediante il suo cognome. 
+
+\begin{DoxyPrecond}{Precondition}
+La collezione deve presentare almeno un utente. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}oggetto utente cercato viene restituito.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em cognome} & Stringa cognome da utilizzare per la ricerca. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Oggetto utente corrispondente al cognome inserito. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_aceb72ba853c4dc8e5e2da746052bed9e}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!cercaUtenteMatricola@{cercaUtenteMatricola}}
+\index{cercaUtenteMatricola@{cercaUtenteMatricola}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{cercaUtenteMatricola()}{cercaUtenteMatricola()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_aceb72ba853c4dc8e5e2da746052bed9e} 
+\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}} it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+cerca\+Utente\+Matricola (\begin{DoxyParamCaption}\item[{String}]{matricola}{}\end{DoxyParamCaption})}
+
+
+
+Ricerca dell\textquotesingle{}utente tramite numero di matricola. Questo metodo permette la ricerca di un utente presente nella collezione mediante numero di matricola univoco. 
+
+\begin{DoxyPrecond}{Precondition}
+La collezione deve presentare almeno un utente. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}oggetto utente cercato viene restituito.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em matricola} & Stringa matricola da utilizzare per la ricerca. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Oggetto utente corrispondente alla matricola inserita. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a658ab1b9391bc3091b1286b7f3de182d}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!elimina@{elimina}}
+\index{elimina@{elimina}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{elimina()}{elimina()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a658ab1b9391bc3091b1286b7f3de182d} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+elimina (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}}}]{utente}{}\end{DoxyParamCaption})}
+
+
+
+Elimina utente. Questo metodo permette l\textquotesingle{}eliminazione di un utente presente nella collezione. 
+
+\begin{DoxyPrecond}{Precondition}
+L\textquotesingle{}oggetto utente da eliminare deve essere già presente nella collezione. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}oggetto utente viene eliminato e la collezione viene aggiornata.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em utente} & Oggetto utente da eliminare nella collezione Tree\+Set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a7b9be1ca967479eb6de3a2778770e6be}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!inserisci@{inserisci}}
+\index{inserisci@{inserisci}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{inserisci()}{inserisci()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a7b9be1ca967479eb6de3a2778770e6be} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+inserisci (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}}}]{utente}{}\end{DoxyParamCaption})}
+
+
+
+Inserimento utente. Questo metodo permette l\textquotesingle{}inserimento di un utente nella collezione. Se la matricola inserita è già associata ad un altro utente l\textquotesingle{}inserimento non è permesso. 
+
+\begin{DoxyPrecond}{Precondition}
+L\textquotesingle{}oggetto utente da inserire non deve essere già presente nella collezione. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}oggetto utente viene inserito e la collezione viene aggiornata.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em utente} & Oggetto utente da inserire nella collezione Tree\+Set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a9fa22da2fd99f6970514ff931f759522}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!modifica@{modifica}}
+\index{modifica@{modifica}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{modifica()}{modifica()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a9fa22da2fd99f6970514ff931f759522} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+modifica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}}}]{utente}{}\end{DoxyParamCaption})}
+
+
+
+Modifica utente. Questo metodo permette la modifica di un utente presente nella collezione. Se la matricola modificata è già associata ad un altro utente la modifica non è permessa. 
+
+\begin{DoxyPrecond}{Precondition}
+L\textquotesingle{}oggetto utente da modificare deve essere già presente nella collezione. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+L\textquotesingle{}oggetto utente viene modificato e la collezione viene aggiornata.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em utente} & Oggetto utente da modificare nella collezione Tree\+Set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a5186645bd746475a5abdaaae4a65ac37}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!salvaUtenti@{salvaUtenti}}
+\index{salvaUtenti@{salvaUtenti}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{salvaUtenti()}{salvaUtenti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a5186645bd746475a5abdaaae4a65ac37} 
+void it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+salva\+Utenti (\begin{DoxyParamCaption}\item[{String}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Salvataggio utenti su file. Questo metodo permette il salvataggio della collezione di utenti su file. 
+
+\begin{DoxyPrecond}{Precondition}
+I dati relativi agli utenti sono stati inseriti nella collezione. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+I dati relativi agli utenti sono esportati su file.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Stringa nome del file da utilizzare per l\textquotesingle{}esportazione dei dati. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a2c72ceeb30869c40d491e98f018ade02}\index{it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}!utenti@{utenti}}
+\index{utenti@{utenti}!it.unisa.biblioteca.model.GestioneUtente@{it.unisa.biblioteca.model.GestioneUtente}}
+\doxysubsubsection{\texorpdfstring{utenti}{utenti}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente_a2c72ceeb30869c40d491e98f018ade02} 
+Set$<$\mbox{\hyperlink{classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente}{Utente}}$>$ it.\+unisa.\+biblioteca.\+model.\+Gestione\+Utente.\+utenti\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/it/unisa/biblioteca/model/\mbox{\hyperlink{_gestione_utente_8java}{Gestione\+Utente.\+java}}\end{DoxyCompactItemize}
