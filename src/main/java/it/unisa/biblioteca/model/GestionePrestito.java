@@ -17,7 +17,8 @@ import java.util.*;
  */
 
 public class GestionePrestito {
-    private Map<Utente, LinkedList<Libro>> prestito;
+    private Map<Utente, LinkedList<Libro>> prestitiAttivi;
+    private static final int MAX_PRESTITI = 3;
     
     /**
      * @brief Costruttore della classe GestionePrestito
@@ -27,7 +28,7 @@ public class GestionePrestito {
      */
      
     public GestionePrestito(){
-        prestito = new HashMap<>();
+        prestitiAttivi = new HashMap<>();
     
     }
     
@@ -41,8 +42,38 @@ public class GestionePrestito {
      * @post Il prestito effettuato è stato registrato ed  inserito nella lista dei prestiti attivi
      */
     
-    public void registraPrestito(Prestito prestito){
-    
+    public void registraPrestito(Prestito prestito) throws GestioneEccezioni{
+        Utente utente = prestito.getUtente();
+        Libro libro = prestito.getLibro();
+        
+        // Controllo disponibilità 
+        if (!libro.hasCopieDisponibili()) { 
+            throw new GestioneEccezioni("ERRORE: Il libro '" + libro.getTitolo() + "' non ha copie disponibili per il prestito.");
+        }
+        
+        // Prende la lista di libri che l'utente ha già in prestito.
+        LinkedList<Libro> libriUtente = prestitiAttivi.get(utente);
+        
+        // Controllo limite prestiti
+        if (libriUtente != null && libriUtente.size() >= MAX_PRESTITI) {
+            throw new GestioneEccezioni("ERRORE: L'utente " + utente.getNome() + " " + utente.getCognome() + 
+                                            " ha raggiunto il limite massimo di " + MAX_PRESTITI + " libri in prestito.");
+        }
+        
+        // Se l'utente non è ancora nella mappa, inizializza la lista.
+        if (libriUtente == null) {
+            libriUtente = new LinkedList<>();
+            prestitiAttivi.put(utente, libriUtente);
+        }
+        
+        // Aggiunge il libro alla lista dei prestiti dell'utente.
+        libriUtente.add(libro);
+        
+        // Aggiorna le copie disponibili del libro.
+        libro.decrementaCopie(); 
+        
+        System.out.println("La registrazione del prestito del libro '" + libro.getTitolo() + 
+                           "' (Codice: " + libro.getCodice() + ") per l'utente con matricola: " + utente.getMatricola() + " è avvenuta con successo.");
     
     }
     
