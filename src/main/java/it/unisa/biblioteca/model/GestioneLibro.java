@@ -5,6 +5,9 @@
  */
 package it.unisa.biblioteca.model;
 import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 /**
  * @file GestioneLibro.java
  * @author Gruppo 9
@@ -15,11 +18,24 @@ import java.util.*;
  */
 public class GestioneLibro implements Gestione<Libro> {
     private Set<Libro> libri;
+    private static GestioneLibro instance; //variabile privata e statica dello stesso tipo della classe
     /**
      * @brief Costruttore che inizializza il TreeSet di libri
      */
-    public GestioneLibro(){
+    
+    //costruttore privato per aderire al desgin Pattern Singleton
+    private GestioneLibro(){
         libri = new TreeSet<>();
+    }
+    
+    //metodo statico pubblico per restituire sempre la stessa istanza (unica) della classe stessa
+    public static GestioneLibro getInstance(){
+        if(instance == null){
+            instance = new GestioneLibro();
+        }
+        
+        return instance;
+    
     }
     /**
      * @brief Metodo che permette di inserire un libro nel TreeSet
@@ -28,10 +44,20 @@ public class GestioneLibro implements Gestione<Libro> {
      * @param libro libro da inserire
      */
     @Override
-    public void inserisci(Libro libro){
-    
+    public void inserisci(Libro libro) throws GestioneEccezioni{
+        if(libri.contains(libro)){
+            throw new GestioneEccezioni("Inserimento del libro fallito. Codice identificativo già esistente");
+        }
+        
+       if(controllaCodice(libro.getCodice())){
+           libri.add(libro);
+       }else{
+            throw new GestioneEccezioni("Inserimento del libro fallito. Codice identificativo non valido");
+        }
     
     }
+    
+    
     /**
      * @brief Metodo che permette di modificare un attributo di un libro nel TreeSet
      * @pre il libro che verrà inserito deve essere presente nel TreeSet
@@ -39,7 +65,56 @@ public class GestioneLibro implements Gestione<Libro> {
      * @param libro libro da modificare
      */
     @Override
-    public void modifica(Libro libro){
+    public void modifica(Libro libro) throws GestioneEccezioni{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       //poiché si modifica anche il titolo e la lista di libri è ordinata per titolo, si rimuova prima l'elemento da modificare
+       this.elimina(libro);
+       
+       String titolo = null;
+       String nomeAutore = null;
+       String cognomeAutore = null;
+       int annoDiPubblicazione = 0;
+       String codice = null;
+       int copieDisponibili = 0;
+       //si modificano gli attributi
+       try{
+            System.out.println("Inserisci il titolo: ");
+            titolo = br.readLine();
+            System.out.println("Inserisci il nome dell'autore ");
+            nomeAutore = br.readLine();
+            System.out.println("Inserisci il cognome dell'autore:  ");
+            cognomeAutore = br.readLine();
+            System.out.println("Inserisci l'anno di pubblicazione: ");
+            annoDiPubblicazione = Integer.parseInt(br.readLine());
+            System.out.println("Inserisci il codice identificativo:  ");
+            codice = br.readLine();
+            System.out.println("Inserisci il numero di copie disponibili: ");
+            copieDisponibili = Integer.parseInt(br.readLine());
+            
+       }catch(IOException ex){
+           ex.printStackTrace();
+       }
+       libro.setTitolo(titolo);
+       libro.setNomeAutore(nomeAutore);
+       libro.setCognomeAutore(cognomeAutore);
+       libro.setAnnoPubblicazione(annoDiPubblicazione);
+       if(controllaCodice(codice) == false){
+           throw new GestioneEccezioni("Modifica fallita: codice identificativo non valido");
+       }else if(this.ricercaLibroCodice(codice) != null){
+           throw new GestioneEccezioni("Modifica fallita: codice identificativo già esistente");
+       }else{
+           libro.setCodice(codice);
+       }
+           
+       libro.setCopieDisponibili(copieDisponibili);
+        
+       //poi si inserisce nuovamente il libro
+       this.inserisci(libro);
+        
+       
+       
+       
+        
     
     
     }
@@ -51,7 +126,7 @@ public class GestioneLibro implements Gestione<Libro> {
      */
     @Override
     public void elimina(Libro libro){
-    
+        libri.remove(libro);
     
     }
     /**
@@ -61,8 +136,21 @@ public class GestioneLibro implements Gestione<Libro> {
      * @param titolo attributo del libro che viene usato per la ricerca
      * @return il libro che corrisponde alla ricerca
      */
-    public Libro ricercaLibro(String titolo){
-        return null;
+    public Libro ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
+        Libro libroTrovato = null;
+        for(Libro libro: libri){
+            if(libro.getTitolo().equals(titolo)){
+                libroTrovato = libro;
+            }
+        
+        }
+        
+        if(libroTrovato == null){
+            throw new GestioneEccezioni("Ricerca fallita: libro non trovato!");
+        }
+        
+        return libroTrovato;
+        
     
     
     }
@@ -74,8 +162,19 @@ public class GestioneLibro implements Gestione<Libro> {
      * @param cognomeAutore attributo del libro che viene usato per la ricerca
      * @return il libro che corrisponde alla ricerca
      */
-    public Libro ricercaLibro(String nomeAutore, String cognomeAutore){
-        return null;
+    public Libro ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
+        Libro libroTrovato = null;
+        for(Libro libro: libri){
+            if(libro.getNomeAutore().equals(nomeAutore) && libro.getCognomeAutore().equals(cognomeAutore)){
+                libroTrovato = libro;
+            }
+        }
+        
+        if(libroTrovato == null){
+            throw new GestioneEccezioni("Ricerca fallita: libro non trovato!");
+        }
+        
+        return libroTrovato;
     
     }
     /**
@@ -85,8 +184,20 @@ public class GestioneLibro implements Gestione<Libro> {
      * @param codice attributo del libro che viene usato per la ricerca
      * @return il libro che corrisponde alla ricerca
      */
-    public Libro ricercaLibro(int codice){
-        return null;
+    public Libro ricercaLibroCodice(String codice) throws GestioneEccezioni{
+        Libro libroTrovato = null;
+        for(Libro libro: libri){
+            if(libro.getCodice().equals(codice)){
+                libroTrovato = libro;
+            
+            }
+        }
+        
+        if(libroTrovato == null){
+            throw new GestioneEccezioni("Ricerca fallita: libro non trovato!");
+        }
+        
+        return libroTrovato;
     
     }
     /**
@@ -99,5 +210,28 @@ public class GestioneLibro implements Gestione<Libro> {
     
     }
     
+    //metodo privato per controllare se il codice identificativo del libro è valido o meno
+    private boolean controllaCodice(String codice){
+        int lunghezzaCodice = codice.length();
+        if(lunghezzaCodice == 6){
+            for(int i = 0;  i < 2; i++){
+                if(!Character.isLetter(codice.charAt(i))){
+                    return false;
+                }
+            
+            }
+            
+            for(int i = 2; i < lunghezzaCodice; i++){
+                if(!Character.isDigit(codice.charAt(i))){
+                    return false;
+                }
+            
+            }
+            
+            return true;
+        }
+        
+        return false;
+    }
     
 }
