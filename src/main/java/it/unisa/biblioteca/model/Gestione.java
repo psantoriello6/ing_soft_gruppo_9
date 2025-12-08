@@ -27,7 +27,7 @@ public interface Gestione<T> {
     *
     * @param elemento Oggetto di tipo T da inserire.
     */
-    public void inserisci(T elemento);
+    public void inserisci(T elemento) throws GestioneEccezioni;
     
     
     /**
@@ -37,7 +37,7 @@ public interface Gestione<T> {
     *
     * @param elemento Oggetto di tipo T da modificare, contenente i dati aggiornati.
     */   
-    public void modifica(T elemento);
+    public void modifica(T elemento)throws GestioneEccezioni;
     
     /**
     * @brief Elimina un elemento dalla collezione.
