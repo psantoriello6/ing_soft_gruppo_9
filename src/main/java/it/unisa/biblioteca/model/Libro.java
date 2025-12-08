@@ -177,9 +177,12 @@ public class Libro implements Comparable<Libro>, Serializable {
     /**
      * @brief metodo per diminuire di 1 il numero di copie disponibili.
      */
-    public void decrementaCopie() {
+    public void decrementaCopie() throws GestioneEccezioni {
         if (copieDisponibili > 0)
             copieDisponibili--;
+        else {
+            throw new GestioneEccezioni("Non sono presenti copie disponibili. Impossibile decrementare il numero di copie.");
+        }
     }
 
     /**
