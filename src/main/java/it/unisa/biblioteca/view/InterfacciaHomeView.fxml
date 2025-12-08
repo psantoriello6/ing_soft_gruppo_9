@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="825.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="mainPane" prefHeight="78.0" prefWidth="825.0" style="-fx-background-color: lightblue;">
+         <children>
+            <Label fx:id="title" alignment="TOP_LEFT" layoutX="14.0" layoutY="24.0" prefHeight="30.0" prefWidth="511.0" text="Università degli Studi di Salerno - Biblioteca">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Text fx:id="introMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Benvenuto alla HOME! Seleziona un'operazione per continuare" wrappingWidth="500.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <HBox fx:id="displayButtons" alignment="CENTER" prefHeight="300.0" prefWidth="200.0" spacing="15.0">
+         <children>
+            <Button fx:id="buttonGestioneLibri" mnemonicParsing="false" prefHeight="81.0" prefWidth="249.0" style="-fx-background-color: #008B8B;" text="GESTIONE LIBRI" textFill="#f4f1f1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="buttonGestioneUtenti" mnemonicParsing="false" prefHeight="80.0" prefWidth="259.0" style="-fx-background-color: #00FF00;" text="GESTIONE UTENTI" textFill="#f4f1f1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="buttonGestionePrestiti" mnemonicParsing="false" prefHeight="80.0" prefWidth="259.0" style="-fx-background-color: orange;" text="GESTIONE PRESTITI" textFill="#f4f1f1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
