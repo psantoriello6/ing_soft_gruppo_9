@@ -29,6 +29,7 @@ public class GestioneLibro implements Gestione<Libro> {
     }
     
     //metodo statico pubblico per restituire sempre la stessa istanza (unica) della classe stessa
+    
     public static GestioneLibro getInstance(){
         if(instance == null){
             instance = new GestioneLibro();

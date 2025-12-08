@@ -107,6 +107,7 @@ public class Prestito implements Comparable<Prestito> {
      * 
      */
     public boolean ritardoPrestito(LocalDate dataRestituzione){
+        
       return LocalDate.now().isAfter(dataRestituzione);
         
     }
