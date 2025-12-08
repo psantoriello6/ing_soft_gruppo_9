@@ -107,7 +107,6 @@ public class GestioneUtente implements Gestione<Utente>{
         utenteInMemoria.setEmail(utenteModificato.getEmail());
         
         utenti.add(utenteInMemoria);
-        
     
     }
     
@@ -163,6 +162,7 @@ public class GestioneUtente implements Gestione<Utente>{
      *
      */
     
+    //ritono una lista perchè ci potrebbero essere più utenti con lo stesso cognome.
     public List<Utente> cercaUtenteCognome(String cognome) throws GestioneEccezioni {
         List<Utente> risultati = new ArrayList<>();
         for(Utente u : utenti){
@@ -196,14 +196,14 @@ public class GestioneUtente implements Gestione<Utente>{
     
     //metodo per il controllo del email con il formato nome.cognome@università.it
     private boolean controlloEmail(Utente u){
-        String nomeValido = u.getNome().trim().toLowerCase();
-        String cognomeValido = u.getCognome().trim().toLowerCase();
-        String emailInserita = u.getEmail().trim().toLowerCase();
-        String emailValida = nomeValido + "." + cognomeValido + "@università.it";  //in caso il "dominio" si può implementare come variabile globale!
-        
         if(u.getEmail().isEmpty() || u.getNome().isEmpty() || u.getCognome().isEmpty()){
             return false;
         }
+        //costruisco il formato di email atteso dai sati che ricevo (.repalce serve per imuove tutti gli spazzi, toLowerCase per scrivere tutto in minuscolo);
+        String nomeValido = u.getNome().replace(" ", "").toLowerCase();
+        String cognomeValido = u.getCognome().replace(" ", "").toLowerCase();
+        String emailInserita = u.getEmail().toLowerCase();
+        String emailValida = nomeValido + "." + cognomeValido + "@università.it";  //in caso il "dominio" si può implementare come variabile globale!
         
         return emailInserita.equals(emailValida);
     }
