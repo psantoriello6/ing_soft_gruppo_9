@@ -107,7 +107,6 @@ public class GestioneUtente implements Gestione<Utente>{
         utenteInMemoria.setEmail(utenteModificato.getEmail());
         
         utenti.add(utenteInMemoria);
-        
     
     }
     
@@ -163,6 +162,7 @@ public class GestioneUtente implements Gestione<Utente>{
      *
      */
     
+    //ritono una lista perchè ci potrebbero essere più utenti con lo stesso cognome.
     public List<Utente> cercaUtenteCognome(String cognome) throws GestioneEccezioni {
         List<Utente> risultati = new ArrayList<>();
         for(Utente u : utenti){
