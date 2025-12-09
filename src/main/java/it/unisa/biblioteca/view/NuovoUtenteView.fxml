@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="80.0" prefWidth="400.0" style="-fx-background-color: lightblue;">
                <children>
-                  <Label prefHeight="40.0" prefWidth="177.0" style="-fx-font-family: Verdana; -fx-font-size: 22; -fx-font-weight: 800; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 4, 0.5, 1, 1); -fx-text-fill: white;" text="   Nuvo Utente">
+                  <Label prefHeight="40.0" prefWidth="199.0" style="-fx-font-family: Verdana; -fx-font-size: 22; -fx-font-weight: 800; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 4, 0.5, 1, 1); -fx-text-fill: white;" text="   Nuovo Utente">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -79,12 +79,12 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="99.0" prefWidth="400.0" spacing="20.0">
                <children>
-                  <Button fx:id="btConferma" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #4CAF50; -fx-font-weight: bold; -fx-background-radius: 5;" text="Conferma">
+                  <Button fx:id="btConferma" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #4CAF50; -fx-font-weight: bold; -fx-background-radius: 5;" text="Conferma">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btAnnulla" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #90A4AE; -fx-font-weight: bold; -fx-background-radius: 5;" text="Annulla">
+                  <Button fx:id="btAnnulla" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #90A4AE; -fx-font-weight: bold; -fx-background-radius: 5;" text="Annulla">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
