@@ -23,8 +23,8 @@ public class NuovoUtenteController {
     @FXML private TextField tfCognome;
     @FXML private TextField tfMatricola;
     @FXML private TextField tfEmail;
-    @FXML private TextField btConferma;
-    @FXML private TextField btAnnulla;
+    @FXML private Button btConferma;
+    @FXML private Button btAnnulla;
     
     
 }
