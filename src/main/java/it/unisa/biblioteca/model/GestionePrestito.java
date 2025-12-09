@@ -85,8 +85,28 @@ public class GestionePrestito {
      * 
      * @post La restituzione del prestito è stata registrata e il prestito è stato eliminato dalla lista dei prestiti attivi
      */
-    public void restituisciPrestito(Prestito prestito){
-     
+    public void restituisciPrestito(Prestito prestito) throws GestioneEccezioni{
+        Utente utente = prestito.getUtente();
+        Libro libro = prestito.getLibro();
+        
+        LinkedList<Libro> libriUtente = prestitiAttivi.get(utente);
+        if (libriUtente == null || libriUtente.isEmpty()) {
+            throw new GestioneEccezioni("ERRORE: L'utente " + utente.getNome() + " " + utente.getCognome() + " non ha alcun prestito attivo da restituire.");
+        }
+        
+        boolean rimosso = libriUtente.remove(libro);
+        
+        if (!rimosso) {
+            throw new GestioneEccezioni("ERRORE: Il libro '" + libro.getTitolo() + "' non risulta in prestito all'utente specificato.");
+        }
+        
+        if (libriUtente.isEmpty()) {
+            prestitiAttivi.remove(utente);
+        }
+        
+        libro.incrementaCopie();
+        
+        System.out.println("La restituzione del libro '" + libro.getTitolo() + "' (Codice: " + libro.getCodice() + ") da parte dell'utente matricola: " + utente.getMatricola() + " è avvenuta con successo.");
     }
     
     /**
