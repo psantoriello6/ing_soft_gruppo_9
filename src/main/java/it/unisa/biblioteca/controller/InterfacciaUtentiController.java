@@ -65,17 +65,58 @@ public class InterfacciaUtentiController {
         
         //continua a casa
         listaUtenti = FXCollections.observableArrayList();  //collegamento interfaccia observablelist (permette aggiornamento TabelView in automatico)
-        aggiornaTabella(); //metodo che aggiorna la lista osservabile (da chiamare dopo operazioni di inserimento - modifica - elimina
-        
+        aggiornaTabella(); 
         //da completare con i vari setOnAction
-        
+        btnNuovoUtenti.setOnAction(event -> apriFinestraNuovoUtente());
+        btnEliminaUtenti.setOnAction(e ->handleEliminaUtente() );
     }
     
+    //metodo che aggiorna la lista osservabile (da chiamare dopo operazioni di inserimento - modifica - elimina
     public void aggiornaTabella(){
         listaUtenti.clear(); //prima rimuovo tutto
         listaUtenti.addAll(GestioneUtente.getInstance().getTutti()); //prendo tutti gli utenti attualmente salvati
         if(listaUtenti != null){
             tabellaUtenti.setItems(listaUtenti); //metto gli elemnti della lista nella tabel view
         }
+    }
+    
+    private void apriFinestraNuovoUtente(){
+        try{
+            //collego il file FXML della view al controller e faccio operazioni standard per impostare lo stage!
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/NuovoUtenteView.fxml"));
+            Parent root = loader.load();
+            //IMPORTANTE: chiamo metodo  setMainController() per passare al pop-up la reference a questo controller!
+            NuovoUtenteController popupController = loader.getController();
+            popupController.setMainController(this);
+            //costruisco lo stage
+            Stage stage = new Stage();
+            stage.setTitle("Nuovo Utente");
+            stage.initModality(Modality.APPLICATION_MODAL); //metodo per bloccare schermata di "sotto" e poter aggire solo sul pop-up
+            stage.setScene(new Scene(root));
+            stage.showAndWait(); //metodo per bloccare flusso di codice fiche il pop-up è aperto
+            
+        }catch (IOException e) {
+            e.printStackTrace();
+            mostraErrore("Impossibile aprire la finestra Nuovo Utente.");
+        }
+    
+    }
+    
+    //gestione dell azione elimina utente (DA RIVEDRE!!!!)
+    private void handleEliminaUtente() {
+        Utente selezionato = tabellaUtenti.getSelectionModel().getSelectedItem();
+        if (selezionato != null) {
+            GestioneUtente.getInstance().elimina(selezionato);
+            aggiornaTabella();
+        } else {
+            mostraErrore("Seleziona un utente da eliminare.");
+        }
+    }
+    
+    //Interfaccia apposita per mostare messaggi di errore (senza costruire file FXML!
+    private void mostraErrore(String msg) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText(msg);
+        alert.show();
     }
 }
