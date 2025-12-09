@@ -6,6 +6,7 @@
 package it.unisa.biblioteca.controller;
 
 import it.unisa.biblioteca.model.Utente;
+import it.unisa.biblioteca.model.GestioneUtente;
 
 import java.io.IOException;
 import javafx.collections.FXCollections;
@@ -63,5 +64,18 @@ public class InterfacciaUtentiController {
         colonnaEmailUtenti.setCellValueFactory(new PropertyValueFactory<>("email"));
         
         //continua a casa
+        listaUtenti = FXCollections.observableArrayList();  //collegamento interfaccia observablelist (permette aggiornamento TabelView in automatico)
+        aggiornaTabella(); //metodo che aggiorna la lista osservabile (da chiamare dopo operazioni di inserimento - modifica - elimina
+        
+        //da completare con i vari setOnAction
+        
+    }
+    
+    public void aggiornaTabella(){
+        listaUtenti.clear(); //prima rimuovo tutto
+        listaUtenti.addAll(GestioneUtente.getInstance().getTutti()); //prendo tutti gli utenti attualmente salvati
+        if(listaUtenti != null){
+            tabellaUtenti.setItems(listaUtenti); //metto gli elemnti della lista nella tabel view
+        }
     }
 }

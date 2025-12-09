@@ -26,5 +26,7 @@ public class NuovoUtenteController {
     @FXML private Button btConferma;
     @FXML private Button btAnnulla;
     
+    private InterfacciaUtentiController controllerUtentiPrincipale;
+    
     
 }
