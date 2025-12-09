@@ -5,12 +5,16 @@
  */
 package it.unisa.biblioteca.controller;
 
+import it.unisa.biblioteca.model.GestioneEccezioni;
+import it.unisa.biblioteca.model.GestioneLibro;
+import it.unisa.biblioteca.model.Libro;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
