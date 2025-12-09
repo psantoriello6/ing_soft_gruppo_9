@@ -161,9 +161,11 @@ public class Libro implements Comparable<Libro>, Serializable {
         this.prestitiAttivi++;
     }
     
-    public void decrementaPrestiti(){
+    public void decrementaPrestiti() throws GestioneEccezioni{
         if (this.prestitiAttivi > 0){
             this.prestitiAttivi--;
+        } else {
+            throw new GestioneEccezioni("Non sono presenti prestiti attivi. Impossibile decrementare il numero di prestiti.");
         }
     }
     
