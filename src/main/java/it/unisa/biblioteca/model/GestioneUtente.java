@@ -89,7 +89,8 @@ public class GestioneUtente implements Gestione<Utente>{
      *
      */
     
-    //non possimao proprio permette la modifca della matricola se no non so come cercare l'utente vecchio nella collezione!
+    //non possimao proprio permette la modifca della matricola se no non so come cercare l'utente vecchio nella collezione
+    //Se faccio ricerca in metodo handle forse possiamo lasciare matricola modificabile! (non è vero)
     @Override
     public void modifica(Utente utenteModificato) throws GestioneEccezioni{
         if(!controlloEmail(utenteModificato)){
@@ -206,6 +207,11 @@ public class GestioneUtente implements Gestione<Utente>{
         String emailValida = nomeValido + "." + cognomeValido + "@università.it";  //in caso il "dominio" si può implementare come variabile globale!
         
         return emailInserita.equals(emailValida);
+    }
+    
+    //metodo utile per compilare la TabelView nel Controller.
+    public Set<Utente> getTutti() {
+        return utenti;
     }
 }
 
