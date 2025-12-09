@@ -68,6 +68,7 @@ public class GestionePrestito {
         
         // Aggiunge il libro alla lista dei prestiti dell'utente.
         libriUtente.add(libro);
+        libro.incrementaPrestiti();
         
         // Aggiorna le copie disponibili del libro.
         libro.decrementaCopie(); 

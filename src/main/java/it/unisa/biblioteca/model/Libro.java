@@ -23,6 +23,7 @@ public class Libro implements Comparable<Libro>, Serializable {
     private int annoPubblicazione;
     private String codice;
     private int copieDisponibili;
+    private int prestitiAttivi;
 
     /**
      * @brief inizializza i dati di un libro.
@@ -152,7 +153,13 @@ public class Libro implements Comparable<Libro>, Serializable {
         this.copieDisponibili = copieDisponibili;
     }
 
-
+    public int getPrestitiAttivi(){
+        return prestitiAttivi;
+    }
+    
+    public void incrementaPrestiti(){
+        prestitiAttivi++;
+    }
     
     /**
      * @brief metodo per gestire l'ordinamento nella collezione sul titolo in ordine alfabetico.
