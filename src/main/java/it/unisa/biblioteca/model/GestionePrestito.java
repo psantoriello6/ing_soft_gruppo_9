@@ -71,7 +71,8 @@ public class GestionePrestito {
         libro.incrementaPrestiti();
         
         // Aggiorna le copie disponibili del libro.
-        libro.decrementaCopie(); 
+        libro.decrementaCopie();
+        libro.incrementaPrestiti();
         
         System.out.println("La registrazione del prestito del libro '" + libro.getTitolo() + 
                            "' (Codice: " + libro.getCodice() + ") per l'utente con matricola: " + utente.getMatricola() + " è avvenuta con successo.");
@@ -106,6 +107,7 @@ public class GestionePrestito {
         }
         
         libro.incrementaCopie();
+        libro.decrementaPrestiti();
         
         System.out.println("La restituzione del libro '" + libro.getTitolo() + "' (Codice: " + libro.getCodice() + ") da parte dell'utente matricola: " + utente.getMatricola() + " è avvenuta con successo.");
     }
