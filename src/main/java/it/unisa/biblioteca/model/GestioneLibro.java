@@ -226,4 +226,8 @@ public class GestioneLibro implements Gestione<Libro> {
         return false;
     }
     
+    public Set<Libro> getSetLibro(){
+        return libri;
+    }
+    
 }
