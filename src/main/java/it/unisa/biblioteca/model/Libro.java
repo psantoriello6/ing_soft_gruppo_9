@@ -45,6 +45,7 @@ public class Libro implements Comparable<Libro>, Serializable {
         this.annoPubblicazione = annoPubblicazione;
         this.codice = codice;
         this.copieDisponibili = copieDisponibili;
+        this.prestitiAttivi = 0;
     }
 
     /**
@@ -157,7 +158,13 @@ public class Libro implements Comparable<Libro>, Serializable {
     }
     
     public void incrementaPrestiti(){
-        prestitiAttivi++;
+        this.prestitiAttivi++;
+    }
+    
+    public void decrementaPrestiti(){
+        if (this.prestitiAttivi > 0){
+            this.prestitiAttivi--;
+        }
     }
     
     /**
