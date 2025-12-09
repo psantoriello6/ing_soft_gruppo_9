@@ -132,14 +132,7 @@ public class Libro implements Comparable<Libro>, Serializable {
      * 
      * @param codice  codice identificativo del libro.
      */
-    public void setCodice(String codice) throws GestioneEccezioni {
-        //da modificare.
-        String c = "^[A-Za-z]{2}[0-9]{4}$";
-        
-        if (codice == null || !codice.matches(c)) {
-            throw new GestioneEccezioni("Errore: Il codice deve essere nel formato CCDDDD (2 lettere seguite da 4 numeri).");
-        }
-        
+    public void setCodice(String codice){
         this.codice = codice;
     }
     
