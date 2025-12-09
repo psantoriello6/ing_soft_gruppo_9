@@ -31,8 +31,15 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         //da completare
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            stage.setTitle("Biblioteca - Home");
+            stage.setScene(scene);
+            stage.show();
     }
 
     public static void main(String[] args) {
