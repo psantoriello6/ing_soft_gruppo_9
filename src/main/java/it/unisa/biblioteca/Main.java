@@ -5,13 +5,13 @@
  */
 package it.unisa.biblioteca;
 
-
+import it.unisa.biblioteca.model.GestioneUtente;
+import it.unisa.biblioteca.model.Utente;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 /**
  * @file Main.java
  * @author Gruppo 9
@@ -27,23 +27,14 @@ import javafx.stage.Stage;
  * 
  * @date 03 Dicembre, 2025
  */
+
 public class Main extends Application {
 
-    /**
-     * @brief Metodo di avvio dell'applicazione JavaFX.
-     *  Carica il file FXML della Home Page e imposta la scena principale.
-     * 
-     */
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         //da completare
     }
 
-    /**
-     * @brief Metodo main per l'avvio dell'applicazione.
-     *  Avvia l'applicazione chiamando il metodo launch() di JavaFX.
-     *  @param args Argomenti da riga di comando.
-     */
     public static void main(String[] args) {
         launch(args);
     }
