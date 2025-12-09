@@ -68,7 +68,7 @@
             <HBox prefHeight="55.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="150.0" text="Codice ISBN: " />
-                  <TextField fx:id="tfCodiceLibro" prefHeight="26.0" prefWidth="225.0" promptText="Codice Libro">
+                  <TextField fx:id="tfCodiceLibro" prefHeight="26.0" prefWidth="225.0" promptText="Codice Libro es: CCDDDD">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
