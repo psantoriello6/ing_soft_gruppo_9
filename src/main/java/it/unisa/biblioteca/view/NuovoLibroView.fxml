@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -10,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.view.NuovoLibroViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.controller.NuovoLibroController">
    <children>
       <VBox prefHeight="410.0" prefWidth="411.0">
          <children>
@@ -42,7 +48,7 @@
             <HBox prefHeight="55.0" prefWidth="400.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="150.0" text="Nome Autore: " />
-                  <TextField fx:id="tfNomeLibro" alignment="TOP_LEFT" prefHeight="26.0" prefWidth="225.0" promptText="Nome Autore Libro">
+                  <TextField fx:id="tfNomeAutoreLibro" alignment="TOP_LEFT" prefHeight="26.0" prefWidth="225.0" promptText="Nome Autore Libro">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -55,7 +61,7 @@
             <HBox prefHeight="55.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="150.0" text="Cognome Autore: " />
-                  <TextField fx:id="tfCognomeLibro" prefHeight="26.0" prefWidth="225.0" promptText="Cognome Autore Libro">
+                  <TextField fx:id="tfCognomeAutoreLibro" prefHeight="26.0" prefWidth="225.0" promptText="Cognome Autore Libro">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -106,7 +112,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="110.0" prefWidth="411.0" spacing="20.0">
                <children>
-                  <Button fx:id="btConfermaNuovoLibro" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #4CAF50; -fx-font-weight: bold; -fx-background-radius: 5;" text="Conferma">
+                  <Button fx:id="btConfermaNuovoLibro" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onConferma" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #4CAF50; -fx-font-weight: bold; -fx-background-radius: 5;" text="Conferma">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

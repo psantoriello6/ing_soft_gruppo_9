@@ -19,6 +19,7 @@ import java.util.*;
 public class GestionePrestito {
     private Map<Utente, LinkedList<Libro>> prestitiAttivi;
     private static final int MAX_PRESTITI = 3;
+    private static GestionePrestito instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
     
     /**
      * @brief Costruttore della classe GestionePrestito
@@ -27,11 +28,21 @@ public class GestionePrestito {
      * 
      */
      
-    public GestionePrestito(){
+    private GestionePrestito(){
         prestitiAttivi = new HashMap<>();
     
     }
     
+    public static GestionePrestito getInstance(){
+        if(instance==null){
+            instance=new GestionePrestito();
+        }
+        return instance;
+    }
+    
+    public void reset(){
+        instance = null;
+    }
     /**
      * @brief Metodo che permette di registrare un prestito
      * @param prestito Il prestito che si vuole registrare

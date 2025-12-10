@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="595.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.controller.GestioneUtentiController">
+<VBox prefHeight="595.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.controller.InterfacciaUtentiController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
@@ -41,7 +41,7 @@
                   </MenuButton>
                   <Button fx:id="btnCercaUtenti" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="62.0" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
                   <Separator prefHeight="1.0" prefWidth="51.0" />
-                  <Button fx:id="btnNuovoUtenti" mnemonicParsing="false" onAction="#apriFinestraNuovoUtente" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Nuovo Utente" />
+                  <Button fx:id="btnNuovoUtenti" mnemonicParsing="false"  style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Nuovo Utente" />
                   <Button fx:id="btnModificaUtenti" mnemonicParsing="false" style="-fx-background-color: ffff00; -fx-font-weight: bold;" text="Modifica Utente" />
                   <Button fx:id="btnEliminaUtenti" mnemonicParsing="false" style="-fx-background-color: ff0000; -fx-font-weight: bold;" text="Elimina Utente" />
                </children>

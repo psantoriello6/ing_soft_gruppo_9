@@ -57,7 +57,7 @@ public class InterfacciaUtentiController {
     private ObservableList<Utente> listaUtenti;
     
     @FXML
-    public void inizia(){
+    public void initialize(){
         colonnaCognomeUtenti.setCellValueFactory(new PropertyValueFactory<>("cognome"));
         colonnaNomeUtenti.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colonnaMatricolaUtenti.setCellValueFactory(new PropertyValueFactory<>("matricola"));

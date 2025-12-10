@@ -34,7 +34,7 @@ public class NuovoUtenteController {
     }
     
     @FXML 
-    public void inizia(){
+    public void initialize(){
         //gestione degli eventi
         btConferma.setOnAction( e -> handleConferma());
         btAnnulla.setOnAction(e -> {
