@@ -34,29 +34,24 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //da completare
-        // 1. INSERIMENTO DATI DI PROVA (Opzionale, ma utile per testare!)
-        // Inserisco manualmente degli utenti per vedere se appaiono nella tabella all'avvio.
-        System.out.println("Caricamento dati di prova...");
+        
+        // 1. CARICAMENTO DATI DI PROVA (Opzionale: Utile per trovare la tabella già popolata quando ci arrivi)
         try {
             GestioneUtente.getInstance().inserisci(new Utente("Mario", "Rossi", 12345, "mario.rossi@università.it"));
             GestioneUtente.getInstance().inserisci(new Utente("Luigi", "Verdi", 67890, "luigi.verdi@università.it"));
         } catch (GestioneEccezioni e) {
-            System.err.println("Errore inserimento dati prova: " + e.getMessage());
+            // Ignora duplicati all'avvio
         }
 
-        // 2. CARICAMENTO DELL'INTERFACCIA GRAFICA
-        // Carico il file FXML della schermata principale (la lista utenti)
-        // NOTA: Assicurati che il percorso "/it/unisa/..." sia corretto. Se il file è nella cartella view, è ok.
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/InterfacciaUtentiView.fxml"));
+        // 2. CARICAMENTO HOME PAGE
+        // Assicurati che il nome del file FXML sia esattamente questo
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
         Parent root = loader.load();
         
-        // 3. IMPOSTAZIONI DELLA FINESTRA (STAGE)
-        primaryStage.setTitle("Gestione Biblioteca - Sezione Utenti");
+        // 3. MOSTRA FINESTRA
+        primaryStage.setTitle("Biblioteca Universitaria - Home");
         primaryStage.setScene(new Scene(root));
-        //primaryStage.setResizable(false); // Blocca il ridimensionamento se vuoi mantenere il layout fisso
-        
-        // 4. MOSTRA LA FINESTRA
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
