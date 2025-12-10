@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" type="AnchorPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.controller.NuovoUtenteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.controller.NuovoUtenteController">
    <children>
       <VBox prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,73 +23,61 @@
                         <Insets top="20.0" />
                      </HBox.margin>
                   </Label>
-               </children></HBox>
+               </children>
+            </HBox>
+
             <HBox prefHeight="55.0" prefWidth="400.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="110.0" text="Nome:  " />
                   <TextField fx:id="tfNome" prefHeight="26.0" prefWidth="225.0" promptText="Nome Utente">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
                      <HBox.margin>
                         <Insets top="15.0" />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
+
             <HBox prefHeight="55.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="110.0" text="Cognome:  " />
                   <TextField fx:id="tfCognome" prefHeight="26.0" prefWidth="225.0" promptText="Cognome Utente">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
                      <HBox.margin>
                         <Insets top="15.0" />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
+
             <HBox prefHeight="55.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="110.0" text="Matricola:  " />
                   <TextField fx:id="tfMatricola" prefHeight="26.0" prefWidth="225.0" promptText="Matricola Utente">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
                      <HBox.margin>
                         <Insets top="15.0" />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
+
             <HBox prefHeight="55.0" prefWidth="200.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="110.0" text="Email:  " textAlignment="RIGHT" />
                   <TextField fx:id="tfEmail" prefHeight="26.0" prefWidth="225.0" promptText="es: nome.cognome@università.it">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
                      <HBox.margin>
                         <Insets top="15.0" />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
+
             <HBox alignment="CENTER" prefHeight="99.0" prefWidth="400.0" spacing="20.0">
                <children>
-                  <Button fx:id="btConferma" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleConferma" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #4CAF50; -fx-font-weight: bold; -fx-background-radius: 5;" text="Conferma">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button fx:id="btAnnulla" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #90A4AE; -fx-font-weight: bold; -fx-background-radius: 5;" text="Annulla">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children></HBox>
+                  <Button fx:id="btConferma" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #4CAF50; -fx-font-weight: bold; -fx-background-radius: 5;" text="Conferma" />
+                  
+                  <Button fx:id="btAnnulla" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #90A4AE; -fx-font-weight: bold; -fx-background-radius: 5;" text="Annulla" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>
-</fx:root>
+</AnchorPane>
