@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import java.util.List;
+import java.time.LocalDate; 
 
 /**
  * @file InterfacciaPrestitiController.java
@@ -216,13 +217,27 @@ public class InterfacciaPrestitiController {
             mostraErrore("Prima selezionare un libro.");
             return;
         }
+        
+        LocalDate dataRestituzionePrevista = LocalDate.now().plusDays(90);
+        Prestito nuovoPrestito = new Prestito(utenteSelezionato, libroSelezionato, dataRestituzionePrevista);
+        
+        try {
+            GestionePrestito.getInstance().registraPrestito(nuovoPrestito);
+            mostraInfo("Prestito registrato con successo! Data di restituzione prevista: " + dataRestituzionePrevista);
 
-     boolean ok = GestionePrestito.getInstance().registraPrestito(utenteSelezionato, libroSelezionato);
+            utenteSelezionato = null;
+            libroSelezionato = null;
+            lblUtenteTrovato.setText("");
+            lblLibroTrovato.setText("");
 
-        if (ok) 
-            mostraInfo("Prestito registrato con successo!");
-        else 
-            mostraErrore("Impossibile registrare il prestito.");
+        } catch (GestioneEccezioni e) {
+        
+        mostraErrore("Impossibile registrare il prestito: " + e.getMessage());
+
+    } catch (Exception e) {
+        mostraErrore("Errore imprevisto durante la registrazione del prestito.");
+        System.err.println("Errore in registraPrestito del Controller: " + e.getMessage());
+    }
     }
 
     
@@ -238,8 +253,4 @@ public class InterfacciaPrestitiController {
         a.setContentText(msg);
         a.show();
     }
-
-
-    
-    
 }
