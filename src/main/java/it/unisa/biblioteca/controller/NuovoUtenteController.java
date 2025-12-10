@@ -18,6 +18,7 @@ import javafx.stage.Stage;
  *
  * @author angel
  */
+
 public class NuovoUtenteController {
     @FXML private TextField tfNome;
     @FXML private TextField tfCognome;
@@ -26,66 +27,85 @@ public class NuovoUtenteController {
     @FXML private Button btConferma;
     @FXML private Button btAnnulla;
     
-    private InterfacciaUtentiController controllerUtentiPrincipale;
+    private InterfacciaUtentiController mainController;
+    private boolean modalitaModifica = false; // Flag per capire se stiamo modificando
     
-    //metodo per collegarsi al controller "principale" e aggiornare la tabella.
     public void setMainController(InterfacciaUtentiController mainController) {
-        controllerUtentiPrincipale = mainController;
+        this.mainController = mainController;
+    }
+
+   
+    // Serve per riempire i campi quando clicchi "Modifica"
+    public void setUtenteDaModificare(Utente u) {
+        this.modalitaModifica = true; // Attivo la modalità modifica
+        
+        //Precompilo i campi con i dati vecchi
+        tfNome.setText(u.getNome());
+        tfCognome.setText(u.getCognome());
+        tfMatricola.setText(String.valueOf(u.getMatricola()));
+        tfEmail.setText(u.getEmail());
+        
+        // campo matricola non modificabile
+        tfMatricola.setDisable(true); 
+        
+        // cambio scritta sul bottone
+        btConferma.setText("Salva Modifiche");
     }
     
     @FXML 
     public void initialize(){
-        //gestione degli eventi
-        btConferma.setOnAction( e -> handleConferma());
-        btAnnulla.setOnAction(e -> {
-            ((Stage) btAnnulla.getScene().getWindow()).close();
-        });
+        btConferma.setOnAction(e -> handleConferma());
+        btAnnulla.setOnAction(e -> ((Stage) btAnnulla.getScene().getWindow()).close());
     }
     
     private void handleConferma(){
         try{
-            //prelevo stringhe dai textfield
+            // Lettura dati
             String nome = tfNome.getText();
             String cognome = tfCognome.getText();
             String email = tfEmail.getText();
             String matricolaStr = tfMatricola.getText();
-            //controllo che tutti i campi sono stati compilati
+            
             if (nome.isEmpty() || cognome.isEmpty() || email.isEmpty() || matricolaStr.isEmpty()) {
-                mostraErrore("Erorre: Compila tutti i campi!");
+                mostraErrore("Errore: Compila tutti i campi!");
                 return;
             }
-            // converto la stringa matricola in un intero (questo metodo lancia eccezione se non è possiibile)
+            
             int matricola = Integer.parseInt(matricolaStr);
-            //creo l'utente da mettere in memoria
-            Utente nuovoUtente = new Utente(nome,cognome,matricola,email);
-            //uso il metodo inserisci per inserire l'utente nella collezione
-            GestioneUtente.getInstance().inserisci(nuovoUtente);
-            //se non vengono catturate eccezioni mostro messaggio di successo
-            mostraSuccesso("Utente inserito correttamente!");
-            //controllo che ho passato reference del cotroller principale e chiedo di aggiornare la table view
-            if (controllerUtentiPrincipale != null) {
-                controllerUtentiPrincipale.aggiornaTabella();
+            
+            // Creo l'oggetto con i dati (nuovi o vecchi che siano)
+            Utente utenteInput = new Utente(nome, cognome, matricola, email);
+            if (modalitaModifica) {
+                // Se sono in modifica, chiamo il metodo MODIFICA del Model
+                GestioneUtente.getInstance().modifica(utenteInput);
+                mostraSuccesso("Utente modificato con successo!");
+            } else {
+                // Se sono in inserimento, chiamo il metodo INSERISCI del Model
+                GestioneUtente.getInstance().inserisci(utenteInput);
+                mostraSuccesso("Utente inserito con successo!");
             }
-            //risalgo la gerarchia per ottenere (con il casting) lo stage su cui posso usare il metodo .close()
+
+            // Aggiorno la tabella principale
+            if (mainController != null) {
+                mainController.aggiornaTabella();
+            }
+            
+            // Chiudo la finestra
             ((Stage) btConferma.getScene().getWindow()).close();
+
         } catch (NumberFormatException e){
-            mostraErrore("La matricola deve essere un numero intero."); //getsione eccezione della conversione!
+            mostraErrore("La matricola deve essere un numero intero.");
         } catch (GestioneEccezioni e){
-            mostraErrore(e.getMessage()); //gestione eccezioni del model!
+            mostraErrore(e.getMessage()); // Qui catturiamo errori come email non valida
         }
-        
     }
     
-    //metodo che usa un interfaccia fatta a posta per mostrare errori!
     private void mostraErrore(String msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Errore");
-        alert.setHeaderText("Errore inserimento!");
         alert.setContentText(msg);
-        alert.showAndWait();
+        alert.show();
     }
     
-    //metodo con la stessa logica di quello di sopra ma che mostra se l'operazione ha avuto successo!
     private void mostraSuccesso(String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Successo");

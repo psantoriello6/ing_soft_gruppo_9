@@ -51,7 +51,7 @@ public class Main extends Application {
         // 3. MOSTRA FINESTRA
         primaryStage.setTitle("Biblioteca Universitaria - Home");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.show();
     }
 

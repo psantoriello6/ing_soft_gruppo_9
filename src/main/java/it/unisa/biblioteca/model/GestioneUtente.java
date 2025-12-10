@@ -70,7 +70,7 @@ public class GestioneUtente implements Gestione<Utente>{
         }
         
         if(!controlloEmail(utente)){
-            throw new GestioneEccezioni("Errore: formato dell'email inserita non valido!");
+            throw new GestioneEccezioni("Errore: formato dell'email inserita non valido! (usa: nome.cognome@università.it)");
         }
         
         utenti.add(utente);
