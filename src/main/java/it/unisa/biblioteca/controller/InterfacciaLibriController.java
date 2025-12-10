@@ -37,6 +37,7 @@ import javafx.stage.Modality;
  */
 public class InterfacciaLibriController {
     
+    @FXML private Button btnHomeLibri;
     @FXML
     private TableView<Libro> tabellaLibri;
     @FXML
@@ -87,6 +88,8 @@ public class InterfacciaLibriController {
         
         
         btnNuoviLibri.setOnAction(e -> apriFinestraNuovoLibro());
+        
+        btnHomeLibri.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
     }
     
     //metodo che aggiorna la lista osservabile
@@ -139,6 +142,24 @@ public class InterfacciaLibriController {
     
     }
     
+    private void ritornoHome(String fxmlPathHome) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPathHome));
+            Parent root = loader.load(); //il load poi chiama in automatico il metodo inizialize specifico per ogni controller
+
+            // Ottengo lo stage corrente (la finestra) da un bottone qualsiasi
+            Stage stage = (Stage) btnHomeLibri.getScene().getWindow();
+            
+            stage.setScene(new Scene(root));
+            stage.setTitle("Biblioteca Universitaria - Home");
+            stage.centerOnScreen();
+            stage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            mostraErrore("Impossibile caricare l'interfaccia: " + fxmlPathHome + "\nControlla che il file esista e il percorso sia corretto.");
+        }
+    }
   }
     
     
