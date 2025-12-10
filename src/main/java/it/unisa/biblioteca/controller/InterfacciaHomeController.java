@@ -13,15 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-/**
- * @file InterfacciaHomeController.java
- * @author Gruppo 9
- * @brief questo file contiene i metodi e la logica per il controllo dell'interfaccia Home.
- * 
- * Fa da tramite tra le interazione con il bibliotecario (nella view) e i dati (nel model).
- * 
- * @date 03 Dicembre, 2025
- */
+
 public class InterfacciaHomeController {
     
     @FXML private Button buttonGestioneLibri;
@@ -29,32 +21,29 @@ public class InterfacciaHomeController {
     @FXML private Button buttonGestionePrestiti;
     
     @FXML
-    public void inizia(){
+    public void initialize(){
+        // Assicurati che i percorsi dei file FXML siano corretti!
         buttonGestioneLibri.setOnAction(e -> cambiaScena("/it/unisa/biblioteca/view/InterfacciaLibriView.fxml", "Gestione Libri"));
         buttonGestioneUtenti.setOnAction(e -> cambiaScena("/it/unisa/biblioteca/view/InterfacciaUtentiView.fxml", "Gestione Utenti"));
         buttonGestionePrestiti.setOnAction(e -> cambiaScena("/it/unisa/biblioteca/view/InterfacciaPrestitiView.fxml", "Gestione Prestiti"));
     }
 
-    private void cambiaScena(String fxmlPath, String sezione) {
+    private void cambiaScena(String fxmlPath, String titolo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent root = loader.load();
-            Object controller = loader.getController();
-            if (controller instanceof InterfacciaUtentiController) {
-                ((InterfacciaUtentiController) controller).inizia();
-            } else if (controller instanceof InterfacciaLibriController) {
-                ((InterfacciaLibriController) controller).inizia();
-            } else if (controller instanceof InterfacciaPrestitiController) {
-                ((InterfacciaPrestitiController) controller).inizia();
-            }
+            Parent root = loader.load(); //il load poi chiama in automatico il metodo inizialize specifico per ogni controller
 
+            // Ottengo lo stage corrente (la finestra) da un bottone qualsiasi
             Stage stage = (Stage) buttonGestioneLibri.getScene().getWindow();
+            
             stage.setScene(new Scene(root));
-            stage.setTitle(sezione);
+            stage.setTitle(titolo);
+            stage.centerOnScreen();
             stage.show();
+            
         } catch (IOException e) {
             e.printStackTrace();
-            mostraErrore("Impossibile caricare l'interfaccia : " + fxmlPath);
+            mostraErrore("Impossibile caricare l'interfaccia: " + fxmlPath + "\nControlla che il file esista e il percorso sia corretto.");
         }
     }
     

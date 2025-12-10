@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.biblioteca.controller.InterfacciaPrestitiController">
    <children>
       <AnchorPane prefHeight="37.0" prefWidth="711.0" style="-fx-background-color: lightblue;">
          <children>
@@ -42,8 +42,8 @@
                                           </AnchorPane>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                                              <children>
-                                                <TextField fx:id="tfprestiti1" />
-                                                <MenuButton fx:id="filterPrestiti1" mnemonicParsing="false" style="-fx-background-color: #ffff00; -fx-font-weight: bold;" text="Filtro">
+                                                <TextField fx:id="tfRicercaUtente" />
+                                                <MenuButton fx:id="menuFiltroUtente" mnemonicParsing="false" style="-fx-background-color: #ffff00; -fx-font-weight: bold;" text="Filtro">
                                                   <items>
                                                     <MenuItem mnemonicParsing="false" text="Action 1" />
                                                     <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -51,7 +51,7 @@
                                                 </MenuButton>
                                              </children>
                                           </HBox>
-                                          <Button fx:id="btnCercaPrestiti1" mnemonicParsing="false" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
+                                          <Button fx:id="btnCercaUtente" mnemonicParsing="false" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -67,8 +67,8 @@
                                           </AnchorPane>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                                              <children>
-                                                <TextField fx:id="tfprestiti2" />
-                                                <MenuButton fx:id="filterPrestiti2" mnemonicParsing="false" style="-fx-background-color: #ffff00; -fx-font-weight: bold;" text="Filtro">
+                                                <TextField fx:id="tfRicercaLibro" />
+                                                <MenuButton fx:id="menuFiltroLibro" mnemonicParsing="false" style="-fx-background-color: #ffff00; -fx-font-weight: bold;" text="Filtro">
                                                   <items>
                                                     <MenuItem mnemonicParsing="false" text="Action 1" />
                                                     <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -76,14 +76,14 @@
                                                 </MenuButton>
                                              </children>
                                           </HBox>
-                                          <Button fx:id="btnCercaPrestiti2" mnemonicParsing="false" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
+                                          <Button fx:id="btnCercaLibro" mnemonicParsing="false" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
                                        </children>
                                     </VBox>
                                  </children>
                               </Pane>
                            </children>
                         </HBox>
-                        <Button fx:id="btnRegistraPrestiti" layoutX="206.0" layoutY="276.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: lightgray; -fx-font-weight: bold;" text="REGISTRA PRESTITO" />
+                        <Button fx:id="btnRegistraPrestito" layoutX="206.0" layoutY="276.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: lightgray; -fx-font-weight: bold;" text="REGISTRA PRESTITO" />
                      </children>
                   </AnchorPane>
             </content>
