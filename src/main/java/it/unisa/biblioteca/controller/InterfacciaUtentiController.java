@@ -69,6 +69,8 @@ public class InterfacciaUtentiController {
         //da completare con i vari setOnAction
         btnNuovoUtenti.setOnAction(event -> apriFinestraNuovoUtente());
         btnEliminaUtenti.setOnAction(e ->handleEliminaUtente() );
+        
+        btnHomeUtenti.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
     }
     
     //metodo che aggiorna la lista osservabile (da chiamare dopo operazioni di inserimento - modifica - elimina
@@ -118,5 +120,24 @@ public class InterfacciaUtentiController {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText(msg);
         alert.show();
+    }
+    
+    private void ritornoHome(String fxmlPathHome) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPathHome));
+            Parent root = loader.load(); //il load poi chiama in automatico il metodo inizialize specifico per ogni controller
+
+            // Ottengo lo stage corrente (la finestra) da un bottone qualsiasi
+            Stage stage = (Stage) btnHomeUtenti.getScene().getWindow();
+            
+            stage.setScene(new Scene(root));
+            stage.setTitle("Biblioteca Universitaria - Home");
+            stage.centerOnScreen();
+            stage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            mostraErrore("Impossibile caricare l'interfaccia: " + fxmlPathHome + "\nControlla che il file esista e il percorso sia corretto.");
+        }
     }
 }
