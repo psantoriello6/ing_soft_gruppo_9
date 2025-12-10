@@ -12,12 +12,17 @@ import it.unisa.biblioteca.model.GestioneUtente;
 import it.unisa.biblioteca.model.GestioneLibro; 
 import it.unisa.biblioteca.model.GestionePrestito; 
 import it.unisa.biblioteca.model.GestioneEccezioni; 
+import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import java.util.List;
 import java.time.LocalDate; 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * @file InterfacciaPrestitiController.java
@@ -29,6 +34,9 @@ import java.time.LocalDate;
  * @date 03 Dicembre, 2025
  */
 public class InterfacciaPrestitiController {
+    
+    //RITORNO HOME
+    @FXML private Button btnHomePrestiti;
     
     // RICERCA UTENTE
     @FXML private TextField tfRicercaUtente;
@@ -97,6 +105,8 @@ public class InterfacciaPrestitiController {
         btnCercaUtente.setOnAction(e -> cercaUtente());
         btnCercaLibro.setOnAction(e -> cercaLibro());
         btnRegistraPrestito.setOnAction(e -> registraPrestito());
+        
+        btnHomePrestiti.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
     }
     
     private void cercaUtente() {
@@ -252,5 +262,24 @@ public class InterfacciaPrestitiController {
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText(msg);
         a.show();
+    }
+
+    private void ritornoHome(String fxmlPathHome) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPathHome));
+            Parent root = loader.load(); //il load poi chiama in automatico il metodo inizialize specifico per ogni controller
+
+            // Ottengo lo stage corrente (la finestra) da un bottone qualsiasi
+            Stage stage = (Stage) btnHomePrestiti.getScene().getWindow();
+            
+            stage.setScene(new Scene(root));
+            stage.setTitle("Biblioteca Universitaria - Home");
+            stage.centerOnScreen();
+            stage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            mostraErrore("Impossibile caricare l'interfaccia: " + fxmlPathHome + "\nControlla che il file esista e il percorso sia corretto.");
+        }
     }
 }
