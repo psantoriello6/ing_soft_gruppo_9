@@ -157,6 +157,7 @@ public class InterfacciaPrestitiController {
 
         lblUtenteTrovato.setText("");
         utenteSelezionato = null;
+        String messaggioDiAvviso = null;
 
         if (input.isEmpty()) {
             lblUtenteTrovato.setText("⚠ Inserire un valore di ricerca.");
@@ -176,19 +177,27 @@ public class InterfacciaPrestitiController {
                 // Restituisce una lista, MA lancia eccezione se vuota
                 List<Utente> risultati = GestioneUtente.getInstance().cercaUtenteCognome(input);
                 if (risultati.size() > 1) { 
-                    lblUtenteTrovato.setText("⚠ Trovati " + risultati.size() + " utenti con questo cognome. Selezionato il primo. Ricercare per Matricola per essere precisi.");
+                    messaggioDiAvviso = "⚠ Trovati " + risultati.size() + " utenti con questo cognome. Selezionato il primo in lista. Ricercare per Matricola per essere precisi.\n";
                 }
                 utenteSelezionato = risultati.get(0);  // prendi il primo utente trovato
                 break;
             }
 
-         // Se siamo qui → utente trovato
-         lblUtenteTrovato.setText(
-            "✔ Utente trovato: " +
-            utenteSelezionato.getNome() + " " +
-            utenteSelezionato.getCognome() +
-            " (Matricola: " + utenteSelezionato.getMatricola() + ")"
-         );
+         if (messaggioDiAvviso != null) {
+            lblUtenteTrovato.setText(messaggioDiAvviso + "Utente selezionato: " +
+                utenteSelezionato.getNome() + " " +
+                utenteSelezionato.getCognome() +
+                " (Matricola: " + utenteSelezionato.getMatricola() + ")");
+            
+        } else {
+            // Se NON c'è avviso (cioè matricola o cognome singolo), stampiamo solo il successo standard
+            lblUtenteTrovato.setText(
+                "✔ Utente trovato: " +
+                utenteSelezionato.getNome() + " " +
+                utenteSelezionato.getCognome() +
+                " (Matricola: " + utenteSelezionato.getMatricola() + ")"
+            );
+        }
 
         } catch (NumberFormatException e) {
             lblUtenteTrovato.setText("La matricola deve essere un numero.");
