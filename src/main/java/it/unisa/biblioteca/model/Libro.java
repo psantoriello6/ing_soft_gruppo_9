@@ -220,6 +220,12 @@ public class Libro implements Comparable<Libro>, Serializable {
         Libro l = (Libro) o;
         return Objects.equals(this.codice, l.codice);
     }
+    
+    @Override
+    public String toString(){
+        return "Titolo : " + titolo + "\nNome Autore: " + nomeAutore + "\nCognome autore: " + cognomeAutore + "\nAnno di pubblicazione: " + annoPubblicazione + "\nCopie Disponibili: " + copieDisponibili +"\n\n";
+    
+    }
 
 }
 

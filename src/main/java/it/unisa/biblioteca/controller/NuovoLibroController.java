@@ -124,14 +124,16 @@ public class NuovoLibroController{
                 //se la modalità modifica è abilitata, modifico il libro
                 //modifico il libro della collezione
                 GestioneLibro.getInstance().modifica(nuovoLibro);
+                GestioneLibro.getInstance().salvaLibri("libri.dat");
                 
                 //mostra un messaggio che indica che il libro è stato inserito con successo
-                this.mostraInformazione("Libro modificato con successo");
+                this.mostraInformazione("Libro modificato e salvato su file con successo");
                
             }else{
                 //se la modalità modifica è disabilitata, allora inserisco il libro
                  //inserisco il libro nella collezione
                 GestioneLibro.getInstance().inserisci(nuovoLibro);
+                GestioneLibro.getInstance().salvaLibri("libri.dat");
                 //mostra un messaggio che indica che il libro è stato inserito con successo
                 this.mostraInformazione("Libro inserito con successo");
             
