@@ -230,4 +230,26 @@ public class GestionePrestito {
         }
         return elencoCompleto;
     }
+    
+    private String generaChiave(Utente u, Libro l) {
+        return u.getMatricola() + "_" + l.getCodice();
+    }
+    
+    public List<Prestito> getElencoPrestitiCompleto() {
+        List<Prestito> elencoCompleto = new ArrayList<>();
+        
+        for (Map.Entry<Utente, LinkedList<Libro>> entry : prestitiAttivi.entrySet()) {
+            Utente utente = entry.getKey();
+            LinkedList<Libro> libriInPrestito = entry.getValue();
+            
+            for (Libro libro : libriInPrestito) {
+                String chiaveUnivoca = utente.getMatricola() + "_" + libro.getCodice();
+                LocalDate dataScadenza = scadenzePrestiti.get(chiaveUnivoca);
+                
+                Prestito p = new Prestito(utente, libro, dataScadenza);
+                elencoCompleto.add(p);
+            }
+        }
+        return elencoCompleto;
+    }
 }
