@@ -107,7 +107,11 @@ public class Utente implements Serializable, Comparable<Utente> {
         if(c!=0){
             return c;
         }
-        return this.getNome().compareToIgnoreCase(u.getNome());
+        int n = this.getNome().compareToIgnoreCase(u.getNome());
+        if(n!=0){
+            return n;
+        }
+        return Integer.compare(this.matricola, u.matricola);
     }
     /**
      * @brief Metodo che determina quale logica viene utilizzata per la generazione degli hashcode
