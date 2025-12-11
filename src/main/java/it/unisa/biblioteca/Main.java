@@ -34,7 +34,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    @Override
+   @Override
     public void start(Stage primaryStage) throws Exception {
         
         // 1. CARICAMENTO DATI DI PROVA (Opzionale: Utile per trovare la tabella già popolata quando ci arrivi)
