@@ -59,6 +59,8 @@ public class InterfacciaPrestitiController {
     @FXML private Button btnRegistraPrestito;
     
     //TABELLA PRESTITI ATTIVI
+    @FXML private Button btnConfermaRestituzionePrestiti;
+    
     @FXML private TableView<Prestito> tabellaPrestiti;
     
     @FXML private TableColumn<Prestito, Integer> colonnaMatricolaPrestiti;
@@ -141,14 +143,18 @@ public class InterfacciaPrestitiController {
         btnCercaLibro.setOnAction(e -> cercaLibro());
         btnRegistraPrestito.setOnAction(e -> registraPrestito());
         
+        if (btnConfermaRestituzionePrestiti != null) {
+            btnConfermaRestituzionePrestiti.setOnAction(e -> azioneRestituisciPrestito());
+        }
+        
         btnHomePrestiti.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
         
         aggiornaTabella();
     }
     
-        private void cercaUtente() {
+    private void cercaUtente() {
         String input = tfRicercaUtente.getText().trim();
-        String messaggioDiAvviso = null;
+
         lblUtenteTrovato.setText("");
         utenteSelezionato = null;
 
@@ -156,16 +162,13 @@ public class InterfacciaPrestitiController {
             lblUtenteTrovato.setText("⚠ Inserire un valore di ricerca.");
             return;
         }
-        else if (filtroUtente == null || filtroUtente.isEmpty()) {
-             lblUtenteTrovato.setText("⚠ Selezionare un criterio di ricerca (Matricola o Cognome).");
-             return;
-        }
-        
+
         try {
             switch (filtroUtente) {
 
             case "matricola":
                 int m = Integer.parseInt(input);
+                // SE IL MODEL NON LO TROVA LANCIA ECCEZIONE
                 utenteSelezionato = GestioneUtente.getInstance().cercaUtenteMatricola(m);
                 break;
 
@@ -173,29 +176,22 @@ public class InterfacciaPrestitiController {
                 // Restituisce una lista, MA lancia eccezione se vuota
                 List<Utente> risultati = GestioneUtente.getInstance().cercaUtenteCognome(input);
                 if (risultati.size() > 1) { 
-                    messaggioDiAvviso = "⚠ Trovati " + risultati.size() + " utenti con questo cognome, selezionato il primo. Ricercare per Matricola per essere precisi.\n";
+                    lblUtenteTrovato.setText("⚠ Trovati " + risultati.size() + " utenti con questo cognome. Selezionato il primo. Ricercare per Matricola per essere precisi.");
                 }
                 utenteSelezionato = risultati.get(0);  // prendi il primo utente trovato
                 break;
             }
-            
-  
-         if (messaggioDiAvviso != null) {
-            lblUtenteTrovato.setText(messaggioDiAvviso + "✔ Utente selezionato: " +
+
+         // Se siamo qui → utente trovato
+         lblUtenteTrovato.setText(
+            "✔ Utente trovato: " +
             utenteSelezionato.getNome() + " " +
             utenteSelezionato.getCognome() +
-            " (Matricola: " + utenteSelezionato.getMatricola() + ")");
-         }
-         else {
-            lblUtenteTrovato.setText("✔ Utente trovato: " +
-            utenteSelezionato.getNome() + " " +
-            utenteSelezionato.getCognome() +
-            " (Matricola: " + utenteSelezionato.getMatricola() + ")");
-         }
-         
+            " (Matricola: " + utenteSelezionato.getMatricola() + ")"
+         );
 
         } catch (NumberFormatException e) {
-            lblUtenteTrovato.setText("⚠ La matricola deve essere un numero.");
+            lblUtenteTrovato.setText("La matricola deve essere un numero.");
 
         } catch (GestioneEccezioni e) {
             // Qui entri se il Model NON trova l'utente
@@ -212,10 +208,6 @@ public class InterfacciaPrestitiController {
         if (input.isEmpty()) {
             lblLibroTrovato.setText("⚠ Inserire un valore di ricerca.");
             return;
-        }
-        else if (filtroLibro == null || filtroLibro.isEmpty()) {
-             lblLibroTrovato.setText("⚠ Selezionare un criterio di ricerca (Titolo, Codice o Autore).");
-             return;
         }
         
         try {
@@ -267,7 +259,7 @@ public class InterfacciaPrestitiController {
     
     
     //REGISTRA PRESTITO
-    
+
     private void registraPrestito() {
         if (utenteSelezionato == null) {
            mostraErrore("Prima selezionare un utente.");
@@ -328,13 +320,15 @@ public class InterfacciaPrestitiController {
             // 3. Aggiorna la Vista (Rimuovi dalla tabella)
             listaPrestiti.remove(prestitoSelezionato);
             
+            aggiornaTabella();
+            
             mostraInfo("Libro restituito con successo.");
             
         } catch (GestioneEccezioni e) {
             mostraErrore("Errore restituzione: " + e.getMessage());
         }
     }
-
+    
     
     //UTILITIES PER MESSAGGI
     private void mostraErrore(String msg) {
@@ -368,4 +362,3 @@ public class InterfacciaPrestitiController {
         }
     }
 }
-
