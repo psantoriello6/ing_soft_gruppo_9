@@ -122,7 +122,7 @@ public class GestionePrestito {
         
         System.out.println("La restituzione del libro '" + libro.getTitolo() + "' (Codice: " + libro.getCodice() + ") da parte dell'utente matricola: " + utente.getMatricola() + " è avvenuta con successo.");
     }
-    
+      
     /**
      * @brief Metodo che permette di esportare su un file i dati relativi ad un presitio
      * @param file Il nome del file su cui devono essere salvati i dati di un prestito
