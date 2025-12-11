@@ -95,7 +95,6 @@ public class GestionePrestito {
         
         // Aggiunge il libro alla lista dei prestiti dell'utente.
         libriUtente.add(libro);
-        libro.incrementaPrestiti();
         
         String chiave = generaChiave(utente, libro);
         scadenzePrestiti.put(chiave, prestito.getDataRestituzione());
