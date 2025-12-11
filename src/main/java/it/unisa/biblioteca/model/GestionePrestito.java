@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package it.unisa.biblioteca.model;
+import java.time.LocalDate;
 import java.util.*;
 /**
  * @file GestionePrestito.java
@@ -18,6 +19,7 @@ import java.util.*;
 
 public class GestionePrestito {
     private Map<Utente, LinkedList<Libro>> prestitiAttivi;
+    private Map<String, LocalDate> scadenzePrestiti;
     private static final int MAX_PRESTITI = 3;
     private static GestionePrestito instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
     
@@ -30,7 +32,7 @@ public class GestionePrestito {
      
     private GestionePrestito(){
         prestitiAttivi = new HashMap<>();
-    
+        scadenzePrestiti = new HashMap<>();
     }
     
     public static GestionePrestito getInstance(){
@@ -81,6 +83,9 @@ public class GestionePrestito {
         libriUtente.add(libro);
         libro.incrementaPrestiti();
         
+        String chiave = generaChiave(utente, libro);
+        scadenzePrestiti.put(chiave, prestito.getDataRestituzione());
+        
         // Aggiorna le copie disponibili del libro.
         libro.decrementaCopie();
         libro.incrementaPrestiti();
@@ -120,6 +125,9 @@ public class GestionePrestito {
         libro.incrementaCopie();
         libro.decrementaPrestiti();
         
+        String chiave = generaChiave(utente, libro);
+        scadenzePrestiti.remove(chiave);
+        
         System.out.println("La restituzione del libro '" + libro.getTitolo() + "' (Codice: " + libro.getCodice() + ") da parte dell'utente matricola: " + utente.getMatricola() + " è avvenuta con successo.");
     }
     
@@ -135,5 +143,27 @@ public class GestionePrestito {
     public void salvaPrestiti(String file){
     
     
+    }
+    
+    private String generaChiave(Utente u, Libro l) {
+        return u.getMatricola() + "_" + l.getCodice();
+    }
+    
+    public List<Prestito> getElencoPrestitiCompleto() {
+        List<Prestito> elencoCompleto = new ArrayList<>();
+        
+        for (Map.Entry<Utente, LinkedList<Libro>> entry : prestitiAttivi.entrySet()) {
+            Utente utente = entry.getKey();
+            LinkedList<Libro> libriInPrestito = entry.getValue();
+            
+            for (Libro libro : libriInPrestito) {
+                String chiaveUnivoca = utente.getMatricola() + "_" + libro.getCodice();
+                LocalDate dataScadenza = scadenzePrestiti.get(chiaveUnivoca);
+                
+                Prestito p = new Prestito(utente, libro, dataScadenza);
+                elencoCompleto.add(p);
+            }
+        }
+        return elencoCompleto;
     }
 }
