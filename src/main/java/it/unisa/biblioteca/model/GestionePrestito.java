@@ -230,5 +230,4 @@ public class GestionePrestito {
         }
         return elencoCompleto;
     }
-
 }
