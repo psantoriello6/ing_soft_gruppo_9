@@ -73,7 +73,7 @@ public class GestioneUtente implements Gestione<Utente>{
         }
         
         if(!controlloEmail(utente)){
-            throw new GestioneEccezioni("Errore: formato dell'email inserita non valido! (usa: nome.cognome@università.it)");
+            throw new GestioneEccezioni("Errore: formato dell'email inserita non valido! (usa: nome.cognome[0-9]@università.it)");
         }
         
         utenti.add(utente);
@@ -220,8 +220,8 @@ public class GestioneUtente implements Gestione<Utente>{
     }
     
     
-    //metodo per il controllo del email con il formato nome.cognome@università.it
-    private boolean controlloEmail(Utente u){
+    //metodo per il controllo del email con il formato nome.cognome[0-9]@università.it
+    private boolean controlloEmail(Utente u) throws GestioneEccezioni{
         if(u.getEmail().isEmpty() || u.getNome().isEmpty() || u.getCognome().isEmpty()){
             return false;
         }
@@ -229,9 +229,16 @@ public class GestioneUtente implements Gestione<Utente>{
         String nomeValido = u.getNome().replace(" ", "").toLowerCase();
         String cognomeValido = u.getCognome().replace(" ", "").toLowerCase();
         String emailInserita = u.getEmail().toLowerCase();
-        String emailValida = nomeValido + "." + cognomeValido + "@università.it";  //in caso il "dominio" si può implementare come variabile globale!
+        String emailValida = nomeValido + "\\." + cognomeValido + "[0-9]*@università.it";  //in caso il "dominio" si può implementare come variabile globale!
         
-        return emailInserita.equals(emailValida);
+        for (Utente esistente : utenti){
+            if (esistente.getEmail().equalsIgnoreCase(emailInserita) && 
+                esistente.getMatricola() != u.getMatricola()) {
+                
+                throw new GestioneEccezioni("Errore: L'email '" + emailInserita + "' è già in uso da un altro utente. Scegliere un numero diverso (es. " + cognomeValido + "[0-9]).");
+            }
+        }
+        return emailInserita.matches(emailValida);
     }
     
     //metodo utile per compilare la TabelView nel Controller.
