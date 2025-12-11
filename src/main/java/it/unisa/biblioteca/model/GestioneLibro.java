@@ -125,7 +125,7 @@ public class GestioneLibro implements Gestione<Libro> {
     public Libro ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
         Libro libroTrovato = null;
         for(Libro libro: libri){
-            if(libro.getTitolo().equals(titolo)){
+            if(libro.getTitolo().equalsIgnoreCase(titolo)){
                 libroTrovato = libro;
             }
         
@@ -151,7 +151,7 @@ public class GestioneLibro implements Gestione<Libro> {
     public Libro ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
         Libro libroTrovato = null;
         for(Libro libro: libri){
-            if(libro.getNomeAutore().equals(nomeAutore) && libro.getCognomeAutore().equals(cognomeAutore)){
+            if(libro.getNomeAutore().equalsIgnoreCase(nomeAutore) && libro.getCognomeAutore().equalsIgnoreCase(cognomeAutore)){
                 libroTrovato = libro;
             }
         }
@@ -173,7 +173,7 @@ public class GestioneLibro implements Gestione<Libro> {
     public Libro ricercaLibroCodice(String codice) throws GestioneEccezioni{
         Libro libroTrovato = null;
         for(Libro libro: libri){
-            if(libro.getCodice().equals(codice)){
+            if(libro.getCodice().equalsIgnoreCase(codice)){
                 libroTrovato = libro;
             
             }

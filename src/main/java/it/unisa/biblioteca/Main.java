@@ -8,6 +8,8 @@ package it.unisa.biblioteca;
 import it.unisa.biblioteca.model.GestioneUtente;
 import it.unisa.biblioteca.model.Utente;
 import it.unisa.biblioteca.model.GestioneEccezioni;
+import it.unisa.biblioteca.model.GestioneLibro;
+import it.unisa.biblioteca.model.Libro;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -42,7 +44,16 @@ public class Main extends Application {
         } catch (GestioneEccezioni e) {
             // Ignora duplicati all'avvio
         }
-
+        
+        try{
+            GestioneLibro.getInstance().inserisci(new Libro("Harry Potter e il prigioniero di Azkaban", "JK", "Rowling", 1999, "HP3478", 2));
+            GestioneLibro.getInstance().inserisci(new Libro("Il Signore degli Anelli", "JRR", "Tolkien", 1955, "LO1245", 2));
+            GestioneLibro.getInstance().inserisci(new Libro("1984", "George", "Orwell", 1949, "GO2369", 3));
+            GestioneLibro.getInstance().inserisci(new Libro("Dune", "Frank", "Herbert", 1965, "DU4312", 1));
+        
+        }catch(GestioneEccezioni e){
+        
+        }
         // 2. CARICAMENTO HOME PAGE
         // Assicurati che il nome del file FXML sia esattamente questo
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));

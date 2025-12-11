@@ -54,7 +54,33 @@ public class NuovoLibroController{
     
     private InterfacciaLibriController mainLibriController;
     
-    public void inizializza(){
+    //flag che mostra se si sta modificando un libro
+    private boolean modalitaModifica = false;
+    
+    
+    public void setLibroDaModificare(Libro l){
+        this.modalitaModifica = true;
+        
+        //precompilo i campi modificabili con i dati vecchi
+        tfTitoloLibro.setText(l.getTitolo());
+        tfNomeAutoreLibro.setText(l.getNomeAutore());
+        tfCognomeAutoreLibro.setText(l.getCognomeAutore());
+        tfCodiceLibro.setText(l.getCodice());
+        tfAnnoLibro.setText(String.valueOf(l.getAnnoPubblicazione()));
+        tfCopieLibro.setText(String.valueOf(l.getCopieDisponibili()));
+        
+        
+        //codice libro non modificabile
+        tfCodiceLibro.setDisable(true);
+        
+        //cambio scritta sul pulsante
+        btConfermaNuovoLibro.setText("Salva Modifiche");
+    
+    
+    
+    }
+    @FXML
+    public void initialize(){
         btConfermaNuovoLibro.setOnAction(e -> onConferma());
         //Recupera lo Stage (la finestra) attuale usando l'evento del pulsante Annulla e lo chiude
         btAnnullaNuovoLibro.setOnAction(e -> {((Stage)btAnnullaNuovoLibro.getScene().getWindow()).close();
@@ -94,12 +120,23 @@ public class NuovoLibroController{
             
             //creo il libro da mettere in memoria
             Libro nuovoLibro = new Libro(titolo, nomeAutore, cognomeAutore, annoLibro, codiceLibro, copieLibro);
+            if(this.modalitaModifica){
+                //se la modalità modifica è abilitata, modifico il libro
+                //modifico il libro della collezione
+                GestioneLibro.getInstance().modifica(nuovoLibro);
+                
+                //mostra un messaggio che indica che il libro è stato inserito con successo
+                this.mostraInformazione("Libro modificato con successo");
+               
+            }else{
+                //se la modalità modifica è disabilitata, allora inserisco il libro
+                 //inserisco il libro nella collezione
+                GestioneLibro.getInstance().inserisci(nuovoLibro);
+                //mostra un messaggio che indica che il libro è stato inserito con successo
+                this.mostraInformazione("Libro inserito con successo");
             
-            //inserisco il libro nella collezione
-            GestioneLibro.getInstance().inserisci(nuovoLibro);
-            
-            //mostra un messaggio che indica che il libro è stato inserito con successo
-            this.mostraInformazione("Libro inserito con successo");
+            }
+          
             //si controlla che la reference del controller "principale" sia stata passata e si aggiorna la table view
             if(mainLibriController != null){
                 mainLibriController.aggiornaTabella();
