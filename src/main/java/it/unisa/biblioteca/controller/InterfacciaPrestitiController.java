@@ -59,8 +59,8 @@ public class InterfacciaPrestitiController {
     private Libro libroSelezionato = null;
     
     // filtri attivi
-    private String filtroUtente = "matricola";
-    private String filtroLibro = "codice";
+    private String filtroUtente ;
+    private String filtroLibro ;
     
     @FXML
     public void initialize() {
@@ -112,7 +112,7 @@ public class InterfacciaPrestitiController {
     
     private void cercaUtente() {
         String input = tfRicercaUtente.getText().trim();
-
+        String messaggioDiAvviso = null;
         lblUtenteTrovato.setText("");
         utenteSelezionato = null;
 
@@ -120,13 +120,16 @@ public class InterfacciaPrestitiController {
             lblUtenteTrovato.setText("⚠ Inserire un valore di ricerca.");
             return;
         }
-
+        else if (filtroUtente == null || filtroUtente.isEmpty()) {
+             lblUtenteTrovato.setText("⚠ Selezionare un criterio di ricerca (Matricola o Cognome).");
+             return;
+        }
+        
         try {
             switch (filtroUtente) {
 
             case "matricola":
                 int m = Integer.parseInt(input);
-                // SE IL MODEL NON LO TROVA LANCIA ECCEZIONE
                 utenteSelezionato = GestioneUtente.getInstance().cercaUtenteMatricola(m);
                 break;
 
@@ -134,22 +137,29 @@ public class InterfacciaPrestitiController {
                 // Restituisce una lista, MA lancia eccezione se vuota
                 List<Utente> risultati = GestioneUtente.getInstance().cercaUtenteCognome(input);
                 if (risultati.size() > 1) { 
-                    lblUtenteTrovato.setText("⚠ Trovati " + risultati.size() + " utenti con questo cognome. Selezionato il primo. Ricercare per Matricola per essere precisi.");
+                    messaggioDiAvviso = "⚠ Trovati " + risultati.size() + " utenti con questo cognome, selezionato il primo. Ricercare per Matricola per essere precisi.\n";
                 }
                 utenteSelezionato = risultati.get(0);  // prendi il primo utente trovato
                 break;
             }
-
-         // Se siamo qui → utente trovato
-         lblUtenteTrovato.setText(
-            "✔ Utente trovato: " +
+            
+  
+         if (messaggioDiAvviso != null) {
+            lblUtenteTrovato.setText(messaggioDiAvviso + "✔ Utente selezionato: " +
             utenteSelezionato.getNome() + " " +
             utenteSelezionato.getCognome() +
-            " (Matricola: " + utenteSelezionato.getMatricola() + ")"
-         );
+            " (Matricola: " + utenteSelezionato.getMatricola() + ")");
+         }
+         else {
+            lblUtenteTrovato.setText("✔ Utente trovato: " +
+            utenteSelezionato.getNome() + " " +
+            utenteSelezionato.getCognome() +
+            " (Matricola: " + utenteSelezionato.getMatricola() + ")");
+         }
+         
 
         } catch (NumberFormatException e) {
-            lblUtenteTrovato.setText("La matricola deve essere un numero.");
+            lblUtenteTrovato.setText("⚠ La matricola deve essere un numero.");
 
         } catch (GestioneEccezioni e) {
             // Qui entri se il Model NON trova l'utente
@@ -166,6 +176,10 @@ public class InterfacciaPrestitiController {
         if (input.isEmpty()) {
             lblLibroTrovato.setText("⚠ Inserire un valore di ricerca.");
             return;
+        }
+        else if (filtroLibro == null || filtroLibro.isEmpty()) {
+             lblLibroTrovato.setText("⚠ Selezionare un criterio di ricerca (Titolo, Codice o Autore).");
+             return;
         }
         
         try {
@@ -219,13 +233,16 @@ public class InterfacciaPrestitiController {
     //REGISTRA PRESTITO
 
     private void registraPrestito() {
-        if (utenteSelezionato == null) {
-           mostraErrore("Prima selezionare un utente.");
+        if(utenteSelezionato == null && libroSelezionato==null) {
+           mostraErrore("⚠ Occorre selezionare utente e libro di cui si vuole registrare la restituzione.");
            return;
         }
-
-        if (libroSelezionato == null) {
-            mostraErrore("Prima selezionare un libro.");
+        else if (utenteSelezionato == null) {
+           mostraErrore("⚠ Occorre selezionare un utente.");
+           return;
+        }
+        else if (libroSelezionato == null) {
+            mostraErrore("⚠ Occorre selezionare un libro.");
             return;
         }
         
