@@ -59,6 +59,8 @@ public class InterfacciaPrestitiController {
     @FXML private Button btnRegistraPrestito;
     
     //TABELLA PRESTITI ATTIVI
+    @FXML private Button btnConfermaRestituzionePrestiti;
+    
     @FXML private TableView<Prestito> tabellaPrestiti;
     
     @FXML private TableColumn<Prestito, Integer> colonnaMatricolaPrestiti;
@@ -140,6 +142,10 @@ public class InterfacciaPrestitiController {
         btnCercaUtente.setOnAction(e -> cercaUtente());
         btnCercaLibro.setOnAction(e -> cercaLibro());
         btnRegistraPrestito.setOnAction(e -> registraPrestito());
+        
+        if (btnConfermaRestituzionePrestiti != null) {
+            btnConfermaRestituzionePrestiti.setOnAction(e -> azioneRestituisciPrestito());
+        }
         
         btnHomePrestiti.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
         
@@ -314,13 +320,15 @@ public class InterfacciaPrestitiController {
             // 3. Aggiorna la Vista (Rimuovi dalla tabella)
             listaPrestiti.remove(prestitoSelezionato);
             
+            aggiornaTabella();
+            
             mostraInfo("Libro restituito con successo.");
             
         } catch (GestioneEccezioni e) {
             mostraErrore("Errore restituzione: " + e.getMessage());
         }
     }
-
+    
     
     //UTILITIES PER MESSAGGI
     private void mostraErrore(String msg) {
