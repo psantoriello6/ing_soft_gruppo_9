@@ -285,6 +285,8 @@ public class InterfacciaPrestitiController {
         
         try {
             GestionePrestito.getInstance().registraPrestito(nuovoPrestito);
+            //per slavare anche le modifiche copie su libro
+            GestioneLibro.getInstance().modifica(libroSelezionato);
             mostraInfo("Prestito registrato con successo! Data di restituzione prevista: " + dataRestituzionePrevista);
 
             utenteSelezionato = null;
@@ -325,7 +327,9 @@ public class InterfacciaPrestitiController {
         try {
             // 2. Chiama il Model per la logica di business (rimuove dalla mappa, incrementa copie, ecc.)
             GestionePrestito.getInstance().restituisciPrestito(prestitoSelezionato);
-            
+            //per salvare le modifiche anche sul libri.dat
+            Libro libroRestituito = prestitoSelezionato.getLibro();
+            GestioneLibro.getInstance().modifica(libroRestituito);
             // 3. Aggiorna la Vista (Rimuovi dalla tabella)
             listaPrestiti.remove(prestitoSelezionato);
             
