@@ -19,6 +19,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import java.util.List;
 import java.time.LocalDate; 
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -54,19 +58,29 @@ public class InterfacciaPrestitiController {
     // REGISTRAZIONE PRESTITO
     @FXML private Button btnRegistraPrestito;
     
+    //TABELLA PRESTITI ATTIVI
+    @FXML private TableView<Prestito> tabellaPrestiti;
+    
+    @FXML private TableColumn<Prestito, Integer> colonnaMatricolaPrestiti;
+    @FXML private TableColumn<Prestito, String> colonnaCognomePrestiti;
+    @FXML private TableColumn<Prestito, String> colonnaTitoloPrestiti;
+    @FXML private TableColumn<Prestito, String> colonnaCodicePrestiti;
+    @FXML private TableColumn<Prestito, LocalDate> colonnaDataPrestiti;
+    
+    private ObservableList<Prestito> listaPrestiti;
+    
     // OGGETTI TROVATI 
     private Utente utenteSelezionato = null;
     private Libro libroSelezionato = null;
     
     // filtri attivi
-    private String filtroUtente ;
-    private String filtroLibro ;
+    private String filtroUtente = "matricola";
+    private String filtroLibro = "codice";
     
     @FXML
     public void initialize() {
 
         //FILTRI UTENTE
-        
         MenuItem fMatricola = new MenuItem("Matricola");
         fMatricola.setOnAction(e -> {
             filtroUtente = "matricola";
@@ -102,15 +116,37 @@ public class InterfacciaPrestitiController {
 
         menuFiltroLibro.getItems().addAll(fCodice, fTitolo, fAutore);
         
+        //RESTITUISCI PRESTITO
+        listaPrestiti = FXCollections.observableArrayList();
+        
+        colonnaMatricolaPrestiti.setCellValueFactory(cellData -> 
+            new SimpleObjectProperty<>(cellData.getValue().getUtente().getMatricola()));
+            
+        colonnaCognomePrestiti.setCellValueFactory(cellData -> 
+            new SimpleStringProperty(cellData.getValue().getUtente().getCognome()));
+            
+        colonnaTitoloPrestiti.setCellValueFactory(cellData -> 
+            new SimpleStringProperty(cellData.getValue().getLibro().getTitolo()));
+            
+        colonnaCodicePrestiti.setCellValueFactory(cellData -> 
+            new SimpleStringProperty(cellData.getValue().getLibro().getCodice()));
+            
+        colonnaDataPrestiti.setCellValueFactory(cellData -> 
+            new SimpleObjectProperty<>(cellData.getValue().getDataRestituzione()));
+        
+        tabellaPrestiti.setItems(listaPrestiti);
+        
         //BUTTON
         btnCercaUtente.setOnAction(e -> cercaUtente());
         btnCercaLibro.setOnAction(e -> cercaLibro());
         btnRegistraPrestito.setOnAction(e -> registraPrestito());
         
         btnHomePrestiti.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
+        
+        aggiornaTabella();
     }
     
-    private void cercaUtente() {
+        private void cercaUtente() {
         String input = tfRicercaUtente.getText().trim();
         String messaggioDiAvviso = null;
         lblUtenteTrovato.setText("");
@@ -231,18 +267,15 @@ public class InterfacciaPrestitiController {
     
     
     //REGISTRA PRESTITO
-
+    
     private void registraPrestito() {
-        if(utenteSelezionato == null && libroSelezionato==null) {
-           mostraErrore("⚠ Occorre selezionare utente e libro di cui si vuole registrare la restituzione.");
+        if (utenteSelezionato == null) {
+           mostraErrore("Prima selezionare un utente.");
            return;
         }
-        else if (utenteSelezionato == null) {
-           mostraErrore("⚠ Occorre selezionare un utente.");
-           return;
-        }
-        else if (libroSelezionato == null) {
-            mostraErrore("⚠ Occorre selezionare un libro.");
+
+        if (libroSelezionato == null) {
+            mostraErrore("Prima selezionare un libro.");
             return;
         }
         
@@ -266,6 +299,40 @@ public class InterfacciaPrestitiController {
         mostraErrore("Errore imprevisto durante la registrazione del prestito.");
         System.err.println("Errore in registraPrestito del Controller: " + e.getMessage());
     }
+        aggiornaTabella();
+    }
+    
+    //RESTITUISCI PRESTITO
+    
+    public void aggiornaTabella(){
+        listaPrestiti.clear(); //prima rimuovo tutto
+        listaPrestiti.addAll(GestionePrestito.getInstance().getElencoPrestitiCompleto()); //prendo tutti i prestiti attualmente salvati
+        if(listaPrestiti != null){
+            tabellaPrestiti.setItems(listaPrestiti); //metto gli elemnti della lista nella tabel view
+        }
+    }
+    
+    private void azioneRestituisciPrestito() {
+        // 1. Ottieni l'elemento selezionato nella tabella
+        Prestito prestitoSelezionato = tabellaPrestiti.getSelectionModel().getSelectedItem();
+        
+        if (prestitoSelezionato == null) {
+            mostraErrore("Seleziona un prestito dalla tabella per restituirlo.");
+            return;
+        }
+        
+        try {
+            // 2. Chiama il Model per la logica di business (rimuove dalla mappa, incrementa copie, ecc.)
+            GestionePrestito.getInstance().restituisciPrestito(prestitoSelezionato);
+            
+            // 3. Aggiorna la Vista (Rimuovi dalla tabella)
+            listaPrestiti.remove(prestitoSelezionato);
+            
+            mostraInfo("Libro restituito con successo.");
+            
+        } catch (GestioneEccezioni e) {
+            mostraErrore("Errore restituzione: " + e.getMessage());
+        }
     }
 
     
@@ -301,3 +368,4 @@ public class InterfacciaPrestitiController {
         }
     }
 }
+
