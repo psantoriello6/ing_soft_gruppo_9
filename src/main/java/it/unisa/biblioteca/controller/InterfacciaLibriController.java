@@ -23,6 +23,8 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Alert;
 import java.io.IOException;
+import java.util.Set;
+import java.util.TreeSet;
 import javafx.stage.Modality;
 
 
@@ -86,8 +88,18 @@ public class InterfacciaLibriController {
         colonnaCodiceLibri.setCellValueFactory(new PropertyValueFactory<>("codice"));
         colonnaCopieLibri.setCellValueFactory(new PropertyValueFactory<>("copieDisponibili"));
       
-        listaLibri = FXCollections.observableArrayList();
-        this.aggiornaTabella();
+        Set<Libro> listaCaricata = GestioneLibro.getInstance().caricaLibri("libri.dat");
+        
+        if(listaCaricata == null){
+            listaCaricata = new TreeSet<>();
+        
+        }else{
+            listaLibri = FXCollections.observableArrayList(listaCaricata);
+            this.inizializzaTabella(listaLibri);
+        }
+        
+        
+       
         
         btnHomeLibri.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
         btnNuoviLibri.setOnAction(e -> apriFinestraNuovoLibro());
@@ -98,6 +110,13 @@ public class InterfacciaLibriController {
     }
     
     //metodo che aggiorna la lista osservabile
+    public void inizializzaTabella(ObservableList<Libro> lista){
+        if(listaLibri != null){
+            tabellaLibri.setItems(listaLibri);  //aggiungo la lista osservabile nella TableView
+        }
+    
+    }
+    
     public void aggiornaTabella(){
         listaLibri.clear();  //prima rimuovo tutto
         listaLibri.addAll(GestioneLibro.getInstance().getSetLibro()); //inserisco nella lista osservabile tutti gli elementi del set di libri
@@ -106,8 +125,6 @@ public class InterfacciaLibriController {
         }
     
     }
-    
-    
     private void apriFinestraNuovoLibro(){
         
         //carico la interfaccia NuovoLibro
@@ -208,6 +225,7 @@ public class InterfacciaLibriController {
         if(selezionato != null){
             GestioneLibro.getInstance().elimina(selezionato);
             this.aggiornaTabella();
+            GestioneLibro.getInstance().salvaLibri("libri.dat");
         
         }else{
             this.mostraErrore("Seleziona un libro da eliminare");

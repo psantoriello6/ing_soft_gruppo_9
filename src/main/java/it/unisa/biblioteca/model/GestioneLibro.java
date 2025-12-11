@@ -4,11 +4,15 @@
  * and open the template in the editor.
  */
 package it.unisa.biblioteca.model;
+import java.io.BufferedInputStream;
 import java.util.*;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 
 /**
  * @file GestioneLibro.java
@@ -28,6 +32,7 @@ public class GestioneLibro implements Gestione<Libro> {
     //costruttore privato per aderire al desgin Pattern Singleton
     private GestioneLibro(){
         libri = new TreeSet<>();
+        this.caricaLibri("libri.dat");
     }
     
     //metodo statico pubblico per restituire sempre la stessa istanza (unica) della classe stessa
@@ -192,14 +197,44 @@ public class GestioneLibro implements Gestione<Libro> {
      * @param file il file di testo su cui vengono salvati tutti i libri presenti
      */
     public void salvaLibri(String file){
+        
         try(ObjectOutputStream objOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))){
             objOut.writeObject(libri);
-        
+            System.out.println("Dato salvati con successo sul file: ");
+            for(Libro l : libri){
+                System.out.println(l.toString());
+            }
+            
         }catch(IOException ex){
+            System.err.println("Errore durante il salvataggio: " + ex.getMessage());
             ex.printStackTrace();
         }
     
     
+    }
+    
+    public Set<Libro> caricaLibri(String file){
+        Set<Libro> listaLibri = new TreeSet<>();
+        File fileBinario = new File(file);
+        if(!fileBinario.exists()){
+            System.err.println("File binario non trovato");
+            return null;
+        }
+        
+        try(ObjectInputStream objIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)))){
+            listaLibri = (Set<Libro>)objIn.readObject();
+            
+            System.out.println("Dati caricati con successo dal file");
+            for(Libro l: listaLibri){
+                System.out.println(l.toString());
+            }
+            
+        
+        }catch(Exception ex){
+            System.err.println("Errore durante il caricamento da binario: " + ex.getMessage());
+        }
+        
+        return listaLibri;
     }
     
     //metodo privato per controllare se il codice identificativo del libro è valido o meno
