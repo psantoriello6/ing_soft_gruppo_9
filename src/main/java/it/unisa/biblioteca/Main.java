@@ -46,12 +46,9 @@ public class Main extends Application {
         }catch(GestioneEccezioni e){
         
         }
-        // 2. CARICAMENTO HOME PAGE
-        // Assicurati che il nome del file FXML sia esattamente questo
+        // Carico Interfaccia Home Page
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
         Parent root = loader.load();
-        
-        // 3. MOSTRA FINESTRA
         primaryStage.setTitle("Biblioteca Universitaria - Home");
         primaryStage.setScene(new Scene(root));
         //primaryStage.setResizable(false);
