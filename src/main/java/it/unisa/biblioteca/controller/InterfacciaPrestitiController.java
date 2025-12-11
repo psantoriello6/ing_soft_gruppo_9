@@ -185,11 +185,11 @@ public class InterfacciaPrestitiController {
          );
 
         } catch (NumberFormatException e) {
-            lblUtenteTrovato.setText("❌ La matricola deve essere un numero.");
+            lblUtenteTrovato.setText("La matricola deve essere un numero.");
 
         } catch (GestioneEccezioni e) {
             // Qui entri se il Model NON trova l'utente
-            lblUtenteTrovato.setText("❌ " + e.getMessage());
+            lblUtenteTrovato.setText(e.getMessage());
         }
     }
     
@@ -242,11 +242,11 @@ public class InterfacciaPrestitiController {
 
         } catch (GestioneEccezioni e) {
             // Qui entri se il Model NON trova il libro o se c'è un altro errore di gestione
-            lblLibroTrovato.setText("❌ " + e.getMessage());
+            lblLibroTrovato.setText(e.getMessage());
             
         } catch (Exception e) {
              // Catch-all per problemi inattesi o metodi mancanti nel Model
-            lblLibroTrovato.setText("❌ Errore imprevisto durante la ricerca.");
+            lblLibroTrovato.setText("Errore imprevisto durante la ricerca.");
             System.err.println("Errore in cercaLibro: " + e.getMessage());
         }
     }
@@ -319,7 +319,7 @@ public class InterfacciaPrestitiController {
             mostraErrore("Errore restituzione: " + e.getMessage());
         }
     }
-    
+
     
     //UTILITIES PER MESSAGGI
     private void mostraErrore(String msg) {

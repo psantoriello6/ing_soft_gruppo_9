@@ -5,6 +5,7 @@
  */
 package it.unisa.biblioteca.controller;
 
+import it.unisa.biblioteca.model.GestioneEccezioni;
 import it.unisa.biblioteca.model.GestioneLibro;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -74,6 +75,8 @@ public class InterfacciaLibriController {
     //lista per costruire la TableView
     private ObservableList<Libro> listaLibri;
     
+    private String tipoFiltro = null;
+    
     
     public void initialize(){
         colonnaTitoloLibri.setCellValueFactory(new PropertyValueFactory<>("titolo"));
@@ -82,14 +85,16 @@ public class InterfacciaLibriController {
         colonnaAnnoLibri.setCellValueFactory(new PropertyValueFactory<>("annoPubblicazione"));
         colonnaCodiceLibri.setCellValueFactory(new PropertyValueFactory<>("codice"));
         colonnaCopieLibri.setCellValueFactory(new PropertyValueFactory<>("copieDisponibili"));
-        
+      
         listaLibri = FXCollections.observableArrayList();
         this.aggiornaTabella();
         
-        
-        btnNuoviLibri.setOnAction(e -> apriFinestraNuovoLibro());
-        
         btnHomeLibri.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
+        btnNuoviLibri.setOnAction(e -> apriFinestraNuovoLibro());
+        btnEliminaLibri.setOnAction(e-> handleEliminaLibro());
+        btnModificaLibri.setOnAction(e -> apriFinestraModificaLibro());
+        btnCercaLibri.setOnAction(e -> cercaLibro());
+        
     }
     
     //metodo che aggiorna la lista osservabile
@@ -103,7 +108,7 @@ public class InterfacciaLibriController {
     }
     
     
-    public void apriFinestraNuovoLibro(){
+    private void apriFinestraNuovoLibro(){
         
         //carico la interfaccia NuovoLibro
         try{
@@ -116,7 +121,6 @@ public class InterfacciaLibriController {
             Stage stage  = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
             //creo una finestra "figlia" che appare sopra la pagina principale 
             //(finestra "madre") e blocca l'interazione con essa fino a quando l'utente non compie un'azione.
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -131,6 +135,148 @@ public class InterfacciaLibriController {
     
     }
     
+    private void cercaLibro(){
+        String testo = tfLibri.getText();
+        
+        if(testo == null || testo.trim().isEmpty()){
+            if(this.tipoFiltro == null){
+                this.mostraInformazione("Specifica un filtro di ricerca");
+            }
+            tabellaLibri.setItems(listaLibri);
+            return;
+        }
+        
+       
+        //variabile di tipo Libro in cui salvare il risultato della ricerca
+        Libro risultato = null;
+        
+        String lowerCaseFilter = testo.toLowerCase();
+        if(this.tipoFiltro == null){
+            this.mostraInformazione("Specifica un filtro di ricerca");
+            return;
+        
+        }
+        else if(this.tipoFiltro.equals("TITOLO")){
+            try{
+                risultato = GestioneLibro.getInstance().ricercaLibroTitolo(lowerCaseFilter);
+            }catch(GestioneEccezioni ex){
+            
+            }
+        }else if(this.tipoFiltro.equals("AUTORE")){
+            //poiché il metodo ricercaLibro per autore richiede nome e cognome, e il TextField restituisce una stringa unica, 
+            //bisogna "spezzare" la stringa in due
+            String parti[] = lowerCaseFilter.split(" ");
+            if(parti.length >= 2){
+                String nome = parti[0];
+                String cognome = parti[1];
+                
+                try{
+                    risultato = GestioneLibro.getInstance().ricercaLibroAutore(nome, cognome);
+                }catch(GestioneEccezioni ex){
+                
+                }
+            }
+        
+        
+        
+        }else if(this.tipoFiltro.equals("CODICE")){
+            try{
+                risultato = GestioneLibro.getInstance().ricercaLibroCodice(lowerCaseFilter);
+            }catch(GestioneEccezioni ex){
+            
+            }
+        }
+        //aggiorno la table view
+        if(risultato != null){
+            //se il libro è stato trovato, creo una lista che contiene SOLO quel libro
+            ObservableList<Libro> listaRisultato = FXCollections.observableArrayList();
+            listaRisultato.add(risultato);
+            tabellaLibri.setItems(listaRisultato);
+        }else{
+            //se non è stato trovato null, si svuota la tabella
+            //tabellaLibri.setItems(FXCollections.emptyObservableList());
+            this.mostraInformazione("Nessun libro trovato");
+            
+        }
+        
+        
+    
+    }
+    
+    private void handleEliminaLibro(){
+        Libro selezionato = tabellaLibri.getSelectionModel().getSelectedItem();
+        if(selezionato != null){
+            GestioneLibro.getInstance().elimina(selezionato);
+            this.aggiornaTabella();
+        
+        }else{
+            this.mostraErrore("Seleziona un libro da eliminare");
+        }
+    
+    
+    }
+    
+    private void apriFinestraModificaLibro(){
+        
+       //seleziono il libro da modificare
+       Libro libroSelezionato = tabellaLibri.getSelectionModel().getSelectedItem();
+       
+       if(libroSelezionato == null){
+           this.mostraErrore("Seleziona un libro da modificare");
+           return;
+       }else{
+           
+           //carico la finestra NuovoLibro
+           try{
+                FXMLLoader loader  = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/NuovoLibroView.fxml"));
+                Parent root = loader.load();
+        
+                NuovoLibroController controller = loader.getController();
+                controller.setController(this);
+                controller.setLibroDaModificare(libroSelezionato);
+        
+                Stage stage  = new Stage();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                //creo una finestra "figlia" che appare sopra la pagina principale 
+                //(finestra "madre") e blocca l'interazione con essa fino a quando l'utente non compie un'azione.
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setTitle("Modifica libro");
+                stage.showAndWait();
+           
+           }catch(IOException ex){
+               ex.printStackTrace();
+               this.mostraErrore("Impossibile aprire la finestra di modifica");
+           
+           
+           }
+       
+       
+       }
+    
+    
+   }
+    
+    
+    @FXML
+    private void handleFiltroTitolo(){
+        this.tipoFiltro = "TITOLO";
+        filterLibri.setText("TITOLO");
+    
+    }
+    
+    @FXML
+    private void handleFiltroAutore(){
+        this.tipoFiltro = "AUTORE";
+        filterLibri.setText("AUTORE");
+    }
+    
+    @FXML
+    private void handleFiltroCodice(){
+        this.tipoFiltro = "CODICE";
+        filterLibri.setText("CODICE");
+    }
+    
     
     public void mostraErrore(String messageError){
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -139,6 +285,15 @@ public class InterfacciaLibriController {
         alert.showAndWait();
     
     
+    
+    }
+    
+    public void mostraInformazione(String messageInfo){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText(null);
+        alert.setContentText(messageInfo);
+        alert.showAndWait();    
     
     }
     

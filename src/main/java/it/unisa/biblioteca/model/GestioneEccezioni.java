@@ -27,8 +27,11 @@ public class GestioneEccezioni extends Exception {
      * @param errorMessage Il messaggio di errore che si vuole stampare
      */
     public GestioneEccezioni(String errorMessage){
-        System.out.println(errorMessage);
+        super(errorMessage);
+    }
     
+    public GestioneEccezioni(){
+        super();
     }
     
     
