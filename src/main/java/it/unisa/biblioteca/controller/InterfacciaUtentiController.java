@@ -246,7 +246,9 @@ public class InterfacciaUtentiController {
     //Interfaccia apposita per mostare messaggi di errore (senza costruire file FXML!
     private void mostraErrore(String msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Errore");
+        alert.setHeaderText("Operazione non riuscita");
         alert.setContentText(msg);
-        alert.show();
+        alert.showAndWait();
     }
 }

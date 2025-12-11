@@ -102,8 +102,10 @@ public class NuovoUtenteController {
     
     private void mostraErrore(String msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Errore");
+        alert.setHeaderText("Operazione non riuscita");
         alert.setContentText(msg);
-        alert.show();
+        alert.showAndWait();
     }
     
     private void mostraSuccesso(String msg) {

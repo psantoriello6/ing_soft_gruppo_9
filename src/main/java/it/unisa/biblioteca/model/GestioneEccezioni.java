@@ -28,8 +28,10 @@ public class GestioneEccezioni extends Exception {
      */
     public GestioneEccezioni(String errorMessage){
         super(errorMessage);
-        System.out.println(errorMessage);
+    }
     
+    public GestioneEccezioni(){
+        super();
     }
     
     
