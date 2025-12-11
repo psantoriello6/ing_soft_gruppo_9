@@ -73,6 +73,10 @@ public class GestionePrestito {
                                             " ha raggiunto il limite massimo di " + MAX_PRESTITI + " libri in prestito.");
         }
         
+        if (libriUtente != null && libriUtente.contains(libro)) {
+            throw new GestioneEccezioni("ERRORE: L'utente ha già in prestito il libro '" + libro.getTitolo() + "'. Non è possibile prenderne un'altra copia.");
+        }
+        
         // Se l'utente non è ancora nella mappa, inizializza la lista.
         if (libriUtente == null) {
             libriUtente = new LinkedList<>();
