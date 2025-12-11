@@ -103,6 +103,8 @@ public class GestionePrestito {
         libro.decrementaCopie();
         libro.incrementaPrestiti();
         
+        
+        
         salvaPrestiti();
         salvaDate();
         
