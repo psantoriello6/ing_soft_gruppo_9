@@ -98,7 +98,7 @@ public class InterfacciaLibriController {
             this.inizializzaTabella(listaLibri);
         }
         
-        
+        GestioneLibro.getInstance().setLibroSet(listaCaricata);
        
         
         btnHomeLibri.setOnAction(e -> ritornoHome("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));

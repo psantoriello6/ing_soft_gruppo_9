@@ -67,6 +67,7 @@ public class GestioneLibro implements Gestione<Libro> {
        }else{
             throw new GestioneEccezioni("Inserimento del libro " + libro.getTitolo() + " fallito. Il codice identificativo " + libro.getCodice() + " non è valido");
         }
+       this.salvaLibri("libri.dat");
     
     }
     
@@ -97,6 +98,7 @@ public class GestioneLibro implements Gestione<Libro> {
        
        //si riaggiunge nuovamente il libro
        libri.add(libroInMemoria);
+       this.salvaLibri("libri.dat");
        
        
 }
@@ -214,7 +216,7 @@ public class GestioneLibro implements Gestione<Libro> {
     }
     
     public Set<Libro> caricaLibri(String file){
-        Set<Libro> listaLibri = new TreeSet<>();
+        Set<Libro> listaLibri = new TreeSet<>(); 
         File fileBinario = new File(file);
         if(!fileBinario.exists()){
             System.err.println("File binario non trovato");
@@ -232,6 +234,7 @@ public class GestioneLibro implements Gestione<Libro> {
         
         }catch(Exception ex){
             System.err.println("Errore durante il caricamento da binario: " + ex.getMessage());
+            //listaLibri = new TreeSet<>();
         }
         
         return listaLibri;
@@ -263,6 +266,10 @@ public class GestioneLibro implements Gestione<Libro> {
     
     public Set<Libro> getSetLibro(){
         return libri;
+    }
+    
+    public void setLibroSet(Set<Libro> l){
+        this.libri = l;
     }
     
 }

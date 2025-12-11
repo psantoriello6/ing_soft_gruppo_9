@@ -36,16 +36,7 @@ public class Main extends Application {
 
    @Override
     public void start(Stage primaryStage) throws Exception {
-        
-        try{
-            GestioneLibro.getInstance().inserisci(new Libro("Harry Potter e il prigioniero di Azkaban", "JK", "Rowling", 1999, "HP3478", 2));
-            GestioneLibro.getInstance().inserisci(new Libro("Il Signore degli Anelli", "JRR", "Tolkien", 1955, "LO1245", 2));
-            GestioneLibro.getInstance().inserisci(new Libro("1984", "George", "Orwell", 1949, "GO2369", 3));
-            GestioneLibro.getInstance().inserisci(new Libro("Dune", "Frank", "Herbert", 1965, "DU4312", 1));
-        
-        }catch(GestioneEccezioni e){
-        
-        }
+
         // Carico Interfaccia Home Page
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/it/unisa/biblioteca/view/InterfacciaHomeView.fxml"));
         Parent root = loader.load();
