@@ -107,8 +107,6 @@ public class InterfacciaLibriController {
         btnModificaLibri.setOnAction(e -> apriFinestraModificaLibro());
         btnCercaLibri.setOnAction(e -> cercaLibro());
         
-        aggiornaTabella();
-        
     }
     
     //metodo che aggiorna la lista osservabile
