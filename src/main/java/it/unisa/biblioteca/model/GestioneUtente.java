@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  * @file GestioneUtente.java
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 public class GestioneUtente implements Gestione<Utente>{
     private Set<Utente> utenti;
     private static GestioneUtente instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
+    private static final String NOME_FILE = "utenti.dat"; //attributo globale per indicare il nome del file per la persistenza dei dati
  
     /**
      * @brief Costruttore.
@@ -31,7 +33,8 @@ public class GestioneUtente implements Gestione<Utente>{
     
     //costruttore privato per seguire logica pattern Singleton
     private GestioneUtente(){       
-        utenti=new TreeSet<Utente>();
+        utenti=new TreeSet<>();
+        caricaUtenti(); //prova a caricare i dati dal file
     }
     
     //metodo per fornire un accesso pubblico alle altre classi per ottenere l'oggetto.
@@ -74,6 +77,7 @@ public class GestioneUtente implements Gestione<Utente>{
         }
         
         utenti.add(utente);
+        salvaUtenti(); // ricarica la collezione aggiornata sul file
     }
     
      /**
@@ -85,7 +89,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * @pre L'oggetto utente da modificare deve essere già presente nella collezione.
      * @post L'oggetto utente viene modificato e la collezione viene aggiornata.
      * 
-     * @param utente Oggetto utente da modificare nella collezione TreeSet.
+     * @param utenteModificato Oggetto utente da modificare nella collezione TreeSet.
      *
      */
     
@@ -108,7 +112,7 @@ public class GestioneUtente implements Gestione<Utente>{
         utenteInMemoria.setEmail(utenteModificato.getEmail());
         
         utenti.add(utenteInMemoria);
-    
+        salvaUtenti(); // ricarica la collezione aggiornata sul file
     }
     
      /**
@@ -126,6 +130,7 @@ public class GestioneUtente implements Gestione<Utente>{
     @Override
     public void elimina(Utente utente){
         utenti.remove(utente);
+        salvaUtenti(); // ricarica la collezione aggiornata sul file
     }
     
      /**
@@ -163,7 +168,7 @@ public class GestioneUtente implements Gestione<Utente>{
      *
      */
     
-    //ritono una lista perchè ci potrebbero essere più utenti con lo stesso cognome.
+    //ritorno una lista perchè ci potrebbero essere più utenti con lo stesso cognome.
     public List<Utente> cercaUtenteCognome(String cognome) throws GestioneEccezioni {
         List<Utente> risultati = new ArrayList<>();
         for(Utente u : utenti){
@@ -189,9 +194,29 @@ public class GestioneUtente implements Gestione<Utente>{
      *
      */
     
-    //metodo per slavare INTERA struttura su file
-    public void salvaUtenti(String file){
-        
+    //metodo per slavare INTERA struttura su file (viene chiamato dopo ogni operazione di inserimento-modifica-elimina)
+    public void salvaUtenti(){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(NOME_FILE))){
+            out.writeObject(utenti);
+            System.out.println("Dati Salvati corretamente in: " + NOME_FILE);
+        }catch(IOException e){
+            System.err.println("Errore dutrante il caricamento: " + e.getMessage());
+            e.printStackTrace(); //serve per mostare sul terminale dettagli specifici in caso di errore (simile a una scatola nera)
+        }
+    }
+    
+    //metodo per caricare in input i dati dal file (viene chiamatto ad ogni avvio, nel costruttore).
+    private void caricaUtenti(){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(NOME_FILE)) ){
+            this.utenti = (Set<Utente>)in.readObject();
+            System.out.println("Dati caricati: " + utenti.size() + " utenti.");
+        }catch(FileNotFoundException e){
+            System.out.println("File Dati non trovato, Creazione nuova struttura dati!");
+            this.utenti= new TreeSet<>();
+        }catch(IOException | ClassNotFoundException e){
+            System.err.println("Errore dutrante il caricamento: " + e.getMessage());
+            this.utenti= new TreeSet<>();
+        }
     }
     
     
