@@ -51,7 +51,7 @@
                                              </children>
                                           </HBox>
                                           <Button fx:id="btnCercaUtente" mnemonicParsing="false" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
-                                          <Label fx:id="lblUtenteTrovato" prefHeight="31.0" prefWidth="270.0" text="">
+                                          <Label fx:id="lblUtenteTrovato" prefHeight="69.0" prefWidth="302.0" text="" wrapText="true">
                                              <VBox.margin>
                                                 <Insets top="15.0" />
                                              </VBox.margin>
@@ -80,7 +80,7 @@
                                              </children>
                                           </HBox>
                                           <Button fx:id="btnCercaLibro" mnemonicParsing="false" style="-fx-background-color: #00ff00; -fx-font-weight: bold;" text="Cerca" />
-                                          <Label fx:id="lblLibroTrovato" prefHeight="32.0" prefWidth="262.0" text="">
+                                          <Label fx:id="lblLibroTrovato" prefHeight="70.0" prefWidth="305.0" text="" wrapText="true">
                                              <VBox.margin>
                                                 <Insets top="15.0" />
                                              </VBox.margin>
