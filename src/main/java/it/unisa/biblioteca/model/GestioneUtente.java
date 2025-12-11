@@ -189,8 +189,6 @@ public class GestioneUtente implements Gestione<Utente>{
      * 
      * @pre I dati relativi agli utenti sono stati inseriti nella collezione.
      * @post I dati relativi agli utenti sono esportati su file.
-     * 
-     * @param file Stringa nome del file da utilizzare per l'esportazione dei dati.
      *
      */
     
@@ -208,11 +206,11 @@ public class GestioneUtente implements Gestione<Utente>{
     //metodo per caricare in input i dati dal file (viene chiamatto ad ogni avvio, nel costruttore).
     private void caricaUtenti(){
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(NOME_FILE)) ){
-            this.utenti = (Set<Utente>)in.readObject();
-            System.out.println("Dati caricati: " + utenti.size() + " utenti.");
+            this.utenti = (Set<Utente>)in.readObject();//questo catsing può generare un eccezione (Va gestito)
+            System.out.println("Dati caricati: " + utenti.size() + " utenti.");//evitabile serve solom per controllare che l'operazione va bene sul terminale
         }catch(FileNotFoundException e){
             System.out.println("File Dati non trovato, Creazione nuova struttura dati!");
-            this.utenti= new TreeSet<>();
+            this.utenti= new TreeSet<>();//al primo avvio viene eseguito per creare per la prima volta la struttura
         }catch(IOException | ClassNotFoundException e){
             System.err.println("Errore dutrante il caricamento: " + e.getMessage());
             this.utenti= new TreeSet<>();
