@@ -285,6 +285,7 @@ public class InterfacciaPrestitiController {
         mostraErrore("Errore imprevisto durante la registrazione del prestito.");
         System.err.println("Errore in registraPrestito del Controller: " + e.getMessage());
     }
+        aggiornaTabella();
     }
     
     //RESTITUISCI PRESTITO
