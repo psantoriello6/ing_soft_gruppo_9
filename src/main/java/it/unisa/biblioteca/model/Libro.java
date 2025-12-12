@@ -223,7 +223,7 @@ public class Libro implements Comparable<Libro>, Serializable {
     
     @Override
     public String toString(){
-        return "Titolo : " + titolo + "\nNome Autore: " + nomeAutore + "\nCognome autore: " + cognomeAutore + "\nAnno di pubblicazione: " + annoPubblicazione + "\nCopie Disponibili: " + copieDisponibili +"\n\n";
+        return "Titolo: " + titolo + "\nNome Autore: " + nomeAutore + "\nCognome Autore: " + cognomeAutore + "\nAnno di pubblicazione: " + annoPubblicazione + "\nCopie Disponibili: " + copieDisponibili +"\n\n";
     
     }
 

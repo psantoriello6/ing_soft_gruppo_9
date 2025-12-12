@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unisa.biblioteca.model;
+package it.unisa.biblioteca.testmodel;
 
+import it.unisa.biblioteca.model.Libro;
+import it.unisa.biblioteca.model.Prestito;
+import it.unisa.biblioteca.model.Utente;
 import java.time.LocalDate;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
