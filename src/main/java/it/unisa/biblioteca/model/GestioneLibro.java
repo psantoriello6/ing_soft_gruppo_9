@@ -17,26 +17,45 @@ import java.io.ObjectInputStream;
 /**
  * @file GestioneLibro.java
  * @author Gruppo 9
- * @brief Gestione di una collezione (TreeSet) di libri che si occupa di inserimento, modifica, eliminazione, ricerca e salvataggio su un file di testo
+ * @brief La classe GestioneLibro permette di gestire una collezione di libri
  * 
+ *  In particolare, la classe contiene dei metodi che si occupano di inserire un libro all'interno della collezione , modificare un libro, eliminare un libro dalla collezione e ricercare un libro in base a 
+ *  specifici parametri di ricerca; inoltre la classe contiene metodi di utilità per il caricamento e il salvataggio della collezione dei libri su un file binario 
  * @date 03/12/2025
- * @author pasqu
  */
 public class GestioneLibro implements Gestione<Libro> {
-    private Set<Libro> libri;
-    private static GestioneLibro instance; //variabile privata e statica dello stesso tipo della classe
-   private static final String NOME_FILE = "libri.dat";
-    /**
-     * @brief Costruttore che inizializza il TreeSet di libri
-     */
     
-    //costruttore privato per aderire al desgin Pattern Singleton
+    /**
+     * @brief Variabile d'istanza privata che rappresenta un set di libri
+     */
+    private Set<Libro> libri;
+    
+    /**
+     * @brief Variabile d'istanza privata e statica che rappresenta l'istanza della classe GestioneLibro
+     */
+    private static GestioneLibro instance;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari libri
+     */
+    private String nomeFile = "libri.dat";  
+    
+    /**
+     * @brief Costruttore privato della classe GestioneLibro
+     *  Il costruttore aderisce al design pattern Singleton e permette di inizializzare il set di libri e di caricare dal file binario l'eventuale collezione di libri, se presente
+     *  
+     */
     private GestioneLibro(){
         libri = new TreeSet<>();
-        this.caricaLibri("libri.dat");
+        this.caricaLibri(nomeFile);
     }
     
-    //metodo statico pubblico per restituire sempre la stessa istanza (unica) della classe stessa
+    /**
+     * @brief Metodo statico pubblico della classe GestioneLibro
+     *  Il metodo aderisce al design pattern Singleton e permette di restituire sempre la stessa (ed unica) istanza della classe GestioneLibro
+     * 
+     * @return L'istanza (unica) della classe GestioneLibro
+     */
     
     public static GestioneLibro getInstance(){
         if(instance == null){
@@ -47,15 +66,20 @@ public class GestioneLibro implements Gestione<Libro> {
     
     }
     
-    //metodo utile per i test: serve a svuotare la memoria
+    /**
+     * @brief Metodo di utilità che permette di "svuotare le memoria" reinizializzando l'istanza della classe GestioneLibro a null
+     *  Questo metodo è utilizzato nei test per rilasciare le risorse utilizzate dopo aver eseguito ogni singolo metod di test
+     */
     public void reset(){
         instance = null;
     }
+    
     /**
      * @brief Metodo che permette di inserire un libro nel TreeSet
      * @pre il libro che verrà inserito non dovrà essere già presente
      * @post il libro sarà inserito nel TreeSet
      * @param libro libro da inserire
+     * @throws GestioneEccezioni
      */
     @Override
     public void inserisci(Libro libro) throws GestioneEccezioni{
@@ -68,8 +92,37 @@ public class GestioneLibro implements Gestione<Libro> {
        }else{
             throw new GestioneEccezioni("Inserimento del libro " + libro.getTitolo() + " fallito. Il codice identificativo " + libro.getCodice() + " non è valido");
         }
-       this.salvaLibri(NOME_FILE);
+       this.salvaLibri(nomeFile);
     
+    }
+    
+    /**
+     * @brief Metodo privato che permette di controllare se il codice identificativo del libro è valido o meno
+     * @param codice il codice identificativo del libro
+     * @return il valore booleano 'true' se il codice identificativo del libro è valido, il valore booleano 'false' se invece il codice identificativo non è valido
+     */
+    private boolean controllaCodice(String codice){
+        int lunghezzaCodice = codice.length();
+        if(lunghezzaCodice == 6){
+            for(int i = 0;  i < 2; i++){
+                if(!Character.isLetter(codice.charAt(i))){
+                    return false;
+                }
+            
+            }
+            
+            for(int i = 2; i < lunghezzaCodice; i++){
+                if(!Character.isDigit(codice.charAt(i))){
+                    return false;
+                }
+            
+            }
+            
+            return true;
+        }
+        
+        return false;
+        
     }
     
     
@@ -78,6 +131,7 @@ public class GestioneLibro implements Gestione<Libro> {
      * @pre il libro che verrà inserito deve essere presente nel TreeSet
      * @post il libro avrà un o più attributi modificati
      * @param libroModificato libro modificato
+     * @throws GestioneEccezioni
      */
     @Override
     public void modifica(Libro libroModificato) throws GestioneEccezioni{
@@ -99,10 +153,11 @@ public class GestioneLibro implements Gestione<Libro> {
        
        //si riaggiunge nuovamente il libro
        libri.add(libroInMemoria);
-       this.salvaLibri(NOME_FILE);
+       this.salvaLibri(nomeFile);
        
        
-}
+   }
+    
     /**
      * @brief Metodo che permette di eliminare un libro nel TreeSet
      * @pre il libro che verrà inserito deve essere presente nel TreeSet
@@ -120,15 +175,18 @@ public class GestioneLibro implements Gestione<Libro> {
             }
         }else if(libro.getPrestitiAttivi() == 0){
              libri.remove(libro);
+             this.salvaLibri(nomeFile);
         }
         
     }
+    
     /**
      * @brief Metodo che permette di ricercare un libro nel TreeSet mediante il titolo
      * @pre il titolo deve essere esistente
      * @post il valore di ritorno deve essere il libro che corrisponde alla ricerca
-     * @param titolo attributo del libro che viene usato per la ricerca
-     * @return il libro che corrisponde alla ricerca
+     * @param titolo titolo del libro che viene usato per la ricerca
+     * @return il libro che corrisponde alla ricerca per titolo
+     * @throws GestioneEccezioni
      */
     public Libro ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
         Libro libroTrovato = null;
@@ -148,13 +206,15 @@ public class GestioneLibro implements Gestione<Libro> {
     
     
     }
+    
     /**
      * @brief Metodo che permette di ricercare un libro nel TreeSet mediante il nome e cognome dell'autore
      * @pre il nome e cognome dell'autore devono essere esistenti
      * @post il valore di ritorno deve essere il libro che corrisponde alla ricerca
-     * @param nomeAutore attributo del libro che viene usato per la ricerca
-     * @param cognomeAutore attributo del libro che viene usato per la ricerca
-     * @return il libro che corrisponde alla ricerca
+     * @param nomeAutore nome dell'autore del libro che viene usato per la ricerca
+     * @param cognomeAutore cognome dell'autore del libro che viene usato per la ricerca
+     * @return il libro che corrisponde alla ricerca per autore
+     * @throws GestioneEccezioni
      */
     public Libro ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
         Libro libroTrovato = null;
@@ -171,12 +231,14 @@ public class GestioneLibro implements Gestione<Libro> {
         return libroTrovato;
     
     }
+    
     /**
-     * @brief Metodo che permette di ricercare un libro nel TreeSet mediante il codice ISBN
+     * @brief Metodo che permette di ricercare un libro nel TreeSet mediante il codice identificativo
      * @pre il codice deve essere esistente
      * @post il valore di ritorno deve essere il libro che corrisponde alla ricerca
-     * @param codice attributo del libro che viene usato per la ricerca
-     * @return il libro che corrisponde alla ricerca
+     * @param codice codice del libro che viene usato per la ricerca
+     * @return il libro che corrisponde alla ricerca per codice
+     * @throws GestioneEccezioni
      */
     public Libro ricercaLibroCodice(String codice) throws GestioneEccezioni{
         Libro libroTrovato = null;
@@ -194,10 +256,22 @@ public class GestioneLibro implements Gestione<Libro> {
         return libroTrovato;
     
     }
+    
     /**
-     * @brief Metodo che permette di salvare tutti i libri del TreeSet nel file di testo
+     * @brief Metodo di utilità che permette di cambiare file binario durante i test
+     * @param nuovoFile il nome del file di test da usare
+     */
+    public void setNomeFile(String nuovoFile){
+        this.nomeFile = nuovoFile;
+        this.libri.clear();
+        this.caricaLibri(nomeFile);
+    
+    }
+    
+    /**
+     * @brief Metodo che permette di salvare tutti i libri del TreeSet in un file binario con estensione .dat
      * @post il sistema salverà la collection di libri su file
-     * @param file il file di testo su cui vengono salvati tutti i libri presenti
+     * @param file il file binario su cui vengono salvati tutti i libri presenti
      */
     public void salvaLibri(String file){
         
@@ -215,6 +289,13 @@ public class GestioneLibro implements Gestione<Libro> {
     
     
     }
+    
+    /**
+     * @brief Metodo che permette di caricare da un file binario con estensione .dat tutti i libri della collezione 
+     * @post la collezione di libri è stato caricata dal file e stampata su terminale
+     * @param file il file binario da cui caricare le informazioni
+     * @return la collezione di libri caricata dal file binario
+     */
     
     public Set<Libro> caricaLibri(String file){
         Set<Libro> listaLibri = new TreeSet<>(); 
@@ -241,36 +322,22 @@ public class GestioneLibro implements Gestione<Libro> {
         return listaLibri;
     }
     
-    //metodo privato per controllare se il codice identificativo del libro è valido o meno
-    private boolean controllaCodice(String codice){
-        int lunghezzaCodice = codice.length();
-        if(lunghezzaCodice == 6){
-            for(int i = 0;  i < 2; i++){
-                if(!Character.isLetter(codice.charAt(i))){
-                    return false;
-                }
-            
-            }
-            
-            for(int i = 2; i < lunghezzaCodice; i++){
-                if(!Character.isDigit(codice.charAt(i))){
-                    return false;
-                }
-            
-            }
-            
-            return true;
-        }
-        
-        return false;
-    }
+    /**
+     * @brief Metodo di utilità che permette di ottenere l'attributo che rappresenta la collezione (set) di libri
+     * @return la collezione di libri
+     */
     
     public Set<Libro> getSetLibro(){
         return libri;
     }
     
-    public void setLibroSet(Set<Libro> l){
-        this.libri = l;
+    /**
+     * @brief Metodo di utilità che permette di modificare l'attributo che rappresenta la collezione (set) di lobri
+     * @param libriSet un set di libri
+     */
+    
+    public void setLibroSet(Set<Libro> libriSet){
+        this.libri = libriSet;
     }
     
 }

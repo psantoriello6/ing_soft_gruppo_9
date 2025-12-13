@@ -391,7 +391,7 @@ public class LibroTest {
         Libro lib1 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "TO7865", 6 );
         
         String stringaAttesa = "Titolo: " + lib1.getTitolo() + "\nNome Autore: " + lib1.getNomeAutore() + "\nCognome Autore: " + 
-                          lib1.getCognomeAutore() + "\nAnno di pubblicazione: " + lib1.getAnnoPubblicazione() + "\nCopie Disponibili: " + lib1.getCopieDisponibili() + "\n\n";
+                          lib1.getCognomeAutore() + "\nAnno di pubblicazione: " + lib1.getAnnoPubblicazione() + "\nCodice: " + lib1.getCodice() + "\nCopie Disponibili: " + lib1.getCopieDisponibili() + "\n\n";
         
         assertEquals(stringaAttesa, lib1.toString());
         
