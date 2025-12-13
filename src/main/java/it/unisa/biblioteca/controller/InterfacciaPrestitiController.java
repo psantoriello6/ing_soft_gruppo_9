@@ -12,6 +12,7 @@ import it.unisa.biblioteca.model.GestioneUtente;
 import it.unisa.biblioteca.model.GestioneLibro; 
 import it.unisa.biblioteca.model.GestionePrestito; 
 import it.unisa.biblioteca.model.GestioneEccezioni; 
+import java.awt.Color;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
@@ -137,6 +138,37 @@ public class InterfacciaPrestitiController {
             new SimpleObjectProperty<>(cellData.getValue().getDataRestituzione()));
         
         tabellaPrestiti.setItems(listaPrestiti);
+        
+        colonnaDataPrestiti.setCellFactory(column -> {
+    return new TableCell<Prestito, LocalDate>() {
+        @Override
+        protected void updateItem(LocalDate data, boolean empty) {
+            super.updateItem(data, empty);
+
+            // 1. Pulizia della cella se è vuota
+            if (data == null || empty) {
+                setText(null);
+                setStyle(""); // Rimuove stili precedenti
+            } else {
+                // 2. Imposta il testo (la data)
+                setText(data.toString());
+
+                // 3. Recupera l'oggetto Prestito di questa riga
+                Prestito prestitoCorrente = getTableView().getItems().get(getIndex());
+
+                // 4. Controllo Ritardo
+                // Se ritardoPrestito restituisce TRUE quando è in ritardo (come da codice caricato):
+                if (prestitoCorrente.ritardoPrestito(data)) {
+                    // STILE PER IL RITARDO: Rosso e Grassetto
+                    setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
+                } else {
+                    // STILE NORMALE: Nero (o default)
+                    setStyle("-fx-text-fill: black;");
+                }
+                }
+        }
+    };
+        });
         
         //BUTTON
         btnCercaUtente.setOnAction(e -> cercaUtente());
