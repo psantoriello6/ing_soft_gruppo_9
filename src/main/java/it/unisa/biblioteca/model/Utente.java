@@ -83,7 +83,6 @@ public class Utente implements Serializable, Comparable<Utente> {
     }
     /**
      * @brief Metodo che permette l'inserimento della email
-     * Se la email inserita non rispetta il formato standard verrà mostrata un'eccezione
      * @param email 
      */ 
     public void setEmail(String email){
