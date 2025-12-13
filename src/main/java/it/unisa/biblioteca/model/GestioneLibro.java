@@ -82,8 +82,12 @@ public class GestioneLibro implements Gestione<Libro> {
      */
     @Override
     public void inserisci(Libro libro) throws GestioneEccezioni{
-        if(libri.contains(libro)){
-            throw new GestioneEccezioni("Inserimento del libro " + libro.getTitolo() + " fallito. Il codice identificativo " + libro.getCodice() + " è già esistente");
+        
+        for(Libro lib: libri){
+            if(lib.getCodice().equalsIgnoreCase(libro.getCodice())){
+                throw new GestioneEccezioni("Inserimento del libro " + libro.getTitolo() + " fallito. Il codice identificativo " + libro.getCodice() + " è già esistente");
+            
+            }
         }
         
        if(controllaCodice(libro.getCodice())){
@@ -218,7 +222,7 @@ public class GestioneLibro implements Gestione<Libro> {
     public Libro ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
         Libro libroTrovato = null;
         for(Libro libro: libri){
-            if(libro.getNomeAutore().equalsIgnoreCase(nomeAutore) && libro.getCognomeAutore().equalsIgnoreCase(cognomeAutore)){
+            if(libro.getNomeAutore().toLowerCase().contains(nomeAutore) && libro.getCognomeAutore().toLowerCase().contains(cognomeAutore)){
                 libroTrovato = libro;
             }
         }
@@ -242,7 +246,7 @@ public class GestioneLibro implements Gestione<Libro> {
     public Libro ricercaLibroCodice(String codice) throws GestioneEccezioni{
         Libro libroTrovato = null;
         for(Libro libro: libri){
-            if(libro.getCodice().equalsIgnoreCase(codice)){
+            if(libro.getCodice().toLowerCase().contains(codice)){
                 libroTrovato = libro;
             
             }

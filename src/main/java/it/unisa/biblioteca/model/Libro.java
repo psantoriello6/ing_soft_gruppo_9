@@ -2,7 +2,6 @@
 
 package it.unisa.biblioteca.model;
 import java.io.*;
-import java.util.*;
 
 /**
  * @file Libro.java
@@ -215,14 +214,23 @@ public class Libro implements Comparable<Libro>, Serializable {
     
     /**
      * @brief Metodo che permette di gestire l'ordinamento nella collezione sul titolo in ordine alfabetico.
+     *     Il metodo permette di ordinare la collezione di libri in base al titolo. A parità di titolo, invece, la collezione viene ordinata in base al codice identificativo
      * @param l libro da comparare.
-     * @return 0 se i titoli sono uguali, minore di 0 se il titolo corrente viene prima nel ordine alfabetico rispetto a quello passato come parametro, 
-     *         maggiore di 0 se viene dopo rispetto a quello passato come parametro.
+     * @return il valore intero -1 se il titolo corrente viene prima in ordine alfabetico rispetto a quello del libro passato come parametro, il valor intero 1 se viene il titolo viene dopo rispetto a quello del libro passato come parametro. Se invece i titoli sono uguali
+     *  il metodo restituisce il valore intero 1 se il codice identificativo del libro corrente viene dopo in ordine alfabetico rispetto a quello del libro passato come parametro, il valore intero -1 se il codice
+     * identificativo del libro corrente viene prima in ordine alfabetico rispetto a quello del libro passato come parametro, altrimenti il valore 0 se i due codici sono uguali
+     *          
      */
     
     @Override
     public int compareTo(Libro l){
-        return this.titolo.compareToIgnoreCase(l.titolo);
+        int confrontoTitolo = this.titolo.compareToIgnoreCase(l.titolo);
+        
+        if(confrontoTitolo != 0){
+            return confrontoTitolo;
+        }
+        
+        return this.codice.compareToIgnoreCase(l.codice);
     
     }
 
