@@ -224,9 +224,6 @@ public class InterfacciaLibriController {
         if(selezionato != null){
             GestioneLibro.getInstance().elimina(selezionato);
             this.aggiornaTabella();
-            String file = "libri.dat";
-            GestioneLibro.getInstance().salvaLibri(file);
-        
         }else{
             this.mostraErrore("Seleziona un libro da eliminare");
         }

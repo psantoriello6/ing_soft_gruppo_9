@@ -47,7 +47,6 @@ public class GestioneLibro implements Gestione<Libro> {
      */
     private GestioneLibro(){
         libri = new TreeSet<>();
-        this.caricaLibri(nomeFile);
     }
     
     /**
