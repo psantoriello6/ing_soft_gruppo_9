@@ -266,7 +266,7 @@ public class Libro implements Comparable<Libro>, Serializable {
         if (this == o) return true;
         if (this.getClass() != o.getClass()) return false;
         Libro l = (Libro) o;
-        return Objects.equals(this.codice, l.codice);
+        return this.codice.equalsIgnoreCase(l.codice);
     }
     
     /**
