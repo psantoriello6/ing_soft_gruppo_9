@@ -179,6 +179,20 @@ public class GestioneUtenteTest {
             GestioneUtente.getInstance().cercaUtenteMatricola(9999);
         });
     }
+    
+    @Test
+    public void testRicercaCognomeFallimento() throws GestioneEccezioni {
+    // creo ed inserisco un utente (collezione vuota)
+    GestioneUtente.getInstance().inserisci(new Utente("Mario", "Bianchi", 9001, "mario.bianchi@università.it"));
+    
+    // faccio una ricerca per cognome passando un cognome che non c'è nella collezione, mi aspetto un eccezione
+    GestioneEccezioni e = assertThrows(GestioneEccezioni.class, () -> {
+            GestioneUtente.getInstance().cercaUtenteCognome("Rossi");
+        });
+    
+    // controllo che il messagggio di errore sia quello specifico di quessto caso
+    assertTrue(e.getMessage().contains("Utente non trovato"), "Deve dire che l'utente non è stato trovato");
+    }
 
     @Test
     public void testRicercaCognomeMultiplo() throws GestioneEccezioni {
