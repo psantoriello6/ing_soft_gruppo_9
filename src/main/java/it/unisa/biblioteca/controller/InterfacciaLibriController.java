@@ -172,8 +172,7 @@ public class InterfacciaLibriController {
             this.mostraInformazione("Specifica un filtro di ricerca");
             return;
         
-        }
-        else if(this.tipoFiltro.equals("TITOLO")){
+        }else if(this.tipoFiltro.equals("TITOLO")){
             try{
                 risultato = GestioneLibro.getInstance().ricercaLibroTitolo(lowerCaseFilter);
             }catch(GestioneEccezioni ex){
@@ -225,7 +224,8 @@ public class InterfacciaLibriController {
         if(selezionato != null){
             GestioneLibro.getInstance().elimina(selezionato);
             this.aggiornaTabella();
-            GestioneLibro.getInstance().salvaLibri("libri.dat");
+            String file = "libri.dat";
+            GestioneLibro.getInstance().salvaLibri(file);
         
         }else{
             this.mostraErrore("Seleziona un libro da eliminare");

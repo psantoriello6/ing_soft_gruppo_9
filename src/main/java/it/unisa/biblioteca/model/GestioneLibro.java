@@ -25,6 +25,7 @@ import java.io.ObjectInputStream;
 public class GestioneLibro implements Gestione<Libro> {
     private Set<Libro> libri;
     private static GestioneLibro instance; //variabile privata e statica dello stesso tipo della classe
+   private static final String NOME_FILE = "libri.dat";
     /**
      * @brief Costruttore che inizializza il TreeSet di libri
      */
@@ -67,7 +68,7 @@ public class GestioneLibro implements Gestione<Libro> {
        }else{
             throw new GestioneEccezioni("Inserimento del libro " + libro.getTitolo() + " fallito. Il codice identificativo " + libro.getCodice() + " non è valido");
         }
-       this.salvaLibri("libri.dat");
+       this.salvaLibri(NOME_FILE);
     
     }
     
@@ -98,7 +99,7 @@ public class GestioneLibro implements Gestione<Libro> {
        
        //si riaggiunge nuovamente il libro
        libri.add(libroInMemoria);
-       this.salvaLibri("libri.dat");
+       this.salvaLibri(NOME_FILE);
        
        
 }
@@ -132,7 +133,7 @@ public class GestioneLibro implements Gestione<Libro> {
     public Libro ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
         Libro libroTrovato = null;
         for(Libro libro: libri){
-            if(libro.getTitolo().equalsIgnoreCase(titolo)){
+            if(libro.getTitolo().toLowerCase().contains(titolo.toLowerCase())){
                 libroTrovato = libro;
             }
         

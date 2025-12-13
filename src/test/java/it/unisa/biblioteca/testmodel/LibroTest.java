@@ -237,16 +237,13 @@ public class LibroTest {
     public void testDecrementaPrestitiFirst() throws GestioneEccezioni {
         Libro lib1 = new Libro("1984", "George", "Orwell", 1949, "GO4532", 4 );
         
+        //il libro ha 1 prestito attivo
         lib1.incrementaPrestiti();
         
-        try{
-            lib1.decrementaPrestiti();
-        
-        }catch(GestioneEccezioni ex){
-        
-        }
-        
-        assertEquals(0, lib1.getPrestitiAttivi());
+        //il libro non ha prestiti attivi
+        lib1.decrementaPrestiti();
+      
+       assertEquals(0, lib1.getPrestitiAttivi());
         
       
     }
@@ -257,12 +254,12 @@ public class LibroTest {
      */
     @Test
     public void testDecrementaPrestitiSecond() throws GestioneEccezioni {
-        // Act & Assert: assertThrows
-        // Sintassi: assertThrows(ClasseEccezioneAttesa.class, () -> { codice che lancia });
+        // Sintassi dell'assertThrows: assertThrows(ClasseEccezioneAttesa.class, () -> { codice che lancia });
         
         Libro lib1 = new Libro("1984", "George", "Orwell", 1949, "GO4532", 4 );
         
-        GestioneEccezioni exc = assertThrows(GestioneEccezioni.class, () -> lib1.decrementaPrestiti());
+        //numero di prestiti pari a 0: impossibile decrementare il numero di prestiti
+        assertThrows(GestioneEccezioni.class, () -> lib1.decrementaPrestiti());
         
         
     }
@@ -317,12 +314,8 @@ public class LibroTest {
     public void testDecrementaCopieFirst() throws GestioneEccezioni {
         Libro lib2 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "TO7865", 3 );
         
-        try{
-            lib2.decrementaCopie();
-        
-        }catch(GestioneEccezioni ex){
-        
-        }
+        //ora sono presenti due copie disponibili del libro
+        lib2.decrementaCopie();
         
         assertEquals(2, lib2.getCopieDisponibili());
     }
@@ -335,11 +328,15 @@ public class LibroTest {
     @Test
     public void testDecrementaCopieSecond() throws GestioneEccezioni{
         
-       Libro lib1 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "TO7865", -4 );
+       Libro lib1 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "TO7865", 0 );
        
-       GestioneEccezioni exc = assertThrows(GestioneEccezioni.class, () -> lib1.decrementaCopie());
+       //non sono presenti copie disponibili: impossibile decrementare il numero di copie
+       assertThrows(GestioneEccezioni.class, () -> lib1.decrementaCopie());
     
-    
+       //numero di copie disponibili pari ad un numero negativo: impossibile decrementare il numero di copie;
+        Libro lib2 = new Libro("1984", "George", "Orwell", 1949, "GO4532", -2 );
+        
+        assertThrows(GestioneEccezioni.class, () -> lib2.decrementaCopie());
     
     }
 
@@ -350,6 +347,8 @@ public class LibroTest {
     public void testIncrementaCopie() {
         
         Libro lib1 = new Libro("Dune", "Frank", "Herbert", 1965, "DU2897", 2 );
+        
+        //incremento il numero di copie del libro: ora questo ha 3 copie disponibili
         lib1.incrementaCopie();
         
         assertEquals(3, lib1.getCopieDisponibili());
@@ -379,7 +378,7 @@ public class LibroTest {
          //caso 4: controllo con null
          assertFalse(lib1.equals((Libro)null));
          
-         //cas0 5: controllo con tipo diverso
+         //caso 5: controllo con tipo diverso
          assertFalse(lib1.equals("TO7865"));
          
     }

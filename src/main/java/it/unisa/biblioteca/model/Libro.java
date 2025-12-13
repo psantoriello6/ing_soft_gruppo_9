@@ -196,7 +196,7 @@ public class Libro implements Comparable<Libro>, Serializable {
         if (copieDisponibili > 0)
             copieDisponibili--;
         else {
-            throw new GestioneEccezioni("Non sono presenti copie disponibili. Impossibile decrementare il numero di copie.");
+            throw new GestioneEccezioni("Non sono presenti copie disponibili/Hai inserito un numero di copie negativo. Impossibile decrementare il numero di copie.");
         }
     }
 
