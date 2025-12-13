@@ -229,6 +229,7 @@ public class GestionePrestito {
                 elencoCompleto.add(p);
             }
         }
+        Collections.sort(elencoCompleto);
         return elencoCompleto;
     }
 }
