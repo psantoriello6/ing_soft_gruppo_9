@@ -24,7 +24,7 @@ import java.io.*;
 public class GestioneUtente implements Gestione<Utente>{
     private Set<Utente> utenti;
     private static GestioneUtente instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
-    private static final String NOME_FILE = "utenti.dat"; //attributo globale per indicare il nome del file per la persistenza dei dati
+    private String nomeFile = "utenti.dat"; //attributo  per indicare il nome del file per la persistenza dei dati
  
     /**
      * @brief Costruttore.
@@ -194,9 +194,9 @@ public class GestioneUtente implements Gestione<Utente>{
     
     //metodo per slavare INTERA struttura su file (viene chiamato dopo ogni operazione di inserimento-modifica-elimina)
     public void salvaUtenti(){
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(NOME_FILE))){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(this.nomeFile))){
             out.writeObject(utenti);
-            System.out.println("Dati Salvati corretamente in: " + NOME_FILE);
+            System.out.println("Dati Salvati corretamente in: " + this.nomeFile);
         }catch(IOException e){
             System.err.println("Errore dutrante il caricamento: " + e.getMessage());
             e.printStackTrace(); //serve per mostare sul terminale dettagli specifici in caso di errore (simile a una scatola nera)
@@ -205,7 +205,7 @@ public class GestioneUtente implements Gestione<Utente>{
     
     //metodo per caricare in input i dati dal file (viene chiamatto ad ogni avvio, nel costruttore).
     private void caricaUtenti(){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(NOME_FILE)) ){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(this.nomeFile)) ){
             this.utenti = (Set<Utente>)in.readObject();//questo catsing può generare un eccezione (Va gestito)
             System.out.println("Dati caricati: " + utenti.size() + " utenti.");//evitabile serve solom per controllare che l'operazione va bene sul terminale
         }catch(FileNotFoundException e){
@@ -242,6 +242,16 @@ public class GestioneUtente implements Gestione<Utente>{
     //metodo utile per compilare la TabelView nel Controller.
     public Set<Utente> getTutti() {
         return utenti;
+    }
+    
+    /**
+    * Metodo per cambiare file durante i TEST.
+    * @param nuovoFile Il nome del file di test da usare (es. "utenti_test.dat")
+    */
+    public void setNomeFile(String nuovoFile) {
+    this.nomeFile = nuovoFile;
+    this.utenti.clear(); // Svuota la memoria dai dati del file vecchio
+    this.caricaUtenti(); // Prova a caricare dal nuovo file (che sarà vuoto o di prova)
     }
 }
 

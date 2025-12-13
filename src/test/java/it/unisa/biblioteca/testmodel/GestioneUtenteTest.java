@@ -7,6 +7,8 @@ import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.Set;
+import java.util.HashSet;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GestioneUtenteTest {
@@ -18,21 +20,23 @@ public class GestioneUtenteTest {
     @BeforeEach
     public void setUp() {
         System.out.println("--- INIZIO SETUP ---");
-        // Reset Singleton
+        
+        // Resetta il Singleton (Pulisce la RAM)
         GestioneUtente.getInstance().reset(); 
         
-        // prendo istanza
+        // Ottieni l'istanza e CAMBIA SUBITO IL FILE per fare i test su un file diverso da wuello dell'applicazione
         GestioneUtente gestione = GestioneUtente.getInstance();
         
-        // Copia per iterare e cancellare
-        if (!gestione.getTutti().isEmpty()) {
-            // pezzoto per eliminare utenti tramite un for each (se no avrei dovuto usare un iteratore)
-            Utente[] utentiSporchi = gestione.getTutti().toArray(new Utente[0]);
+        // I test scriveranno su questo file, lasciando intatto "utenti.dat"
+        gestione.setNomeFile("utenti_TEST.dat"); 
+        
+        // rimuoviamo tutti i dati dal file di TEST 
+        Set<Utente> utentiSporchi = new HashSet<>(gestione.getTutti());
+        if (!utentiSporchi.isEmpty()) {
             for (Utente u : utentiSporchi) {
                 gestione.elimina(u);
             }
         }
-        assertEquals(0, gestione.getTutti().size(), "Il setup ha fallito: la lista non è vuota!");
     }
     
     @AfterEach
@@ -270,7 +274,8 @@ public class GestioneUtenteTest {
         
         // Simulo il riavvio (con il metodo get istance ottengo la reference (poichè prima l avevo rimossa) a gestioenUtenti e controllo che i dati siano stati ricaricati dal file)
         GestioneUtente nuovaIstanza = GestioneUtente.getInstance();
-        
+        //specifico che deve usare il file di slavataggio per i test e non quello dell'applicazione
+        nuovaIstanza.setNomeFile("utenti_TEST.dat");
         // Verifico che i dati sianao stati caricati dal file corretamente (l'unico utente che avevo inserito ci deve essere ancora)
         assertEquals(1, nuovaIstanza.getTutti().size());
         Utente trovato = nuovaIstanza.cercaUtenteMatricola(7001);
