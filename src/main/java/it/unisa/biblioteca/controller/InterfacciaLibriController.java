@@ -164,8 +164,14 @@ public class InterfacciaLibriController {
         }
         
        
-        //variabile di tipo Libro in cui salvare il risultato della ricerca
-        Libro risultato = null;
+        //set di Libri in cui salvare il risultato della ricerca per titolo o per autore
+        Set<Libro> risultato = null;
+        
+        //variabile di tipo Libro in cui salvare il risultato della ricerca per codice
+        Libro risultatoCodice = null;
+        
+        
+        
         
         String lowerCaseFilter = testo.toLowerCase();
         if(this.tipoFiltro == null){
@@ -197,22 +203,24 @@ public class InterfacciaLibriController {
         
         }else if(this.tipoFiltro.equals("CODICE")){
             try{
-                risultato = GestioneLibro.getInstance().ricercaLibroCodice(lowerCaseFilter);
+                risultatoCodice = GestioneLibro.getInstance().ricercaLibroCodice(lowerCaseFilter);
             }catch(GestioneEccezioni ex){
             
             }
         }
         //aggiorno la table view
         if(risultato != null){
-            //se il libro è stato trovato, creo una lista che contiene SOLO quel libro
-            ObservableList<Libro> listaRisultato = FXCollections.observableArrayList();
-            listaRisultato.add(risultato);
-            tabellaLibri.setItems(listaRisultato);
-        }else{
-            //se non è stato trovato null, si svuota la tabella
-            //tabellaLibri.setItems(FXCollections.emptyObservableList());
-            this.mostraInformazione("Nessun libro trovato");
+            //se il set di libri non è vuoto nel caso di ricerca per titolo o autore , creo una lista che contiene quel set di libri
+            ObservableList<Libro> listaRisultatoTitoloAutore = FXCollections.observableArrayList(risultato);
+            tabellaLibri.setItems(listaRisultatoTitoloAutore);
+        }else if(risultatoCodice != null){
+            //nel caso di ricerca per codice, creo una lista con SOLO quel libro, se è stato trovato
+            ObservableList<Libro> listaRisultatoCodice = FXCollections.observableArrayList();
+            listaRisultatoCodice.add(risultatoCodice);
+            tabellaLibri.setItems(listaRisultatoCodice);
             
+        }else{
+            this.mostraInformazione("Nessun libro trovato");
         }
         
         

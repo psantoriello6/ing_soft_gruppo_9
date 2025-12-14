@@ -191,20 +191,20 @@ public class GestioneLibro implements Gestione<Libro> {
      * @return il libro che corrisponde alla ricerca per titolo
      * @throws GestioneEccezioni
      */
-    public Libro ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
-        Libro libroTrovato = null;
+    public Set<Libro> ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
+        Set<Libro> risultati = new TreeSet<>();
         for(Libro libro: libri){
             if(libro.getTitolo().toLowerCase().contains(titolo.toLowerCase())){
-                libroTrovato = libro;
+                risultati.add(libro);
             }
         
         }
         
-        if(libroTrovato == null){
+        if(risultati.isEmpty()){
             throw new GestioneEccezioni("Ricerca fallita: libro non trovato!");
         }
         
-        return libroTrovato;
+        return risultati;
         
     
     
@@ -219,19 +219,19 @@ public class GestioneLibro implements Gestione<Libro> {
      * @return il libro che corrisponde alla ricerca per autore
      * @throws GestioneEccezioni
      */
-    public Libro ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
-        Libro libroTrovato = null;
+    public Set<Libro> ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
+        Set<Libro> risultati = new TreeSet<>();
         for(Libro libro: libri){
             if(libro.getNomeAutore().toLowerCase().contains(nomeAutore.toLowerCase()) && libro.getCognomeAutore().toLowerCase().contains(cognomeAutore.toLowerCase())){
-                libroTrovato = libro;
+                risultati.add(libro);
             }
         }
         
-        if(libroTrovato == null){
+        if(risultati.isEmpty()){
             throw new GestioneEccezioni("Ricerca fallita: libro non trovato!");
         }
         
-        return libroTrovato;
+        return risultati;
     
     }
     

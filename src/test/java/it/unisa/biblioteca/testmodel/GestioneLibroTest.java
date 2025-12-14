@@ -214,20 +214,21 @@ public class GestioneLibroTest {
         //creo ed inserisco 3 libri
         Libro lib1 = new Libro("Harry Potter e il prigioniero di Azkaban", "JK", "Rowling", 1999, "HP4532", 1 );
         Libro lib2 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "TO7865", 3 );
-        Libro lib3 = new Libro("1984", "George", "Orwell", 1949, "GO4532", 4 );
+        Libro lib3 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "CE5432", 3 );
+        
         
         GestioneLibro.getInstance().inserisci(lib1);
         GestioneLibro.getInstance().inserisci(lib2);
         GestioneLibro.getInstance().inserisci(lib3);
         
-        //si effettua la ricerca per titolo per trovare un libro
-        Libro libroTrovato = GestioneLibro.getInstance().ricercaLibroTitolo("1984");
+        //si effettua la ricerca per titolo per trovare uno o più libri
+        Set<Libro> libriTrovati = GestioneLibro.getInstance().ricercaLibroTitolo("Il Signore degli Anelli");
         
         //controllo che ritorni qualcosa
-        assertNotNull(libroTrovato);
+        assertNotNull(libriTrovati);
         
-        //controllo che ritorni effettivamente il libro che stavo cercando
-        assertEquals("1984", libroTrovato.getTitolo());
+        //controllo che i libri aventi lo stesso titolo siano stati effettivamente trovati
+        assertEquals(2, libriTrovati.size());
         
         
         
@@ -243,22 +244,21 @@ public class GestioneLibroTest {
         //creo ed inserisco 3 libri
         Libro lib1 = new Libro("Harry Potter e il prigioniero di Azkaban", "JK", "Rowling", 1999, "HP4532", 1 );
         Libro lib2 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "TO7865", 3 );
-        Libro lib3 = new Libro("1984", "George", "Orwell", 1949, "GO4532", 4 );
+        Libro lib3 = new Libro("Il Signore degli Anelli", "JRR", "Tolkien" , 1955, "CE5432", 3 );
         
         GestioneLibro.getInstance().inserisci(lib1);
         GestioneLibro.getInstance().inserisci(lib2);
         GestioneLibro.getInstance().inserisci(lib3);
         
-        //si effettua la ricerca per nome e cognome dell'autore per trovare un libro
-        Libro libroTrovato = GestioneLibro.getInstance().ricercaLibroAutore("JRR", "Tolkien");
+        //si effettua la ricerca per nome e cognome dell'autore per trovare uno o più libri
+        Set<Libro> libriTrovati = GestioneLibro.getInstance().ricercaLibroAutore("JRR", "Tolkien");
         
         //controllo che ritorni qualcosa
-        assertNotNull(libroTrovato);
+        assertNotNull(libriTrovati);
         
-        //controllo che ritorni effettivamente il libro che stavo cercando
-        assertEquals("JRR", libroTrovato.getNomeAutore());
-        assertEquals("Tolkien", libroTrovato.getCognomeAutore());
         
+        //controllo che i libri aventi lo stesso autore siano stati effettivamente trovati
+        assertEquals(2, libriTrovati.size());
      
     }
 
@@ -394,7 +394,7 @@ public class GestioneLibroTest {
         GestioneLibro.getInstance().modifica(libroModificato);
         
         //si recupera l'unico libro della collezione mediante ricerca per titolo e si verifica se si sono modificati i campi
-        Libro libroRecuperato = GestioneLibro.getInstance().ricercaLibroTitolo("Dune");
+        Libro libroRecuperato = GestioneLibro.getInstance().ricercaLibroCodice("DU2897");
         assertEquals(4, libroRecuperato.getCopieDisponibili());
         
     

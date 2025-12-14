@@ -20,6 +20,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import java.util.List;
 import java.time.LocalDate; 
+import java.util.Set;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -75,6 +76,7 @@ public class InterfacciaPrestitiController {
     // OGGETTI TROVATI 
     private Utente utenteSelezionato = null;
     private Libro libroSelezionato = null;
+    private Set<Libro> libriSelezionati = null;
     
     // filtri attivi
     private String filtroUtente = "matricola";
@@ -261,7 +263,7 @@ public class InterfacciaPrestitiController {
 
                 case "titolo":
                     // Chiamata al metodo che cerca per titolo
-                    libroSelezionato = GestioneLibro.getInstance().ricercaLibroTitolo(input);
+                    libriSelezionati = GestioneLibro.getInstance().ricercaLibroTitolo(input);
                     break;
 
                 case "autore":
@@ -275,7 +277,7 @@ public class InterfacciaPrestitiController {
                     String cognomeAutore = partiAutore[1];
                     
                     // Chiamata al metodo che cerca per autore
-                    libroSelezionato = GestioneLibro.getInstance().ricercaLibroAutore(nomeAutore, cognomeAutore);
+                    libriSelezionati = GestioneLibro.getInstance().ricercaLibroAutore(nomeAutore, cognomeAutore);
                     break;
             }
 
