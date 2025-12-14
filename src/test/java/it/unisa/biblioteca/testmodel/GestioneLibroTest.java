@@ -36,11 +36,13 @@ public class GestioneLibroTest {
         //i test scriveranno sul file libri_TEST.dat, lasciando intatto libri.dat
         gestione.setNomeFile("libri_TEST.dat");
         
-        Set<Libro> collezioneLibri = new TreeSet<>(gestione.getSetLibro());
         //se il set di libri non è vuoto
-        if(!collezioneLibri.isEmpty()){
+        if(!gestione.getSetLibro().isEmpty()){
             //elimina tutti i libri dal set
-            for(Libro lib : gestione.getSetLibro()){
+            //creo un array di appoggio per permettere di usare la cancellazione nel for each
+            Libro[] libriDaCancellare = gestione.getSetLibro().toArray(new Libro[0]);
+            
+            for(Libro lib : libriDaCancellare){
                 gestione.elimina(lib);
             }
         
