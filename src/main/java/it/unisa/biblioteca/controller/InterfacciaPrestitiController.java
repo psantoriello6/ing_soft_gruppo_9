@@ -21,6 +21,7 @@ import javafx.scene.control.Alert.AlertType;
 import java.util.List;
 import java.time.LocalDate; 
 import java.util.Set;
+import java.util.TreeSet;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -76,7 +77,7 @@ public class InterfacciaPrestitiController {
     // OGGETTI TROVATI 
     private Utente utenteSelezionato = null;
     private Libro libroSelezionato = null;
-    private Set<Libro> libriSelezionati = null;
+    private Set<Libro> libriSelezionati = new TreeSet<>();
     
     // filtri attivi
     private String filtroUtente = "matricola";
@@ -244,7 +245,8 @@ public class InterfacciaPrestitiController {
     
     private void cercaLibro() {
         String input = tfRicercaLibro.getText().trim();
-
+        String messaggioDiAvviso = null;
+        
         lblLibroTrovato.setText("");
         libroSelezionato = null;
 
@@ -263,7 +265,13 @@ public class InterfacciaPrestitiController {
 
                 case "titolo":
                     // Chiamata al metodo che cerca per titolo
-                    libriSelezionati = GestioneLibro.getInstance().ricercaLibroTitolo(input);
+                    Set<Libro> setLibriFirst = GestioneLibro.getInstance().ricercaLibroTitolo(input);
+                    TreeSet<Libro> risultatiFirst = (TreeSet)setLibriFirst;
+                    if (risultatiFirst.size() > 1) { 
+                        messaggioDiAvviso = "⚠ Trovati " + risultatiFirst.size() + " libri con questo titolo. Selezionato il primo in lista. Ricercare per Codice per essere precisi.\n";
+                    }
+                    libroSelezionato = risultatiFirst.first();
+                    //libriSelezionati = GestioneLibro.getInstance().ricercaLibroTitolo(input);
                     break;
 
                 case "autore":
@@ -277,17 +285,32 @@ public class InterfacciaPrestitiController {
                     String cognomeAutore = partiAutore[1];
                     
                     // Chiamata al metodo che cerca per autore
-                    libriSelezionati = GestioneLibro.getInstance().ricercaLibroAutore(nomeAutore, cognomeAutore);
+                    Set<Libro> setLibriSecond = GestioneLibro.getInstance().ricercaLibroAutore(nomeAutore, cognomeAutore);
+                    TreeSet<Libro> risultatiSecond = (TreeSet)setLibriSecond;
+                    if (risultatiSecond.size() > 1) { 
+                        messaggioDiAvviso = "⚠ Trovati " + risultatiSecond.size() + " libri con questo autore. Selezionato il primo in lista. Ricercare per Codice per essere precisi.\n";
+                    }
+                    libroSelezionato = risultatiSecond.first();
+                    //libriSelezionati = GestioneLibro.getInstance().ricercaLibroAutore(nomeAutore, cognomeAutore);
                     break;
             }
 
             // Se siamo qui → libro trovato
-            lblLibroTrovato.setText(
+            if (messaggioDiAvviso != null) {
+            lblLibroTrovato.setText(messaggioDiAvviso + "Libro selezionato: " +
+                libroSelezionato.getTitolo() + " " +
+                libroSelezionato.getNomeAutore() +
+                " " + libroSelezionato.getCognomeAutore() +
+                " (Codice: " + libroSelezionato.getCodice() + ")");
+            }else{
+             lblLibroTrovato.setText(
                 "✔ Libro trovato: " +
                 libroSelezionato.getTitolo() + " - " +
                 libroSelezionato.getNomeAutore() + " " + libroSelezionato.getCognomeAutore() +
                 " (Codice: " + libroSelezionato.getCodice() + ")"
             );
+        
+         }
 
         } catch (GestioneEccezioni e) {
             // Qui entri se il Model NON trova il libro o se c'è un altro errore di gestione
@@ -309,7 +332,7 @@ public class InterfacciaPrestitiController {
            return;
         }
 
-        if (libroSelezionato == null) {
+        if (libroSelezionato == null || libriSelezionati.isEmpty()) {
             mostraErrore("Prima selezionare un libro.");
             return;
         }
