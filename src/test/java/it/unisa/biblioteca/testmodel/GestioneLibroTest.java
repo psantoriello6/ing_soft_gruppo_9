@@ -39,7 +39,7 @@ public class GestioneLibroTest {
         
        Set<Libro> collezioneLibri = new TreeSet<>(gestione.getSetLibro());
        Iterator<Libro> iter = collezioneLibri.iterator();
-       //se il set di libri non è vuoto 
+       //rimuovo gli elementi dal set 
        while(iter.hasNext()){
            iter.next();
            iter.remove();
