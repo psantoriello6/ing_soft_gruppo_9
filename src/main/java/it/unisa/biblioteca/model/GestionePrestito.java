@@ -27,8 +27,8 @@ public class GestionePrestito {
     private Map<Utente, LinkedList<Libro>> prestitiAttivi;
     private Map<String, LocalDate> scadenzePrestiti;
     private static final int MAX_PRESTITI = 3;
-    private static final String PRESTITI_FILE = "prestiti.dat";
-    private static final String DATE_FILE = "date.dat";
+    private String nomeFilePrestiti = "prestiti.dat";
+    private String nomeFileDate = "date.dat";
     private static GestionePrestito instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
     
     /**
@@ -163,9 +163,9 @@ public class GestionePrestito {
      */
     public void salvaPrestiti(){
     
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(PRESTITI_FILE))){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nomeFilePrestiti))){
             out.writeObject(prestitiAttivi);
-            System.out.println("Dati Salvati corretamente in: " + PRESTITI_FILE);
+            System.out.println("Dati Salvati corretamente in: " + nomeFilePrestiti);
         }catch(IOException e){
             System.err.println("Errore dutrante il caricamento: " + e.getMessage());
             e.printStackTrace();
@@ -174,9 +174,9 @@ public class GestionePrestito {
         
     public void salvaDate(){
     
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(DATE_FILE))){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nomeFileDate))){
             out.writeObject(scadenzePrestiti);
-            System.out.println("Dati Salvati corretamente in: " + DATE_FILE);
+            System.out.println("Dati Salvati corretamente in: " + nomeFileDate);
         }catch(IOException e){
             System.err.println("Errore dutrante il caricamento: " + e.getMessage());
             e.printStackTrace();
@@ -184,7 +184,7 @@ public class GestionePrestito {
     }
     
     public void caricaPrestiti(){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(PRESTITI_FILE)) ){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeFilePrestiti)) ){
             this.prestitiAttivi = (Map<Utente, LinkedList<Libro>>)in.readObject();
             System.out.println("Dati caricati: " + prestitiAttivi.size() + " utenti.");
         }catch(FileNotFoundException e){
@@ -197,7 +197,7 @@ public class GestionePrestito {
     }
     
     public void caricaDate(){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(DATE_FILE)) ){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeFileDate)) ){
             this.scadenzePrestiti = (Map<String, LocalDate>)in.readObject();
             System.out.println("Dati caricati: " + prestitiAttivi.size() + " utenti.");
         }catch(FileNotFoundException e){
@@ -231,5 +231,19 @@ public class GestionePrestito {
         }
         Collections.sort(elencoCompleto);
         return elencoCompleto;
+    }
+    
+    //metodo per settare il file da usare per i Test
+    public void setFilePathsForTest(String filePrestiti, String fileDate) {
+        this.nomeFilePrestiti = filePrestiti;
+        this.nomeFileDate = fileDate;
+        
+        // pulizia per partire coi file vuoti
+        this.prestitiAttivi.clear();
+        this.scadenzePrestiti.clear();
+        
+        //carichiamo i file (se non esistono si creano)
+        caricaPrestiti();
+        caricaDate();
     }
 }
