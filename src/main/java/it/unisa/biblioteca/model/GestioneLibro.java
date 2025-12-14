@@ -184,11 +184,12 @@ public class GestioneLibro implements Gestione<Libro> {
     }
     
     /**
-     * @brief Metodo che permette di ricercare un libro nel TreeSet mediante il titolo
+     * @brief Metodo che permette di ricercare un libro o più libri nel TreeSet mediante il titolo
+     *     Il metodo ritorna un set di libri in quanto possono esserci più libri con lo stesso titolo
      * @pre il titolo deve essere esistente
      * @post il valore di ritorno deve essere il libro che corrisponde alla ricerca
      * @param titolo titolo del libro che viene usato per la ricerca
-     * @return il libro che corrisponde alla ricerca per titolo
+     * @return la collezione costituita dai libri che corrispondono alla ricerca per titolo
      * @throws GestioneEccezioni
      */
     public Set<Libro> ricercaLibroTitolo(String titolo) throws GestioneEccezioni{
@@ -211,12 +212,13 @@ public class GestioneLibro implements Gestione<Libro> {
     }
     
     /**
-     * @brief Metodo che permette di ricercare un libro nel TreeSet mediante il nome e cognome dell'autore
+     * @brief Metodo che permette di ricercare un libro o più libri nel TreeSet mediante il nome e cognome dell'autore
+     *   Il metodo ritorna un set di libri in quanto possono esserci più libri dello stesso autore
      * @pre il nome e cognome dell'autore devono essere esistenti
      * @post il valore di ritorno deve essere il libro che corrisponde alla ricerca
      * @param nomeAutore nome dell'autore del libro che viene usato per la ricerca
      * @param cognomeAutore cognome dell'autore del libro che viene usato per la ricerca
-     * @return il libro che corrisponde alla ricerca per autore
+     * @return la collezione costituita dai libri che corrispondono alla ricerca per autore 
      * @throws GestioneEccezioni
      */
     public Set<Libro> ricercaLibroAutore(String nomeAutore, String cognomeAutore) throws GestioneEccezioni{
