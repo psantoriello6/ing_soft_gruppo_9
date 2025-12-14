@@ -8,6 +8,7 @@ package it.unisa.biblioteca.testmodel;
 import it.unisa.biblioteca.model.GestioneEccezioni;
 import it.unisa.biblioteca.model.GestioneLibro;
 import it.unisa.biblioteca.model.Libro;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 import org.junit.jupiter.api.AfterEach;
@@ -37,17 +38,14 @@ public class GestioneLibroTest {
         gestione.setNomeFile("libri_TEST.dat");
         
        Set<Libro> collezioneLibri = new TreeSet<>(gestione.getSetLibro());
+       Iterator<Libro> iter = collezioneLibri.iterator();
        //se il set di libri non è vuoto 
-       if(!collezioneLibri.isEmpty()){
-           //elimina tutti i libri dal set
-           for(Libro lib : gestione.getSetLibro()){
-                gestione.elimina(lib);
-            }
-           
-        }
+       while(iter.hasNext()){
+           iter.next();
+           iter.remove();
+       }
         
-        //verifica che al termine dell'eliminazione, la dimensione del set di libri sia pari a 0, cioè il set è vuotot
-        //assertEquals(0, gestione.getSetLibro().size());
+        
         
     }
     
