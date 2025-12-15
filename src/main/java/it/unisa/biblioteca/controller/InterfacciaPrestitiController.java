@@ -80,8 +80,8 @@ public class InterfacciaPrestitiController {
     
     
     // filtri attivi
-    private String filtroUtente = "matricola";
-    private String filtroLibro = "codice";
+    private String filtroUtente = null;
+    private String filtroLibro = null;
     
     @FXML
     public void initialize() {
@@ -198,18 +198,20 @@ public class InterfacciaPrestitiController {
             lblUtenteTrovato.setText("⚠ Inserire un valore di ricerca.");
             return;
         }
+        if (filtroUtente == null) {
+            mostraErrore("⚠ Selezionare un filtro di ricerca.");
+            return;
+        }
 
         try {
             switch (filtroUtente) {
 
             case "matricola":
                 int m = Integer.parseInt(input);
-                // SE IL MODEL NON LO TROVA LANCIA ECCEZIONE
                 utenteSelezionato = GestioneUtente.getInstance().cercaUtenteMatricola(m);
                 break;
 
             case "cognome":
-                // Restituisce una lista, MA lancia eccezione se vuota
                 List<Utente> risultati = GestioneUtente.getInstance().cercaUtenteCognome(input);
                 if (risultati.size() > 1) { 
                     messaggioDiAvviso = "⚠ Trovati " + risultati.size() + " utenti con questo cognome. Selezionato il primo in lista. Ricercare per Matricola per essere precisi.\n";
@@ -252,6 +254,11 @@ public class InterfacciaPrestitiController {
 
         if (input.isEmpty()) {
             lblLibroTrovato.setText("⚠ Inserire un valore di ricerca.");
+            return;
+        }
+        
+        if (filtroLibro == null) {
+            mostraErrore("⚠ Selezionare un filtro di ricerca per il libro.");
             return;
         }
         
