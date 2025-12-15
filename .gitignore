@@ -1,3 +1,4 @@
 /target/
 *.dat
 /nbproject/
+!/libri.dat
