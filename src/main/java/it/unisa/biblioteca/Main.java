@@ -5,12 +5,6 @@
  */
 package it.unisa.biblioteca;
 
-import it.unisa.biblioteca.model.GestioneUtente;
-import it.unisa.biblioteca.model.Utente;
-import it.unisa.biblioteca.model.GestioneEccezioni;
-import it.unisa.biblioteca.model.GestioneLibro;
-import it.unisa.biblioteca.model.Libro;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
