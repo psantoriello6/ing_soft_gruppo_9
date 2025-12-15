@@ -77,7 +77,7 @@ public class InterfacciaPrestitiController {
     // OGGETTI TROVATI 
     private Utente utenteSelezionato = null;
     private Libro libroSelezionato = null;
-    private Set<Libro> libriSelezionati = new TreeSet<>();
+    
     
     // filtri attivi
     private String filtroUtente = "matricola";
@@ -332,7 +332,7 @@ public class InterfacciaPrestitiController {
            return;
         }
 
-        if (libroSelezionato == null || libriSelezionati.isEmpty()) {
+        if (libroSelezionato == null) {
             mostraErrore("Prima selezionare un libro.");
             return;
         }
