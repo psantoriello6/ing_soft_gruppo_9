@@ -345,6 +345,7 @@ public class InterfacciaPrestitiController {
         }
         
         LocalDate dataRestituzionePrevista = LocalDate.now().plusDays(90);
+        //LocalDate dataRestituzionePrevista = LocalDate.now().minusDays(5);
         Prestito nuovoPrestito = new Prestito(utenteSelezionato, libroSelezionato, dataRestituzionePrevista);
         
         try {
