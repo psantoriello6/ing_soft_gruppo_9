@@ -229,7 +229,9 @@ public class InterfacciaLibriController {
     
     private void handleEliminaLibro(){
         Libro selezionato = tabellaLibri.getSelectionModel().getSelectedItem();
-        if(selezionato != null){
+        if(selezionato != null && selezionato.getPrestitiAttivi() != 0){
+            this.mostraErrore("Eliminazione fallita. Il libro selezionato ha almeno un prestito attivo");
+        }else if(selezionato != null && selezionato.getPrestitiAttivi() == 0){
             GestioneLibro.getInstance().elimina(selezionato);
             this.aggiornaTabella();
         }else{
