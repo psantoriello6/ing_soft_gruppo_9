@@ -199,7 +199,7 @@ public class InterfacciaPrestitiController {
             return;
         }
         if (filtroUtente == null) {
-            mostraErrore("⚠ Selezionare un filtro di ricerca.");
+            mostraErrore("⚠ Selezionare un filtro di ricerca per l'utente.");
             return;
         }
 
