@@ -30,6 +30,10 @@ public class GestioneEccezioni extends Exception {
         super(errorMessage);
     }
     
+    /**
+     * @brief Costruttore vuoto della classe Gestione Eccezioni.
+     * Crea un'eccezione senza un messaggio di dettaglio specifico.
+     */
     public GestioneEccezioni(){
         super();
     }

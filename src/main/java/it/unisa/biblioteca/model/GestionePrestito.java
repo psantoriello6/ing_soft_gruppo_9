@@ -45,6 +45,10 @@ public class GestionePrestito {
         caricaDate();
     }
     
+    /**
+     * @brief Restituisce l'istanza unica della classe (Pattern Singleton).
+     * @return L'istanza statica di GestionePrestito.
+     */
     public static GestionePrestito getInstance(){
         if(instance==null){
             instance=new GestionePrestito();
@@ -52,6 +56,10 @@ public class GestionePrestito {
         return instance;
     }
     
+    /**
+     * @brief Resetta l'istanza della classe a null.
+     * Utile per i test unitari.
+     */
     public void reset(){
         instance = null;
     }
@@ -171,7 +179,16 @@ public class GestionePrestito {
             e.printStackTrace();
         }
     }
-        
+    
+    /**
+     * @brief Salva la mappa delle scadenze dei prestiti su file.
+     * .
+     * Serializza l'oggetto `scadenzePrestiti` nel file specificato da `nomeFileDate`.
+     * 
+     * @pre I dati relativi alle date di restituzione sono stati inseriti nella collezione.
+     * 
+     * @post I dati relativi alle date di restituzione sono stati esportati sul file
+     */    
     public void salvaDate(){
     
         try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nomeFileDate))){
@@ -183,6 +200,10 @@ public class GestionePrestito {
         }
     }
     
+    /**
+     * @brief Carica la mappa dei prestiti attivi da file.
+     * Se il file non esiste, inizializza una nuova HashMap vuota.
+     */
     public void caricaPrestiti(){
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeFilePrestiti)) ){
             this.prestitiAttivi = (Map<Utente, LinkedList<Libro>>)in.readObject();
@@ -196,6 +217,10 @@ public class GestionePrestito {
         }
     }
     
+    /**
+     * @brief Carica la mappa delle scadenze dei prestiti da file.
+     * Se il file non esiste, inizializza una nuova HashMap vuota.
+     */
     public void caricaDate(){
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeFileDate)) ){
             this.scadenzePrestiti = (Map<String, LocalDate>)in.readObject();
@@ -209,11 +234,22 @@ public class GestionePrestito {
         }
     }
     
-    
+    /**
+     * @brief Genera una chiave univoca per identificare un prestito specifico.
+     * La chiave è composta dalla matricola dell'utente e dal codice del libro.
+     * @param u L'utente che richiede il prestito.
+     * @param l Il libro oggetto del prestito.
+     * @return Una stringa univoca nel formato "matricola_codice".
+     */
     private String generaChiave(Utente u, Libro l) {
         return u.getMatricola() + "_" + l.getCodice();
     }
     
+    /**
+     * @brief Restituisce una lista piatta contenente tutti i prestiti attivi.
+     * Converte la struttura a Mappa in una lista di oggetti `Prestito` ordinata, utile per la visualizzazione.
+     * @return Una List di oggetti Prestito ordinata per data di scadenza.
+     */
     public List<Prestito> getElencoPrestitiCompleto() {
         List<Prestito> elencoCompleto = new ArrayList<>();
         
@@ -233,6 +269,12 @@ public class GestionePrestito {
         return elencoCompleto;
     }
     
+    /**
+     * @brief Imposta i percorsi dei file per l'ambiente di test.
+     * Pulisce le strutture dati in memoria e tenta di caricare dai nuovi file specificati.
+     * @param filePrestiti Nome del file per salvare i prestiti (es. "prestiti_test.dat").
+     * @param fileDate Nome del file per salvare le date (es. "date_test.dat").
+     */
     //metodo per settare il file da usare per i Test
     public void setFilePathsForTest(String filePrestiti, String fileDate) {
         this.nomeFilePrestiti = filePrestiti;

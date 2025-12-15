@@ -37,6 +37,11 @@ public class GestioneUtente implements Gestione<Utente>{
         caricaUtenti(); //prova a caricare i dati dal file
     }
     
+    /**
+     * @brief Restituisce l'istanza unica della classe (Pattern Singleton).
+     * Se l'istanza non esiste, ne crea una nuova.
+     * * @return L'istanza statica di GestioneUtente.
+     */
     //metodo per fornire un accesso pubblico alle altre classi per ottenere l'oggetto.
     public static GestioneUtente getInstance(){
         if(instance==null){
@@ -45,6 +50,10 @@ public class GestioneUtente implements Gestione<Utente>{
         return instance;
     }
     
+    /**
+     * @brief Resetta l'istanza della classe a null.
+     * Metodo di utilità usato principalmente durante i test per pulire lo stato del Singleton.
+     */
     //metodo per svuotare la memoria, utile per quando faremo i test!
     public void reset(){
         instance = null;
@@ -203,6 +212,12 @@ public class GestioneUtente implements Gestione<Utente>{
         }
     }
     
+    /**
+     * @brief Carica gli utenti dal file binario specificato.
+     * Legge il file "utenti.dat" e popla la struttura dati TreeSet.
+     * Se il file non esiste o si verificano erori, inizializza una nuova collezione vuota.
+     */
+    
     //metodo per caricare in input i dati dal file (viene chiamatto ad ogni avvio, nel costruttore).
     private void caricaUtenti(){
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(this.nomeFile)) ){
@@ -217,6 +232,12 @@ public class GestioneUtente implements Gestione<Utente>{
         }
     }
     
+    /**
+     * @brief Verifica la validità e l'unicità dell'email.
+     * Controlla che l'email rispetti il formato "nome.cognome[0-9]@università.it" e che non sia già associata ad un altro utente.
+     * @param u L'oggetto Utente di cui validare l'email.
+     * @return true se l'email è valida e unica, altrimnti lancia un'eccezione o ritorna false.
+     */
     
     //metodo per il controllo del email con il formato nome.cognome[0-9]@università.it
     private boolean controlloEmail(Utente u) throws GestioneEccezioni{
@@ -239,13 +260,18 @@ public class GestioneUtente implements Gestione<Utente>{
         return emailInserita.matches(emailValida);
     }
     
+    /**
+     * @brief Restituisce l'intera collezione di utenti.
+     * Metodo utile per il popolamento della TableView.
+     * * @return Il Set contenente tutti gli utenti registrati.
+     */
     //metodo utile per compilare la TabelView nel Controller.
     public Set<Utente> getTutti() {
         return utenti;
     }
     
     /**
-    * Metodo per cambiare file durante i TEST.
+    * @brief Metodo per cambiare file durante i TEST.
     * @param nuovoFile Il nome del file di test da usare (es. "utenti_test.dat")
     */
     public void setNomeFile(String nuovoFile) {
