@@ -94,9 +94,9 @@ $(function(){initNavTree('interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestio
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afb103d8fb653f7e5a7bbc1eeb6ca0fc8" id="r_afb103d8fb653f7e5a7bbc1eeb6ca0fc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb103d8fb653f7e5a7bbc1eeb6ca0fc8">inserisci</a> (T elemento)</td></tr>
+<tr class="memitem:afb103d8fb653f7e5a7bbc1eeb6ca0fc8" id="r_afb103d8fb653f7e5a7bbc1eeb6ca0fc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb103d8fb653f7e5a7bbc1eeb6ca0fc8">inserisci</a> (T elemento)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
 <tr class="memdesc:afb103d8fb653f7e5a7bbc1eeb6ca0fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un nuovo elemento nella collezione. Il metodo aggiunge alla collezione l'oggetto fornito come parametro. Gestisce eventuali controlli sull'unicità dei dati (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> o <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>).  <br /></td></tr>
-<tr class="memitem:aaf67cb9480267c29e8dbac20c21ca63c" id="r_aaf67cb9480267c29e8dbac20c21ca63c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf67cb9480267c29e8dbac20c21ca63c">modifica</a> (T elemento)</td></tr>
+<tr class="memitem:aaf67cb9480267c29e8dbac20c21ca63c" id="r_aaf67cb9480267c29e8dbac20c21ca63c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf67cb9480267c29e8dbac20c21ca63c">modifica</a> (T elemento)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
 <tr class="memdesc:aaf67cb9480267c29e8dbac20c21ca63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica un elemento della collezione. Il metodo modifica l'oggetto fornito come parametro. Gestisce eventuali controlli sull'unicità dei dati inseriti(Utente o Libro).  <br /></td></tr>
 <tr class="memitem:a05f9b5a05f3fabbc432adac45fece29d" id="r_a05f9b5a05f3fabbc432adac45fece29d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05f9b5a05f3fabbc432adac45fece29d">elimina</a> (T elemento)</td></tr>
 <tr class="memdesc:a05f9b5a05f3fabbc432adac45fece29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un elemento dalla collezione. Il metodo elimina dalla collezione l'oggetto fornito come parametro.  <br /></td></tr>
@@ -137,12 +137,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html">it.unisa.biblioteca.model.Gestione</a>&lt; T &gt;.inserisci </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>elemento</em></span></td><td>)</td>
-          <td></td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Inserisce un nuovo elemento nella collezione. Il metodo aggiunge alla collezione l'oggetto fornito come parametro. Gestisce eventuali controlli sull'unicità dei dati (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> o <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>). </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">elemento</td><td>Oggetto di tipo T da inserire. </td></tr>
@@ -162,12 +168,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html">it.unisa.biblioteca.model.Gestione</a>&lt; T &gt;.modifica </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>elemento</em></span></td><td>)</td>
-          <td></td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Modifica un elemento della collezione. Il metodo modifica l'oggetto fornito come parametro. Gestisce eventuali controlli sull'unicità dei dati inseriti(Utente o Libro). </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">elemento</td><td>Oggetto di tipo T da modificare, contenente i dati aggiornati. </td></tr>

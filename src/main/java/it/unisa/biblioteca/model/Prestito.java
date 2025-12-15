@@ -17,8 +17,20 @@ import java.time.LocalDate;
  * @date 3 Dicembre 2025
  */
 public class Prestito implements Comparable<Prestito> {
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta un utente
+     */
     private Utente utente;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta un libro
+     */
     private Libro libro;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta la data di restituzione del prestito
+     */
     private LocalDate dataRestituzione;
     
     /**

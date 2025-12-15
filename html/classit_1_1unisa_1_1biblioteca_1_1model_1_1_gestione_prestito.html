@@ -94,18 +94,54 @@ $(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_p
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ace311c3a45d7f8f8760cf3c1ed4e2f86" id="r_ace311c3a45d7f8f8760cf3c1ed4e2f86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace311c3a45d7f8f8760cf3c1ed4e2f86">reset</a> ()</td></tr>
+<tr class="memdesc:ace311c3a45d7f8f8760cf3c1ed4e2f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetta l'istanza della classe a null. Utile per i test unitari.  <br /></td></tr>
+<tr class="memitem:a4f1ea394544430f30822de2808beef12" id="r_a4f1ea394544430f30822de2808beef12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f1ea394544430f30822de2808beef12">registraPrestito</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> prestito)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
+<tr class="memdesc:a4f1ea394544430f30822de2808beef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di registrare un prestito.  <br /></td></tr>
+<tr class="memitem:a2f963efe20a77258cc7fa85c6718f5ba" id="r_a2f963efe20a77258cc7fa85c6718f5ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f963efe20a77258cc7fa85c6718f5ba">restituisciPrestito</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> prestito)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
+<tr class="memdesc:a2f963efe20a77258cc7fa85c6718f5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di registrare la restituzione di un libro in prestito.  <br /></td></tr>
+<tr class="memitem:a6bcaf0b8483e096940fe0e3cf7c5387f" id="r_a6bcaf0b8483e096940fe0e3cf7c5387f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bcaf0b8483e096940fe0e3cf7c5387f">salvaPrestiti</a> ()</td></tr>
+<tr class="memdesc:a6bcaf0b8483e096940fe0e3cf7c5387f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di esportare su un file i dati relativi ad un presitio.  <br /></td></tr>
+<tr class="memitem:ac335c62e3494b5c2b7f6b4ac263add09" id="r_ac335c62e3494b5c2b7f6b4ac263add09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac335c62e3494b5c2b7f6b4ac263add09">salvaDate</a> ()</td></tr>
+<tr class="memdesc:ac335c62e3494b5c2b7f6b4ac263add09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva la mappa delle scadenze dei prestiti su file.Serializza l'oggetto <span class="tt">scadenzePrestiti</span> nel file specificato da <span class="tt">nomeFileDate</span>.  <br /></td></tr>
+<tr class="memitem:ac81f419f499091c2a955e62edd4c8ecb" id="r_ac81f419f499091c2a955e62edd4c8ecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac81f419f499091c2a955e62edd4c8ecb">caricaPrestiti</a> ()</td></tr>
+<tr class="memdesc:ac81f419f499091c2a955e62edd4c8ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica la mappa dei prestiti attivi da file. Se il file non esiste, inizializza una nuova HashMap vuota.  <br /></td></tr>
+<tr class="memitem:a4e591b214cf9bd60ab4ab9b56bb3f497" id="r_a4e591b214cf9bd60ab4ab9b56bb3f497"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e591b214cf9bd60ab4ab9b56bb3f497">caricaDate</a> ()</td></tr>
+<tr class="memdesc:a4e591b214cf9bd60ab4ab9b56bb3f497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica la mappa delle scadenze dei prestiti da file. Se il file non esiste, inizializza una nuova HashMap vuota.  <br /></td></tr>
+<tr class="memitem:ab68425bd57ff5d26a9911ae76e45b75c" id="r_ab68425bd57ff5d26a9911ae76e45b75c"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab68425bd57ff5d26a9911ae76e45b75c">getElencoPrestitiCompleto</a> ()</td></tr>
+<tr class="memdesc:ab68425bd57ff5d26a9911ae76e45b75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una lista piatta contenente tutti i prestiti attivi. Converte la struttura a Mappa in una lista di oggetti <span class="tt"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a></span> ordinata, utile per la visualizzazione.  <br /></td></tr>
+<tr class="memitem:afc2c04e5efcc111f756a86958adbf734" id="r_afc2c04e5efcc111f756a86958adbf734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc2c04e5efcc111f756a86958adbf734">setFilePathsForTest</a> (String filePrestiti, String fileDate)</td></tr>
+<tr class="memdesc:afc2c04e5efcc111f756a86958adbf734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta i percorsi dei file per l'ambiente di test. Pulisce le strutture dati in memoria e tenta di caricare dai nuovi file specificati.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae16648a571a6f1eead838340858ee7d5" id="r_ae16648a571a6f1eead838340858ee7d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae16648a571a6f1eead838340858ee7d5">getInstance</a> ()</td></tr>
+<tr class="memdesc:ae16648a571a6f1eead838340858ee7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'istanza unica della classe (Pattern Singleton).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
 <tr class="memitem:adec2ed49cc85335eac875201ae9f515b" id="r_adec2ed49cc85335eac875201ae9f515b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adec2ed49cc85335eac875201ae9f515b">GestionePrestito</a> ()</td></tr>
 <tr class="memdesc:adec2ed49cc85335eac875201ae9f515b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>.  <br /></td></tr>
-<tr class="memitem:a4f1ea394544430f30822de2808beef12" id="r_a4f1ea394544430f30822de2808beef12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f1ea394544430f30822de2808beef12">registraPrestito</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> <a class="el" href="#afd7b02336c921315a569a2196de47bbc">prestito</a>)</td></tr>
-<tr class="memdesc:a4f1ea394544430f30822de2808beef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di registrare un prestito.  <br /></td></tr>
-<tr class="memitem:a2f963efe20a77258cc7fa85c6718f5ba" id="r_a2f963efe20a77258cc7fa85c6718f5ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f963efe20a77258cc7fa85c6718f5ba">restituisciPrestito</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> <a class="el" href="#afd7b02336c921315a569a2196de47bbc">prestito</a>)</td></tr>
-<tr class="memdesc:a2f963efe20a77258cc7fa85c6718f5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di registrare la restituzione di un libro in prestito.  <br /></td></tr>
-<tr class="memitem:a0486249f2e18d9854d6c13ac47fcf944" id="r_a0486249f2e18d9854d6c13ac47fcf944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0486249f2e18d9854d6c13ac47fcf944">salvaPrestiti</a> (String file)</td></tr>
-<tr class="memdesc:a0486249f2e18d9854d6c13ac47fcf944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di esportare su un file i dati relativi ad un presitio.  <br /></td></tr>
+<tr class="memitem:aa276ffcdecd5b3c29a0d9bb266bd6e1a" id="r_aa276ffcdecd5b3c29a0d9bb266bd6e1a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa276ffcdecd5b3c29a0d9bb266bd6e1a">generaChiave</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> u, <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> l)</td></tr>
+<tr class="memdesc:aa276ffcdecd5b3c29a0d9bb266bd6e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera una chiave univoca per identificare un prestito specifico. La chiave è composta dalla matricola dell'utente e dal codice del libro.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:afd7b02336c921315a569a2196de47bbc" id="r_afd7b02336c921315a569a2196de47bbc"><td class="memItemLeft" align="right" valign="top">Map&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, LinkedList&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd7b02336c921315a569a2196de47bbc">prestito</a></td></tr>
+<tr class="memitem:af03755e213783f153f4507d2d104826a" id="r_af03755e213783f153f4507d2d104826a"><td class="memItemLeft" align="right" valign="top">Map&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, LinkedList&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af03755e213783f153f4507d2d104826a">prestitiAttivi</a></td></tr>
+<tr class="memdesc:af03755e213783f153f4507d2d104826a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta un'HashMap costituita dai prestiti attivi di un determinato utente.  <br /></td></tr>
+<tr class="memitem:a2689a7c4f9db1fd461802873db082e79" id="r_a2689a7c4f9db1fd461802873db082e79"><td class="memItemLeft" align="right" valign="top">Map&lt; String, LocalDate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2689a7c4f9db1fd461802873db082e79">scadenzePrestiti</a></td></tr>
+<tr class="memdesc:a2689a7c4f9db1fd461802873db082e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta un' HashMap costituita dalle scadenze dei prestiti di un determinato utente.  <br /></td></tr>
+<tr class="memitem:a7cd41ed6c5d4ed380bd6823def7318e6" id="r_a7cd41ed6c5d4ed380bd6823def7318e6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cd41ed6c5d4ed380bd6823def7318e6">nomeFilePrestiti</a> = &quot;prestiti.dat&quot;</td></tr>
+<tr class="memdesc:a7cd41ed6c5d4ed380bd6823def7318e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari prestiti.  <br /></td></tr>
+<tr class="memitem:ae37ce98cff4edc80eff51abc8b7988f2" id="r_ae37ce98cff4edc80eff51abc8b7988f2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37ce98cff4edc80eff51abc8b7988f2">nomeFileDate</a> = &quot;date.dat&quot;</td></tr>
+<tr class="memdesc:ae37ce98cff4edc80eff51abc8b7988f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare le date di scadenza relative ai vari prestiti.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a88d1301367910ad40938080900c8852a" id="r_a88d1301367910ad40938080900c8852a"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88d1301367910ad40938080900c8852a">MAX_PRESTITI</a> = 3</td></tr>
+<tr class="memdesc:a88d1301367910ad40938080900c8852a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costante che rappresenta il numero massimo di prestiti che un utente può avere contemporaneamente.  <br /></td></tr>
+<tr class="memitem:acf07e2473fe029b1a3d312bb4aeb7334" id="r_acf07e2473fe029b1a3d312bb4aeb7334"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf07e2473fe029b1a3d312bb4aeb7334">instance</a> = null</td></tr>
+<tr class="memdesc:acf07e2473fe029b1a3d312bb4aeb7334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata e statica che rappresenta l'istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adec2ed49cc85335eac875201ae9f515b" name="adec2ed49cc85335eac875201ae9f515b"></a>
@@ -113,6 +149,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">it.unisa.biblioteca.model.GestionePrestito.GestionePrestito </td>
@@ -121,6 +160,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Costruttore della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>. </p>
@@ -129,6 +173,131 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4e591b214cf9bd60ab4ab9b56bb3f497" name="a4e591b214cf9bd60ab4ab9b56bb3f497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e591b214cf9bd60ab4ab9b56bb3f497">&#9670;&#160;</a></span>caricaDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.caricaDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica la mappa delle scadenze dei prestiti da file. Se il file non esiste, inizializza una nuova HashMap vuota. </p>
+
+</div>
+</div>
+<a id="ac81f419f499091c2a955e62edd4c8ecb" name="ac81f419f499091c2a955e62edd4c8ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81f419f499091c2a955e62edd4c8ecb">&#9670;&#160;</a></span>caricaPrestiti()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.caricaPrestiti </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica la mappa dei prestiti attivi da file. Se il file non esiste, inizializza una nuova HashMap vuota. </p>
+
+</div>
+</div>
+<a id="aa276ffcdecd5b3c29a0d9bb266bd6e1a" name="aa276ffcdecd5b3c29a0d9bb266bd6e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa276ffcdecd5b3c29a0d9bb266bd6e1a">&#9670;&#160;</a></span>generaChiave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.model.GestionePrestito.generaChiave </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a></td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Genera una chiave univoca per identificare un prestito specifico. La chiave è composta dalla matricola dell'utente e dal codice del libro. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>L'utente che richiede il prestito. </td></tr>
+    <tr><td class="paramname">l</td><td>Il libro oggetto del prestito. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Una stringa univoca nel formato "matricola_codice". </dd></dl>
+
+</div>
+</div>
+<a id="ab68425bd57ff5d26a9911ae76e45b75c" name="ab68425bd57ff5d26a9911ae76e45b75c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68425bd57ff5d26a9911ae76e45b75c">&#9670;&#160;</a></span>getElencoPrestitiCompleto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> &gt; it.unisa.biblioteca.model.GestionePrestito.getElencoPrestitiCompleto </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce una lista piatta contenente tutti i prestiti attivi. Converte la struttura a Mappa in una lista di oggetti <span class="tt"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a></span> ordinata, utile per la visualizzazione. </p>
+<dl class="section return"><dt>Returns</dt><dd>Una List di oggetti <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> ordinata per data di scadenza. </dd></dl>
+
+</div>
+</div>
+<a id="ae16648a571a6f1eead838340858ee7d5" name="ae16648a571a6f1eead838340858ee7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae16648a571a6f1eead838340858ee7d5">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a> it.unisa.biblioteca.model.GestionePrestito.getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restituisce l'istanza unica della classe (Pattern Singleton). </p>
+<dl class="section return"><dt>Returns</dt><dd>L'istanza statica di <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>. </dd></dl>
+
+</div>
+</div>
 <a id="a4f1ea394544430f30822de2808beef12" name="a4f1ea394544430f30822de2808beef12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f1ea394544430f30822de2808beef12">&#9670;&#160;</a></span>registraPrestito()</h2>
 
@@ -139,7 +308,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.registraPrestito </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a></td>          <td class="paramname"><span class="paramname"><em>prestito</em></span></td><td>)</td>
-          <td></td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -151,10 +320,35 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd>Il libro che si vuole prestare deve avere almento una copia disponibile </dd>
+<dl class="section pre"><dt>Precondition</dt><dd>Il libro che si vuole prestare deve avere almeno una copia disponibile </dd>
 <dd>
-L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl>
+L'utente deve avere al massimo due libri in prestito contemporaneamente </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Il prestito effettuato è stato registrato ed inserito nella lista dei prestiti attivi </dd></dl>
+
+</div>
+</div>
+<a id="ace311c3a45d7f8f8760cf3c1ed4e2f86" name="ace311c3a45d7f8f8760cf3c1ed4e2f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace311c3a45d7f8f8760cf3c1ed4e2f86">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resetta l'istanza della classe a null. Utile per i test unitari. </p>
 
 </div>
 </div>
@@ -168,7 +362,7 @@ L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl
           <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.restituisciPrestito </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a></td>          <td class="paramname"><span class="paramname"><em>prestito</em></span></td><td>)</td>
-          <td></td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,7 +370,13 @@ L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl
 <p>Metodo che permette di registrare la restituzione di un libro in prestito. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prestito</td><td>Il prestito di cui si vuole registrare la restituzione</td></tr>
+    <tr><td class="paramname">prestito</td><td>Il prestito di cui si vuole registrare la restituzione </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -185,8 +385,29 @@ L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl
 
 </div>
 </div>
-<a id="a0486249f2e18d9854d6c13ac47fcf944" name="a0486249f2e18d9854d6c13ac47fcf944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0486249f2e18d9854d6c13ac47fcf944">&#9670;&#160;</a></span>salvaPrestiti()</h2>
+<a id="ac335c62e3494b5c2b7f6b4ac263add09" name="ac335c62e3494b5c2b7f6b4ac263add09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac335c62e3494b5c2b7f6b4ac263add09">&#9670;&#160;</a></span>salvaDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.salvaDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva la mappa delle scadenze dei prestiti su file.Serializza l'oggetto <span class="tt">scadenzePrestiti</span> nel file specificato da <span class="tt">nomeFileDate</span>. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>I dati relativi alle date di restituzione sono stati inseriti nella collezione. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>I dati relativi alle date di restituzione sono stati esportati sul file </dd></dl>
+
+</div>
+</div>
+<a id="a6bcaf0b8483e096940fe0e3cf7c5387f" name="a6bcaf0b8483e096940fe0e3cf7c5387f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bcaf0b8483e096940fe0e3cf7c5387f">&#9670;&#160;</a></span>salvaPrestiti()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,27 +415,51 @@ L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl
         <tr>
           <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.salvaPrestiti </td>
           <td>(</td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Metodo che permette di esportare su un file i dati relativi ad un presitio. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td>Il nome del file su cui devono essere salvati i dati di un prestito</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section pre"><dt>Precondition</dt><dd>I dati relativi ad un prestito sono stati inseriti nella collezione</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>I dati relativi ad un prestito sono stati inseriti nella collezione </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>I dati relativi ad un prestito sono stati esportati sul file </dd></dl>
 
 </div>
 </div>
+<a id="afc2c04e5efcc111f756a86958adbf734" name="afc2c04e5efcc111f756a86958adbf734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2c04e5efcc111f756a86958adbf734">&#9670;&#160;</a></span>setFilePathsForTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestionePrestito.setFilePathsForTest </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>filePrestiti</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>fileDate</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imposta i percorsi dei file per l'ambiente di test. Pulisce le strutture dati in memoria e tenta di caricare dai nuovi file specificati. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePrestiti</td><td>Nome del file per salvare i prestiti (es. "prestiti_test.dat"). </td></tr>
+    <tr><td class="paramname">fileDate</td><td>Nome del file per salvare le date (es. "date_test.dat"). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="afd7b02336c921315a569a2196de47bbc" name="afd7b02336c921315a569a2196de47bbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd7b02336c921315a569a2196de47bbc">&#9670;&#160;</a></span>prestito</h2>
+<a id="acf07e2473fe029b1a3d312bb4aeb7334" name="acf07e2473fe029b1a3d312bb4aeb7334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf07e2473fe029b1a3d312bb4aeb7334">&#9670;&#160;</a></span>instance</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +468,55 @@ L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Map&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, LinkedList&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&gt; &gt; it.unisa.biblioteca.model.GestionePrestito.prestito</td>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a> it.unisa.biblioteca.model.GestionePrestito.instance = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variabile di istanza privata e statica che rappresenta l'istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html">GestionePrestito</a>. </p>
+
+</div>
+</div>
+<a id="a88d1301367910ad40938080900c8852a" name="a88d1301367910ad40938080900c8852a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d1301367910ad40938080900c8852a">&#9670;&#160;</a></span>MAX_PRESTITI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int it.unisa.biblioteca.model.GestionePrestito.MAX_PRESTITI = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Costante che rappresenta il numero massimo di prestiti che un utente può avere contemporaneamente. </p>
+
+</div>
+</div>
+<a id="ae37ce98cff4edc80eff51abc8b7988f2" name="ae37ce98cff4edc80eff51abc8b7988f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37ce98cff4edc80eff51abc8b7988f2">&#9670;&#160;</a></span>nomeFileDate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.model.GestionePrestito.nomeFileDate = &quot;date.dat&quot;</td>
         </tr>
       </table>
   </td>
@@ -232,6 +525,80 @@ L'utente deve avere al massimo due libri in prestito contemporaneamente</dd></dl
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare le date di scadenza relative ai vari prestiti. </p>
+
+</div>
+</div>
+<a id="a7cd41ed6c5d4ed380bd6823def7318e6" name="a7cd41ed6c5d4ed380bd6823def7318e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd41ed6c5d4ed380bd6823def7318e6">&#9670;&#160;</a></span>nomeFilePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.model.GestionePrestito.nomeFilePrestiti = &quot;prestiti.dat&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari prestiti. </p>
+
+</div>
+</div>
+<a id="af03755e213783f153f4507d2d104826a" name="af03755e213783f153f4507d2d104826a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03755e213783f153f4507d2d104826a">&#9670;&#160;</a></span>prestitiAttivi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, LinkedList&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&gt; &gt; it.unisa.biblioteca.model.GestionePrestito.prestitiAttivi</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta un'HashMap costituita dai prestiti attivi di un determinato utente. </p>
+
+</div>
+</div>
+<a id="a2689a7c4f9db1fd461802873db082e79" name="a2689a7c4f9db1fd461802873db082e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2689a7c4f9db1fd461802873db082e79">&#9670;&#160;</a></span>scadenzePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;String, LocalDate&gt; it.unisa.biblioteca.model.GestionePrestito.scadenzePrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta un' HashMap costituita dalle scadenze dei prestiti di un determinato utente. </p>
 
 </div>
 </div>

@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html','',''); });
+$(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html','','classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller-members'); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -91,6 +91,742 @@ $(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1controller_1_1_inter
   <div class="headertitle"><div class="title">it.unisa.biblioteca.controller.InterfacciaPrestitiController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aaff86e96d45f4779ccbbaa7e771f52d8" id="r_aaff86e96d45f4779ccbbaa7e771f52d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff86e96d45f4779ccbbaa7e771f52d8">initialize</a> ()</td></tr>
+<tr class="memitem:a75c529630e0f71a4cb5a1b4b1e44c083" id="r_a75c529630e0f71a4cb5a1b4b1e44c083"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75c529630e0f71a4cb5a1b4b1e44c083">aggiornaTabella</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a168db6ef05fa1f33a23fe66cb04b56fc" id="r_a168db6ef05fa1f33a23fe66cb04b56fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a168db6ef05fa1f33a23fe66cb04b56fc">cercaUtente</a> ()</td></tr>
+<tr class="memitem:a6046d3f5b9ccc0c916d044466053ef2d" id="r_a6046d3f5b9ccc0c916d044466053ef2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6046d3f5b9ccc0c916d044466053ef2d">cercaLibro</a> ()</td></tr>
+<tr class="memitem:ae0f8729b6006c6eb5d5d544188fec8dd" id="r_ae0f8729b6006c6eb5d5d544188fec8dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0f8729b6006c6eb5d5d544188fec8dd">registraPrestito</a> ()</td></tr>
+<tr class="memitem:a03ada612ceb46a3aa820b58d527b8949" id="r_a03ada612ceb46a3aa820b58d527b8949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03ada612ceb46a3aa820b58d527b8949">azioneRestituisciPrestito</a> ()</td></tr>
+<tr class="memitem:a9cffb88fd9e506700dacdd3d59414b9e" id="r_a9cffb88fd9e506700dacdd3d59414b9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cffb88fd9e506700dacdd3d59414b9e">mostraErrore</a> (String msg)</td></tr>
+<tr class="memitem:ae651cdcdad4f43ae119f0301b5bbd8ba" id="r_ae651cdcdad4f43ae119f0301b5bbd8ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae651cdcdad4f43ae119f0301b5bbd8ba">mostraInfo</a> (String msg)</td></tr>
+<tr class="memitem:a197aa3ccca316826e6bf6c999b745cab" id="r_a197aa3ccca316826e6bf6c999b745cab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a197aa3ccca316826e6bf6c999b745cab">ritornoHome</a> (String fxmlPathHome)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0b6974d11931820ffc378ff704a73662" id="r_a0b6974d11931820ffc378ff704a73662"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b6974d11931820ffc378ff704a73662">btnHomePrestiti</a></td></tr>
+<tr class="memitem:aebf9b8e37c9d9f2a338f780895081e03" id="r_aebf9b8e37c9d9f2a338f780895081e03"><td class="memItemLeft" align="right" valign="top">TextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebf9b8e37c9d9f2a338f780895081e03">tfRicercaUtente</a></td></tr>
+<tr class="memitem:a83c7e18705515467df6c4e314adc65a9" id="r_a83c7e18705515467df6c4e314adc65a9"><td class="memItemLeft" align="right" valign="top">MenuButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83c7e18705515467df6c4e314adc65a9">menuFiltroUtente</a></td></tr>
+<tr class="memitem:a4809d1d782acde068b9eff0e1ae3c3b1" id="r_a4809d1d782acde068b9eff0e1ae3c3b1"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4809d1d782acde068b9eff0e1ae3c3b1">btnCercaUtente</a></td></tr>
+<tr class="memitem:a818049684290ea7ebf6e4d93711bb48c" id="r_a818049684290ea7ebf6e4d93711bb48c"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818049684290ea7ebf6e4d93711bb48c">lblUtenteTrovato</a></td></tr>
+<tr class="memitem:a77876e7527211fe7977f9b8137a81817" id="r_a77876e7527211fe7977f9b8137a81817"><td class="memItemLeft" align="right" valign="top">TextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77876e7527211fe7977f9b8137a81817">tfRicercaLibro</a></td></tr>
+<tr class="memitem:a89699d82dd6841b0acbf40249718e346" id="r_a89699d82dd6841b0acbf40249718e346"><td class="memItemLeft" align="right" valign="top">MenuButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89699d82dd6841b0acbf40249718e346">menuFiltroLibro</a></td></tr>
+<tr class="memitem:a1f93381064cc8581d4b9977e19cb1491" id="r_a1f93381064cc8581d4b9977e19cb1491"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f93381064cc8581d4b9977e19cb1491">btnCercaLibro</a></td></tr>
+<tr class="memitem:ac2eda7d987c2523fcbb2cd9a4ef21564" id="r_ac2eda7d987c2523fcbb2cd9a4ef21564"><td class="memItemLeft" align="right" valign="top">Label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2eda7d987c2523fcbb2cd9a4ef21564">lblLibroTrovato</a></td></tr>
+<tr class="memitem:ae2953af20db728892436dee088681078" id="r_ae2953af20db728892436dee088681078"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2953af20db728892436dee088681078">btnRegistraPrestito</a></td></tr>
+<tr class="memitem:a7d3842a1e88a5a972769cd88ab7ca373" id="r_a7d3842a1e88a5a972769cd88ab7ca373"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d3842a1e88a5a972769cd88ab7ca373">btnConfermaRestituzionePrestiti</a></td></tr>
+<tr class="memitem:a59bba1434b46de42282ef4a329d5ecc4" id="r_a59bba1434b46de42282ef4a329d5ecc4"><td class="memItemLeft" align="right" valign="top">TableView&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59bba1434b46de42282ef4a329d5ecc4">tabellaPrestiti</a></td></tr>
+<tr class="memitem:ace145312c45117b90b6b2841986f92d2" id="r_ace145312c45117b90b6b2841986f92d2"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace145312c45117b90b6b2841986f92d2">colonnaMatricolaPrestiti</a></td></tr>
+<tr class="memitem:a86d316b62ef5d83024b64e0cc0d95c56" id="r_a86d316b62ef5d83024b64e0cc0d95c56"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86d316b62ef5d83024b64e0cc0d95c56">colonnaCognomePrestiti</a></td></tr>
+<tr class="memitem:abe9a0962bd5348f950d9646e5ef1968f" id="r_abe9a0962bd5348f950d9646e5ef1968f"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe9a0962bd5348f950d9646e5ef1968f">colonnaTitoloPrestiti</a></td></tr>
+<tr class="memitem:a24375e4428c38e1c7e3eaa7fd862a55c" id="r_a24375e4428c38e1c7e3eaa7fd862a55c"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24375e4428c38e1c7e3eaa7fd862a55c">colonnaCodicePrestiti</a></td></tr>
+<tr class="memitem:a0d99e29b61fdc2225dfcab194a71e6f3" id="r_a0d99e29b61fdc2225dfcab194a71e6f3"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, LocalDate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d99e29b61fdc2225dfcab194a71e6f3">colonnaDataPrestiti</a></td></tr>
+<tr class="memitem:a299bb23aa39dafda9ab109b53b6e06d6" id="r_a299bb23aa39dafda9ab109b53b6e06d6"><td class="memItemLeft" align="right" valign="top">ObservableList&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a299bb23aa39dafda9ab109b53b6e06d6">listaPrestiti</a></td></tr>
+<tr class="memitem:a068ba406e1ac9c7b2b432c2f90484f51" id="r_a068ba406e1ac9c7b2b432c2f90484f51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a068ba406e1ac9c7b2b432c2f90484f51">utenteSelezionato</a> = null</td></tr>
+<tr class="memitem:a624a41fd60083c60ca93b030d5a9f094" id="r_a624a41fd60083c60ca93b030d5a9f094"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a624a41fd60083c60ca93b030d5a9f094">libroSelezionato</a> = null</td></tr>
+<tr class="memitem:a6e849fd77337271e91184ffe6d10fce2" id="r_a6e849fd77337271e91184ffe6d10fce2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e849fd77337271e91184ffe6d10fce2">filtroUtente</a> = null</td></tr>
+<tr class="memitem:ac70a7f059e42d27bbe3885dd1d210645" id="r_ac70a7f059e42d27bbe3885dd1d210645"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70a7f059e42d27bbe3885dd1d210645">filtroLibro</a> = null</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a75c529630e0f71a4cb5a1b4b1e44c083" name="a75c529630e0f71a4cb5a1b4b1e44c083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c529630e0f71a4cb5a1b4b1e44c083">&#9670;&#160;</a></span>aggiornaTabella()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.aggiornaTabella </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03ada612ceb46a3aa820b58d527b8949" name="a03ada612ceb46a3aa820b58d527b8949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ada612ceb46a3aa820b58d527b8949">&#9670;&#160;</a></span>azioneRestituisciPrestito()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.azioneRestituisciPrestito </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6046d3f5b9ccc0c916d044466053ef2d" name="a6046d3f5b9ccc0c916d044466053ef2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6046d3f5b9ccc0c916d044466053ef2d">&#9670;&#160;</a></span>cercaLibro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.cercaLibro </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a168db6ef05fa1f33a23fe66cb04b56fc" name="a168db6ef05fa1f33a23fe66cb04b56fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a168db6ef05fa1f33a23fe66cb04b56fc">&#9670;&#160;</a></span>cercaUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.cercaUtente </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaff86e96d45f4779ccbbaa7e771f52d8" name="aaff86e96d45f4779ccbbaa7e771f52d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff86e96d45f4779ccbbaa7e771f52d8">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.initialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9cffb88fd9e506700dacdd3d59414b9e" name="a9cffb88fd9e506700dacdd3d59414b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cffb88fd9e506700dacdd3d59414b9e">&#9670;&#160;</a></span>mostraErrore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.mostraErrore </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae651cdcdad4f43ae119f0301b5bbd8ba" name="ae651cdcdad4f43ae119f0301b5bbd8ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae651cdcdad4f43ae119f0301b5bbd8ba">&#9670;&#160;</a></span>mostraInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.mostraInfo </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0f8729b6006c6eb5d5d544188fec8dd" name="ae0f8729b6006c6eb5d5d544188fec8dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f8729b6006c6eb5d5d544188fec8dd">&#9670;&#160;</a></span>registraPrestito()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.registraPrestito </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a197aa3ccca316826e6bf6c999b745cab" name="a197aa3ccca316826e6bf6c999b745cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197aa3ccca316826e6bf6c999b745cab">&#9670;&#160;</a></span>ritornoHome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaPrestitiController.ritornoHome </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>fxmlPathHome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a1f93381064cc8581d4b9977e19cb1491" name="a1f93381064cc8581d4b9977e19cb1491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f93381064cc8581d4b9977e19cb1491">&#9670;&#160;</a></span>btnCercaLibro</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaPrestitiController.btnCercaLibro</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4809d1d782acde068b9eff0e1ae3c3b1" name="a4809d1d782acde068b9eff0e1ae3c3b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4809d1d782acde068b9eff0e1ae3c3b1">&#9670;&#160;</a></span>btnCercaUtente</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaPrestitiController.btnCercaUtente</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d3842a1e88a5a972769cd88ab7ca373" name="a7d3842a1e88a5a972769cd88ab7ca373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3842a1e88a5a972769cd88ab7ca373">&#9670;&#160;</a></span>btnConfermaRestituzionePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaPrestitiController.btnConfermaRestituzionePrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b6974d11931820ffc378ff704a73662" name="a0b6974d11931820ffc378ff704a73662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6974d11931820ffc378ff704a73662">&#9670;&#160;</a></span>btnHomePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaPrestitiController.btnHomePrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2953af20db728892436dee088681078" name="ae2953af20db728892436dee088681078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2953af20db728892436dee088681078">&#9670;&#160;</a></span>btnRegistraPrestito</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaPrestitiController.btnRegistraPrestito</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24375e4428c38e1c7e3eaa7fd862a55c" name="a24375e4428c38e1c7e3eaa7fd862a55c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24375e4428c38e1c7e3eaa7fd862a55c">&#9670;&#160;</a></span>colonnaCodicePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, String&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.colonnaCodicePrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86d316b62ef5d83024b64e0cc0d95c56" name="a86d316b62ef5d83024b64e0cc0d95c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d316b62ef5d83024b64e0cc0d95c56">&#9670;&#160;</a></span>colonnaCognomePrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, String&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.colonnaCognomePrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d99e29b61fdc2225dfcab194a71e6f3" name="a0d99e29b61fdc2225dfcab194a71e6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d99e29b61fdc2225dfcab194a71e6f3">&#9670;&#160;</a></span>colonnaDataPrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, LocalDate&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.colonnaDataPrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace145312c45117b90b6b2841986f92d2" name="ace145312c45117b90b6b2841986f92d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace145312c45117b90b6b2841986f92d2">&#9670;&#160;</a></span>colonnaMatricolaPrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, Integer&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.colonnaMatricolaPrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe9a0962bd5348f950d9646e5ef1968f" name="abe9a0962bd5348f950d9646e5ef1968f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe9a0962bd5348f950d9646e5ef1968f">&#9670;&#160;</a></span>colonnaTitoloPrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>, String&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.colonnaTitoloPrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac70a7f059e42d27bbe3885dd1d210645" name="ac70a7f059e42d27bbe3885dd1d210645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70a7f059e42d27bbe3885dd1d210645">&#9670;&#160;</a></span>filtroLibro</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.controller.InterfacciaPrestitiController.filtroLibro = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e849fd77337271e91184ffe6d10fce2" name="a6e849fd77337271e91184ffe6d10fce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e849fd77337271e91184ffe6d10fce2">&#9670;&#160;</a></span>filtroUtente</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.controller.InterfacciaPrestitiController.filtroUtente = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2eda7d987c2523fcbb2cd9a4ef21564" name="ac2eda7d987c2523fcbb2cd9a4ef21564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2eda7d987c2523fcbb2cd9a4ef21564">&#9670;&#160;</a></span>lblLibroTrovato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label it.unisa.biblioteca.controller.InterfacciaPrestitiController.lblLibroTrovato</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a818049684290ea7ebf6e4d93711bb48c" name="a818049684290ea7ebf6e4d93711bb48c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818049684290ea7ebf6e4d93711bb48c">&#9670;&#160;</a></span>lblUtenteTrovato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Label it.unisa.biblioteca.controller.InterfacciaPrestitiController.lblUtenteTrovato</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a624a41fd60083c60ca93b030d5a9f094" name="a624a41fd60083c60ca93b030d5a9f094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624a41fd60083c60ca93b030d5a9f094">&#9670;&#160;</a></span>libroSelezionato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> it.unisa.biblioteca.controller.InterfacciaPrestitiController.libroSelezionato = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a299bb23aa39dafda9ab109b53b6e06d6" name="a299bb23aa39dafda9ab109b53b6e06d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a299bb23aa39dafda9ab109b53b6e06d6">&#9670;&#160;</a></span>listaPrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObservableList&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.listaPrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89699d82dd6841b0acbf40249718e346" name="a89699d82dd6841b0acbf40249718e346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89699d82dd6841b0acbf40249718e346">&#9670;&#160;</a></span>menuFiltroLibro</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MenuButton it.unisa.biblioteca.controller.InterfacciaPrestitiController.menuFiltroLibro</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83c7e18705515467df6c4e314adc65a9" name="a83c7e18705515467df6c4e314adc65a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c7e18705515467df6c4e314adc65a9">&#9670;&#160;</a></span>menuFiltroUtente</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MenuButton it.unisa.biblioteca.controller.InterfacciaPrestitiController.menuFiltroUtente</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59bba1434b46de42282ef4a329d5ecc4" name="a59bba1434b46de42282ef4a329d5ecc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59bba1434b46de42282ef4a329d5ecc4">&#9670;&#160;</a></span>tabellaPrestiti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableView&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html">Prestito</a>&gt; it.unisa.biblioteca.controller.InterfacciaPrestitiController.tabellaPrestiti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77876e7527211fe7977f9b8137a81817" name="a77876e7527211fe7977f9b8137a81817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77876e7527211fe7977f9b8137a81817">&#9670;&#160;</a></span>tfRicercaLibro</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextField it.unisa.biblioteca.controller.InterfacciaPrestitiController.tfRicercaLibro</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebf9b8e37c9d9f2a338f780895081e03" name="aebf9b8e37c9d9f2a338f780895081e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf9b8e37c9d9f2a338f780895081e03">&#9670;&#160;</a></span>tfRicercaUtente</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextField it.unisa.biblioteca.controller.InterfacciaPrestitiController.tfRicercaUtente</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a068ba406e1ac9c7b2b432c2f90484f51" name="a068ba406e1ac9c7b2b432c2f90484f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068ba406e1ac9c7b2b432c2f90484f51">&#9670;&#160;</a></span>utenteSelezionato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> it.unisa.biblioteca.controller.InterfacciaPrestitiController.utenteSelezionato = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/java/it/unisa/biblioteca/controller/<a class="el" href="_interfaccia_prestiti_controller_8java.html">InterfacciaPrestitiController.java</a></li>
 </ul>

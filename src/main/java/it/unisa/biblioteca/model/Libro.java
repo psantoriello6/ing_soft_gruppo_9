@@ -152,13 +152,6 @@ public class Libro implements Comparable<Libro>, Serializable {
     
     /**
      * @brief Metodo che permette di modificare l'attributo codice.
-     * 
-     * Il metodo consente la modifica dell'attributo solo se il codice rispetta il formato standard,
-     * in caso contrario lancia un eccezione.
-     * 
-     * @pre il codice deve essere coerente con il formato standard CCDDDD.
-     * @post l'attributo codice viene modificato.
-     * 
      * @param codice  codice identificativo del libro.
      */
     public void setCodice(String codice){
@@ -216,7 +209,7 @@ public class Libro implements Comparable<Libro>, Serializable {
      * @brief Metodo che permette di gestire l'ordinamento nella collezione sul titolo in ordine alfabetico.
      *     Il metodo permette di ordinare la collezione di libri in base al titolo. A parità di titolo, invece, la collezione viene ordinata in base al codice identificativo
      * @param l libro da comparare.
-     * @return il valore intero -1 se il titolo corrente viene prima in ordine alfabetico rispetto a quello del libro passato come parametro, il valor intero 1 se viene il titolo viene dopo rispetto a quello del libro passato come parametro. Se invece i titoli sono uguali
+     * @return il valore intero -1 se il titolo del libro corrente viene prima in ordine alfabetico rispetto a quello del libro passato come parametro, il valore intero 1 se il titolo del libro corrente viene dopo rispetto a quello del libro passato come parametro. Se invece i titoli sono uguali
      *  il metodo restituisce il valore intero 1 se il codice identificativo del libro corrente viene dopo in ordine alfabetico rispetto a quello del libro passato come parametro, il valore intero -1 se il codice
      * identificativo del libro corrente viene prima in ordine alfabetico rispetto a quello del libro passato come parametro, altrimenti il valore 0 se i due codici sono uguali
      *          

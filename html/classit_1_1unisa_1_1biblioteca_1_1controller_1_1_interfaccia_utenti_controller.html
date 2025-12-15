@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html','',''); });
+$(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html','','classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller-members'); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -91,6 +91,524 @@ $(function(){initNavTree('classit_1_1unisa_1_1biblioteca_1_1controller_1_1_inter
   <div class="headertitle"><div class="title">it.unisa.biblioteca.controller.InterfacciaUtentiController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ada65ff121394a6a40052a005ca518d07" id="r_ada65ff121394a6a40052a005ca518d07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada65ff121394a6a40052a005ca518d07">initialize</a> ()</td></tr>
+<tr class="memitem:a5712af1dcd041dc647da4add75c7d644" id="r_a5712af1dcd041dc647da4add75c7d644"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5712af1dcd041dc647da4add75c7d644">aggiornaTabella</a> ()</td></tr>
+<tr class="memitem:a071e85fde808911bded37e241600b6a9" id="r_a071e85fde808911bded37e241600b6a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a071e85fde808911bded37e241600b6a9">apriFinestraModificaUtente</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1f7f58eeb31b1c5dda6338b4f0e96bf3" id="r_a1f7f58eeb31b1c5dda6338b4f0e96bf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f7f58eeb31b1c5dda6338b4f0e96bf3">apriFinestraNuovoUtente</a> ()</td></tr>
+<tr class="memitem:a8792b16e47993fcfc39c25e4d270cfe7" id="r_a8792b16e47993fcfc39c25e4d270cfe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8792b16e47993fcfc39c25e4d270cfe7">handleEliminaUtente</a> ()</td></tr>
+<tr class="memitem:a68da3fff4ab047e9315b731065e48760" id="r_a68da3fff4ab047e9315b731065e48760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68da3fff4ab047e9315b731065e48760">tornaAllaHome</a> ()</td></tr>
+<tr class="memitem:acce488e73a4a5d74d7d96f1c05ad4838" id="r_acce488e73a4a5d74d7d96f1c05ad4838"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acce488e73a4a5d74d7d96f1c05ad4838">handleCercaUtente</a> ()</td></tr>
+<tr class="memitem:a39c95502926f022920a3b987eebbb6c1" id="r_a39c95502926f022920a3b987eebbb6c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39c95502926f022920a3b987eebbb6c1">mostraErrore</a> (String msg)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3a8bfc473af81acd56a4d9ddbb108d2a" id="r_a3a8bfc473af81acd56a4d9ddbb108d2a"><td class="memItemLeft" align="right" valign="top">TableView&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a8bfc473af81acd56a4d9ddbb108d2a">tabellaUtenti</a></td></tr>
+<tr class="memitem:af6d725ef69fd2257d888bd0cf72923ba" id="r_af6d725ef69fd2257d888bd0cf72923ba"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d725ef69fd2257d888bd0cf72923ba">colonnaCognomeUtenti</a></td></tr>
+<tr class="memitem:a928eda870819eda1622159e2aaa82f58" id="r_a928eda870819eda1622159e2aaa82f58"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a928eda870819eda1622159e2aaa82f58">colonnaNomeUtenti</a></td></tr>
+<tr class="memitem:a26581e16d15cf2b6a8dcaa006a7ce0f5" id="r_a26581e16d15cf2b6a8dcaa006a7ce0f5"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26581e16d15cf2b6a8dcaa006a7ce0f5">colonnaMatricolaUtenti</a></td></tr>
+<tr class="memitem:a95fa22e000655147bf3806c462e35ff5" id="r_a95fa22e000655147bf3806c462e35ff5"><td class="memItemLeft" align="right" valign="top">TableColumn&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95fa22e000655147bf3806c462e35ff5">colonnaEmailUtenti</a></td></tr>
+<tr class="memitem:aa929a8f8f5267ab79ab9195cd871fe7e" id="r_aa929a8f8f5267ab79ab9195cd871fe7e"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa929a8f8f5267ab79ab9195cd871fe7e">btnNuovoUtenti</a></td></tr>
+<tr class="memitem:aee6ef175830f0491724c21edd1e58a1b" id="r_aee6ef175830f0491724c21edd1e58a1b"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee6ef175830f0491724c21edd1e58a1b">btnModificaUtenti</a></td></tr>
+<tr class="memitem:a38b92325bf0eafaa6bc68a8a7496b332" id="r_a38b92325bf0eafaa6bc68a8a7496b332"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38b92325bf0eafaa6bc68a8a7496b332">btnEliminaUtenti</a></td></tr>
+<tr class="memitem:afa4908370d57699b7636eb6ec5122ee5" id="r_afa4908370d57699b7636eb6ec5122ee5"><td class="memItemLeft" align="right" valign="top">TextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa4908370d57699b7636eb6ec5122ee5">tfUtenti</a></td></tr>
+<tr class="memitem:ae36da68009e578835fe2e8de9897f21a" id="r_ae36da68009e578835fe2e8de9897f21a"><td class="memItemLeft" align="right" valign="top">MenuButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae36da68009e578835fe2e8de9897f21a">filterUtenti</a></td></tr>
+<tr class="memitem:a676054caa43c5d4f9ba00b1923f644c1" id="r_a676054caa43c5d4f9ba00b1923f644c1"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a676054caa43c5d4f9ba00b1923f644c1">btnCercaUtenti</a></td></tr>
+<tr class="memitem:aca79147efdc59a844d69e1e51a30c539" id="r_aca79147efdc59a844d69e1e51a30c539"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca79147efdc59a844d69e1e51a30c539">btnHomeUtenti</a></td></tr>
+<tr class="memitem:adfbdef509826d49f61cbfb9d83e1b94b" id="r_adfbdef509826d49f61cbfb9d83e1b94b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfbdef509826d49f61cbfb9d83e1b94b">criterioRicerca</a> = &quot;Cognome&quot;</td></tr>
+<tr class="memitem:acc75a810527b3a1c02e5c36f03dead46" id="r_acc75a810527b3a1c02e5c36f03dead46"><td class="memItemLeft" align="right" valign="top">ObservableList&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc75a810527b3a1c02e5c36f03dead46">listaUtenti</a></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a5712af1dcd041dc647da4add75c7d644" name="a5712af1dcd041dc647da4add75c7d644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5712af1dcd041dc647da4add75c7d644">&#9670;&#160;</a></span>aggiornaTabella()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.aggiornaTabella </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a071e85fde808911bded37e241600b6a9" name="a071e85fde808911bded37e241600b6a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a071e85fde808911bded37e241600b6a9">&#9670;&#160;</a></span>apriFinestraModificaUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.apriFinestraModificaUtente </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f7f58eeb31b1c5dda6338b4f0e96bf3" name="a1f7f58eeb31b1c5dda6338b4f0e96bf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7f58eeb31b1c5dda6338b4f0e96bf3">&#9670;&#160;</a></span>apriFinestraNuovoUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.apriFinestraNuovoUtente </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acce488e73a4a5d74d7d96f1c05ad4838" name="acce488e73a4a5d74d7d96f1c05ad4838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce488e73a4a5d74d7d96f1c05ad4838">&#9670;&#160;</a></span>handleCercaUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.handleCercaUtente </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8792b16e47993fcfc39c25e4d270cfe7" name="a8792b16e47993fcfc39c25e4d270cfe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8792b16e47993fcfc39c25e4d270cfe7">&#9670;&#160;</a></span>handleEliminaUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.handleEliminaUtente </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada65ff121394a6a40052a005ca518d07" name="ada65ff121394a6a40052a005ca518d07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada65ff121394a6a40052a005ca518d07">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.initialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39c95502926f022920a3b987eebbb6c1" name="a39c95502926f022920a3b987eebbb6c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c95502926f022920a3b987eebbb6c1">&#9670;&#160;</a></span>mostraErrore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.mostraErrore </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68da3fff4ab047e9315b731065e48760" name="a68da3fff4ab047e9315b731065e48760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68da3fff4ab047e9315b731065e48760">&#9670;&#160;</a></span>tornaAllaHome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.controller.InterfacciaUtentiController.tornaAllaHome </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a676054caa43c5d4f9ba00b1923f644c1" name="a676054caa43c5d4f9ba00b1923f644c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676054caa43c5d4f9ba00b1923f644c1">&#9670;&#160;</a></span>btnCercaUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaUtentiController.btnCercaUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38b92325bf0eafaa6bc68a8a7496b332" name="a38b92325bf0eafaa6bc68a8a7496b332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b92325bf0eafaa6bc68a8a7496b332">&#9670;&#160;</a></span>btnEliminaUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaUtentiController.btnEliminaUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca79147efdc59a844d69e1e51a30c539" name="aca79147efdc59a844d69e1e51a30c539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca79147efdc59a844d69e1e51a30c539">&#9670;&#160;</a></span>btnHomeUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaUtentiController.btnHomeUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee6ef175830f0491724c21edd1e58a1b" name="aee6ef175830f0491724c21edd1e58a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6ef175830f0491724c21edd1e58a1b">&#9670;&#160;</a></span>btnModificaUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaUtentiController.btnModificaUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa929a8f8f5267ab79ab9195cd871fe7e" name="aa929a8f8f5267ab79ab9195cd871fe7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa929a8f8f5267ab79ab9195cd871fe7e">&#9670;&#160;</a></span>btnNuovoUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.unisa.biblioteca.controller.InterfacciaUtentiController.btnNuovoUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6d725ef69fd2257d888bd0cf72923ba" name="af6d725ef69fd2257d888bd0cf72923ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d725ef69fd2257d888bd0cf72923ba">&#9670;&#160;</a></span>colonnaCognomeUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, String&gt; it.unisa.biblioteca.controller.InterfacciaUtentiController.colonnaCognomeUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95fa22e000655147bf3806c462e35ff5" name="a95fa22e000655147bf3806c462e35ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95fa22e000655147bf3806c462e35ff5">&#9670;&#160;</a></span>colonnaEmailUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, String&gt; it.unisa.biblioteca.controller.InterfacciaUtentiController.colonnaEmailUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26581e16d15cf2b6a8dcaa006a7ce0f5" name="a26581e16d15cf2b6a8dcaa006a7ce0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26581e16d15cf2b6a8dcaa006a7ce0f5">&#9670;&#160;</a></span>colonnaMatricolaUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, Integer&gt; it.unisa.biblioteca.controller.InterfacciaUtentiController.colonnaMatricolaUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a928eda870819eda1622159e2aaa82f58" name="a928eda870819eda1622159e2aaa82f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a928eda870819eda1622159e2aaa82f58">&#9670;&#160;</a></span>colonnaNomeUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableColumn&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>, String&gt; it.unisa.biblioteca.controller.InterfacciaUtentiController.colonnaNomeUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfbdef509826d49f61cbfb9d83e1b94b" name="adfbdef509826d49f61cbfb9d83e1b94b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfbdef509826d49f61cbfb9d83e1b94b">&#9670;&#160;</a></span>criterioRicerca</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.controller.InterfacciaUtentiController.criterioRicerca = &quot;Cognome&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae36da68009e578835fe2e8de9897f21a" name="ae36da68009e578835fe2e8de9897f21a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae36da68009e578835fe2e8de9897f21a">&#9670;&#160;</a></span>filterUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MenuButton it.unisa.biblioteca.controller.InterfacciaUtentiController.filterUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc75a810527b3a1c02e5c36f03dead46" name="acc75a810527b3a1c02e5c36f03dead46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc75a810527b3a1c02e5c36f03dead46">&#9670;&#160;</a></span>listaUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObservableList&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>&gt; it.unisa.biblioteca.controller.InterfacciaUtentiController.listaUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a8bfc473af81acd56a4d9ddbb108d2a" name="a3a8bfc473af81acd56a4d9ddbb108d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8bfc473af81acd56a4d9ddbb108d2a">&#9670;&#160;</a></span>tabellaUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TableView&lt;<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a>&gt; it.unisa.biblioteca.controller.InterfacciaUtentiController.tabellaUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa4908370d57699b7636eb6ec5122ee5" name="afa4908370d57699b7636eb6ec5122ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa4908370d57699b7636eb6ec5122ee5">&#9670;&#160;</a></span>tfUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextField it.unisa.biblioteca.controller.InterfacciaUtentiController.tfUtenti</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/java/it/unisa/biblioteca/controller/<a class="el" href="_interfaccia_utenti_controller_8java.html">InterfacciaUtentiController.java</a></li>
 </ul>

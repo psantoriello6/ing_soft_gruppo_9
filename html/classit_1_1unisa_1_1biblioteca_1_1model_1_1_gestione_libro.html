@@ -103,33 +103,61 @@ Inheritance diagram for it.unisa.biblioteca.model.GestioneLibro:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a30429fb8158611171d79d048a69d8fe0" id="r_a30429fb8158611171d79d048a69d8fe0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30429fb8158611171d79d048a69d8fe0">GestioneLibro</a> ()</td></tr>
-<tr class="memdesc:a30429fb8158611171d79d048a69d8fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore che inizializza il TreeSet di libri.  <br /></td></tr>
-<tr class="memitem:a910a9c41af4091e0d3be329c8745e28b" id="r_a910a9c41af4091e0d3be329c8745e28b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a910a9c41af4091e0d3be329c8745e28b">inserisci</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> libro)</td></tr>
+<tr class="memitem:a1b666377e787b60a1d7849cf5bf48c4e" id="r_a1b666377e787b60a1d7849cf5bf48c4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b666377e787b60a1d7849cf5bf48c4e">reset</a> ()</td></tr>
+<tr class="memdesc:a1b666377e787b60a1d7849cf5bf48c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di utilità che permette di "svuotare le memoria" reinizializzando l'istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> a null Questo metodo è utilizzato nei test per rilasciare le risorse utilizzate dopo aver eseguito ogni singolo metod di test.  <br /></td></tr>
+<tr class="memitem:a910a9c41af4091e0d3be329c8745e28b" id="r_a910a9c41af4091e0d3be329c8745e28b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a910a9c41af4091e0d3be329c8745e28b">inserisci</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> libro)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
 <tr class="memdesc:a910a9c41af4091e0d3be329c8745e28b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di inserire un libro nel TreeSet.  <br /></td></tr>
-<tr class="memitem:a01f4d713f48f8d1a5c9bf2a85f94337a" id="r_a01f4d713f48f8d1a5c9bf2a85f94337a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01f4d713f48f8d1a5c9bf2a85f94337a">modifica</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> libro)</td></tr>
-<tr class="memdesc:a01f4d713f48f8d1a5c9bf2a85f94337a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di modificare un attributo di un libro nel TreeSet.  <br /></td></tr>
+<tr class="memitem:aadaf74f824723c7af42212c24d62f5f5" id="r_aadaf74f824723c7af42212c24d62f5f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadaf74f824723c7af42212c24d62f5f5">modifica</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> libroModificato)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
+<tr class="memdesc:aadaf74f824723c7af42212c24d62f5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di modificare un attributo di un libro nel TreeSet.  <br /></td></tr>
 <tr class="memitem:a82cb4d99509d6c7eaf322e77b341d1b7" id="r_a82cb4d99509d6c7eaf322e77b341d1b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82cb4d99509d6c7eaf322e77b341d1b7">elimina</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> libro)</td></tr>
 <tr class="memdesc:a82cb4d99509d6c7eaf322e77b341d1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di eliminare un libro nel TreeSet.  <br /></td></tr>
-<tr class="memitem:ab34dad500b3dd4cdc30bbc8714c7aff8" id="r_ab34dad500b3dd4cdc30bbc8714c7aff8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab34dad500b3dd4cdc30bbc8714c7aff8">ricercaLibro</a> (String titolo)</td></tr>
-<tr class="memdesc:ab34dad500b3dd4cdc30bbc8714c7aff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di ricercare un libro nel TreeSet mediante il titolo.  <br /></td></tr>
-<tr class="memitem:a93ce899ed17167aea32674b457fd9feb" id="r_a93ce899ed17167aea32674b457fd9feb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93ce899ed17167aea32674b457fd9feb">ricercaLibro</a> (String nomeAutore, String cognomeAutore)</td></tr>
-<tr class="memdesc:a93ce899ed17167aea32674b457fd9feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di ricercare un libro nel TreeSet mediante il nome e cognome dell'autore.  <br /></td></tr>
-<tr class="memitem:a7f26a10178b5a06d5914c7b2319d5fc1" id="r_a7f26a10178b5a06d5914c7b2319d5fc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f26a10178b5a06d5914c7b2319d5fc1">ricercaLibro</a> (int codice)</td></tr>
-<tr class="memdesc:a7f26a10178b5a06d5914c7b2319d5fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di ricercare un libro nel TreeSet mediante il codice ISBN.  <br /></td></tr>
+<tr class="memitem:a1ee99046d045270000faf8c58520c6fe" id="r_a1ee99046d045270000faf8c58520c6fe"><td class="memItemLeft" align="right" valign="top">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ee99046d045270000faf8c58520c6fe">ricercaLibroTitolo</a> (String titolo)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
+<tr class="memdesc:a1ee99046d045270000faf8c58520c6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di ricercare un libro o più libri nel TreeSet mediante il titolo Il metodo ritorna un set di libri in quanto possono esserci più libri con lo stesso titolo.  <br /></td></tr>
+<tr class="memitem:aa263ee98b5d674026b2d9f2c9da2bab0" id="r_aa263ee98b5d674026b2d9f2c9da2bab0"><td class="memItemLeft" align="right" valign="top">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa263ee98b5d674026b2d9f2c9da2bab0">ricercaLibroAutore</a> (String nomeAutore, String cognomeAutore)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
+<tr class="memdesc:aa263ee98b5d674026b2d9f2c9da2bab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di ricercare un libro o più libri nel TreeSet mediante il nome e cognome dell'autore Il metodo ritorna un set di libri in quanto possono esserci più libri dello stesso autore.  <br /></td></tr>
+<tr class="memitem:a3aa33aa5a6fbb3346d3cdd1369594ed9" id="r_a3aa33aa5a6fbb3346d3cdd1369594ed9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3aa33aa5a6fbb3346d3cdd1369594ed9">ricercaLibroCodice</a> (String codice)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
+<tr class="memdesc:a3aa33aa5a6fbb3346d3cdd1369594ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di ricercare un libro nel TreeSet mediante il codice identificativo.  <br /></td></tr>
+<tr class="memitem:adc0d1b1ca3c753e4828a8f7b9ddea42c" id="r_adc0d1b1ca3c753e4828a8f7b9ddea42c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc0d1b1ca3c753e4828a8f7b9ddea42c">setNomeFile</a> (String nuovoFile)</td></tr>
+<tr class="memdesc:adc0d1b1ca3c753e4828a8f7b9ddea42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di utilità che permette di cambiare file binario durante i test.  <br /></td></tr>
 <tr class="memitem:aebd1b8e304d8e7516a8eff95341dec68" id="r_aebd1b8e304d8e7516a8eff95341dec68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebd1b8e304d8e7516a8eff95341dec68">salvaLibri</a> (String file)</td></tr>
-<tr class="memdesc:aebd1b8e304d8e7516a8eff95341dec68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di salvare tutti i libri del TreeSet nel file di testo.  <br /></td></tr>
+<tr class="memdesc:aebd1b8e304d8e7516a8eff95341dec68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di salvare tutti i libri del TreeSet in un file binario con estensione .dat.  <br /></td></tr>
+<tr class="memitem:a3c262fbf774e587e9caa923967f22f69" id="r_a3c262fbf774e587e9caa923967f22f69"><td class="memItemLeft" align="right" valign="top">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c262fbf774e587e9caa923967f22f69">caricaLibri</a> (String file)</td></tr>
+<tr class="memdesc:a3c262fbf774e587e9caa923967f22f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette di caricare da un file binario con estensione .dat tutti i libri della collezione.  <br /></td></tr>
+<tr class="memitem:a570c08a425f7228503656e7a58121490" id="r_a570c08a425f7228503656e7a58121490"><td class="memItemLeft" align="right" valign="top">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570c08a425f7228503656e7a58121490">getSetLibro</a> ()</td></tr>
+<tr class="memdesc:a570c08a425f7228503656e7a58121490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di utilità che permette di ottenere l'attributo che rappresenta la collezione (set) di libri.  <br /></td></tr>
+<tr class="memitem:a4f2ab4a408d6b4662f95b18df36a3e8f" id="r_a4f2ab4a408d6b4662f95b18df36a3e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f2ab4a408d6b4662f95b18df36a3e8f">setLibroSet</a> (Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; libriSet)</td></tr>
+<tr class="memdesc:a4f2ab4a408d6b4662f95b18df36a3e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo di utilità che permette di modificare l'attributo che rappresenta la collezione (set) di lobri.  <br /></td></tr>
 <tr class="inherit_header pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html">it.unisa.biblioteca.model.Gestione&lt; Libro &gt;</a></td></tr>
-<tr class="memitem:afb103d8fb653f7e5a7bbc1eeb6ca0fc8 inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione" id="r_afb103d8fb653f7e5a7bbc1eeb6ca0fc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html#afb103d8fb653f7e5a7bbc1eeb6ca0fc8">inserisci</a> (T elemento)</td></tr>
+<tr class="memitem:afb103d8fb653f7e5a7bbc1eeb6ca0fc8 inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione" id="r_afb103d8fb653f7e5a7bbc1eeb6ca0fc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html#afb103d8fb653f7e5a7bbc1eeb6ca0fc8">inserisci</a> (T elemento)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
 <tr class="memdesc:afb103d8fb653f7e5a7bbc1eeb6ca0fc8 inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un nuovo elemento nella collezione. Il metodo aggiunge alla collezione l'oggetto fornito come parametro. Gestisce eventuali controlli sull'unicità dei dati (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> o <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a>).  <br /></td></tr>
-<tr class="memitem:aaf67cb9480267c29e8dbac20c21ca63c inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione" id="r_aaf67cb9480267c29e8dbac20c21ca63c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html#aaf67cb9480267c29e8dbac20c21ca63c">modifica</a> (T elemento)</td></tr>
+<tr class="memitem:aaf67cb9480267c29e8dbac20c21ca63c inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione" id="r_aaf67cb9480267c29e8dbac20c21ca63c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html#aaf67cb9480267c29e8dbac20c21ca63c">modifica</a> (T elemento)  throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td></tr>
 <tr class="memdesc:aaf67cb9480267c29e8dbac20c21ca63c inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica un elemento della collezione. Il metodo modifica l'oggetto fornito come parametro. Gestisce eventuali controlli sull'unicità dei dati inseriti(Utente o Libro).  <br /></td></tr>
 <tr class="memitem:a05f9b5a05f3fabbc432adac45fece29d inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione" id="r_a05f9b5a05f3fabbc432adac45fece29d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione.html#a05f9b5a05f3fabbc432adac45fece29d">elimina</a> (T elemento)</td></tr>
 <tr class="memdesc:a05f9b5a05f3fabbc432adac45fece29d inherit pub_methods_interfaceit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un elemento dalla collezione. Il metodo elimina dalla collezione l'oggetto fornito come parametro.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a44e24918f5069687015d7e23f26d078f" id="r_a44e24918f5069687015d7e23f26d078f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44e24918f5069687015d7e23f26d078f">getInstance</a> ()</td></tr>
+<tr class="memdesc:a44e24918f5069687015d7e23f26d078f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo statico pubblico della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> Il metodo aderisce al design pattern Singleton e permette di restituire sempre la stessa (ed unica) istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a30429fb8158611171d79d048a69d8fe0" id="r_a30429fb8158611171d79d048a69d8fe0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30429fb8158611171d79d048a69d8fe0">GestioneLibro</a> ()</td></tr>
+<tr class="memdesc:a30429fb8158611171d79d048a69d8fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore privato della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> Il costruttore aderisce al design pattern Singleton e permette di inizializzare il set di libri e di caricare dal file binario l'eventuale collezione di libri, se presente.  <br /></td></tr>
+<tr class="memitem:addf35415a7c9b7e5bcc4b1c5b6f62339" id="r_addf35415a7c9b7e5bcc4b1c5b6f62339"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addf35415a7c9b7e5bcc4b1c5b6f62339">controllaCodice</a> (String codice)</td></tr>
+<tr class="memdesc:addf35415a7c9b7e5bcc4b1c5b6f62339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo privato che permette di controllare se il codice identificativo del libro è valido o meno.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aeab38669a20d1f9a6475d979c2e90424" id="r_aeab38669a20d1f9a6475d979c2e90424"><td class="memItemLeft" align="right" valign="top">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeab38669a20d1f9a6475d979c2e90424">libri</a></td></tr>
+<tr class="memdesc:aeab38669a20d1f9a6475d979c2e90424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile d'istanza privata che rappresenta un set di libri.  <br /></td></tr>
+<tr class="memitem:a39dcb637f42bc594cbaed5e65c4a5004" id="r_a39dcb637f42bc594cbaed5e65c4a5004"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39dcb637f42bc594cbaed5e65c4a5004">nomeFile</a> = &quot;libri.dat&quot;</td></tr>
+<tr class="memdesc:a39dcb637f42bc594cbaed5e65c4a5004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari libri.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a31b01e0a6c83ef409c77a2119aca3a73" id="r_a31b01e0a6c83ef409c77a2119aca3a73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31b01e0a6c83ef409c77a2119aca3a73">instance</a></td></tr>
+<tr class="memdesc:a31b01e0a6c83ef409c77a2119aca3a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile d'istanza privata e statica che rappresenta l'istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a>.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a30429fb8158611171d79d048a69d8fe0" name="a30429fb8158611171d79d048a69d8fe0"></a>
@@ -137,6 +165,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">it.unisa.biblioteca.model.GestioneLibro.GestioneLibro </td>
@@ -145,13 +176,79 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Costruttore che inizializza il TreeSet di libri. </p>
+<p>Costruttore privato della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> Il costruttore aderisce al design pattern Singleton e permette di inizializzare il set di libri e di caricare dal file binario l'eventuale collezione di libri, se presente. </p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a3c262fbf774e587e9caa923967f22f69" name="a3c262fbf774e587e9caa923967f22f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c262fbf774e587e9caa923967f22f69">&#9670;&#160;</a></span>caricaLibri()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; it.unisa.biblioteca.model.GestioneLibro.caricaLibri </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metodo che permette di caricare da un file binario con estensione .dat tutti i libri della collezione. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>la collezione di libri è stato caricata dal file e stampata su terminale </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>il file binario da cui caricare le informazioni </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>la collezione di libri caricata dal file binario </dd></dl>
+
+</div>
+</div>
+<a id="addf35415a7c9b7e5bcc4b1c5b6f62339" name="addf35415a7c9b7e5bcc4b1c5b6f62339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf35415a7c9b7e5bcc4b1c5b6f62339">&#9670;&#160;</a></span>controllaCodice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean it.unisa.biblioteca.model.GestioneLibro.controllaCodice </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>codice</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Metodo privato che permette di controllare se il codice identificativo del libro è valido o meno. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codice</td><td>il codice identificativo del libro </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>il valore booleano 'true' se il codice identificativo del libro è valido, il valore booleano 'false' se invece il codice identificativo non è valido </dd></dl>
+
+</div>
+</div>
 <a id="a82cb4d99509d6c7eaf322e77b341d1b7" name="a82cb4d99509d6c7eaf322e77b341d1b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82cb4d99509d6c7eaf322e77b341d1b7">&#9670;&#160;</a></span>elimina()</h2>
 
@@ -168,7 +265,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Metodo che permette di eliminare un libro nel TreeSet. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>il libro che verrà inserito deve essere presente nel TreeSet </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>il libro che verrà eliminato deve essere presente nel TreeSet </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>il libro sarà rimosso dal TreeSet </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -176,6 +273,54 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a44e24918f5069687015d7e23f26d078f" name="a44e24918f5069687015d7e23f26d078f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e24918f5069687015d7e23f26d078f">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> it.unisa.biblioteca.model.GestioneLibro.getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Metodo statico pubblico della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> Il metodo aderisce al design pattern Singleton e permette di restituire sempre la stessa (ed unica) istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>L'istanza (unica) della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> </dd></dl>
+
+</div>
+</div>
+<a id="a570c08a425f7228503656e7a58121490" name="a570c08a425f7228503656e7a58121490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570c08a425f7228503656e7a58121490">&#9670;&#160;</a></span>getSetLibro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; it.unisa.biblioteca.model.GestioneLibro.getSetLibro </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metodo di utilità che permette di ottenere l'attributo che rappresenta la collezione (set) di libri. </p>
+<dl class="section return"><dt>Returns</dt><dd>la collezione di libri </dd></dl>
 
 </div>
 </div>
@@ -189,7 +334,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">void it.unisa.biblioteca.model.GestioneLibro.inserisci </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a></td>          <td class="paramname"><span class="paramname"><em>libro</em></span></td><td>)</td>
-          <td></td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -203,11 +348,17 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a01f4d713f48f8d1a5c9bf2a85f94337a" name="a01f4d713f48f8d1a5c9bf2a85f94337a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01f4d713f48f8d1a5c9bf2a85f94337a">&#9670;&#160;</a></span>modifica()</h2>
+<a id="aadaf74f824723c7af42212c24d62f5f5" name="aadaf74f824723c7af42212c24d62f5f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadaf74f824723c7af42212c24d62f5f5">&#9670;&#160;</a></span>modifica()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,110 +366,153 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void it.unisa.biblioteca.model.GestioneLibro.modifica </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a></td>          <td class="paramname"><span class="paramname"><em>libro</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a></td>          <td class="paramname"><span class="paramname"><em>libroModificato</em></span></td><td>)</td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Metodo che permette di modificare un attributo di un libro nel TreeSet. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>il libro che verrà inserito deve essere presente nel TreeSet </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>il libro avrà un o più attributi modificati </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>il libro avrà uno o più attributi modificati </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">libro</td><td>libro da modificare </td></tr>
+    <tr><td class="paramname">libroModificato</td><td>libro modificato </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a7f26a10178b5a06d5914c7b2319d5fc1" name="a7f26a10178b5a06d5914c7b2319d5fc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f26a10178b5a06d5914c7b2319d5fc1">&#9670;&#160;</a></span>ricercaLibro() <span class="overload">[1/3]</span></h2>
+<a id="a1b666377e787b60a1d7849cf5bf48c4e" name="a1b666377e787b60a1d7849cf5bf48c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b666377e787b60a1d7849cf5bf48c4e">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> it.unisa.biblioteca.model.GestioneLibro.ricercaLibro </td>
+          <td class="memname">void it.unisa.biblioteca.model.GestioneLibro.reset </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>codice</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo che permette di ricercare un libro nel TreeSet mediante il codice ISBN. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>il codice deve essere esistente </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>il valore di ritorno deve essere il libro che corrisponde alla ricerca </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">codice</td><td>attributo del libro che viene usato per la ricerca </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>il libro che corrisponde alla ricerca </dd></dl>
+<p>Metodo di utilità che permette di "svuotare le memoria" reinizializzando l'istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> a null Questo metodo è utilizzato nei test per rilasciare le risorse utilizzate dopo aver eseguito ogni singolo metod di test. </p>
 
 </div>
 </div>
-<a id="a93ce899ed17167aea32674b457fd9feb" name="a93ce899ed17167aea32674b457fd9feb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93ce899ed17167aea32674b457fd9feb">&#9670;&#160;</a></span>ricercaLibro() <span class="overload">[2/3]</span></h2>
+<a id="aa263ee98b5d674026b2d9f2c9da2bab0" name="aa263ee98b5d674026b2d9f2c9da2bab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa263ee98b5d674026b2d9f2c9da2bab0">&#9670;&#160;</a></span>ricercaLibroAutore()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> it.unisa.biblioteca.model.GestioneLibro.ricercaLibro </td>
+          <td class="memname">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; it.unisa.biblioteca.model.GestioneLibro.ricercaLibroAutore </td>
           <td>(</td>
           <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>nomeAutore</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>cognomeAutore</em></span>&#160;)</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>cognomeAutore</em></span>&#160;) throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo che permette di ricercare un libro nel TreeSet mediante il nome e cognome dell'autore. </p>
+<p>Metodo che permette di ricercare un libro o più libri nel TreeSet mediante il nome e cognome dell'autore Il metodo ritorna un set di libri in quanto possono esserci più libri dello stesso autore. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>il nome e cognome dell'autore devono essere esistenti </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>il valore di ritorno deve essere il libro che corrisponde alla ricerca </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeAutore</td><td>attributo del libro che viene usato per la ricerca </td></tr>
-    <tr><td class="paramname">cognomeAutore</td><td>attributo del libro che viene usato per la ricerca </td></tr>
+    <tr><td class="paramname">nomeAutore</td><td>nome dell'autore del libro che viene usato per la ricerca </td></tr>
+    <tr><td class="paramname">cognomeAutore</td><td>cognome dell'autore del libro che viene usato per la ricerca </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>il libro che corrisponde alla ricerca </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>la collezione costituita dai libri che corrispondono alla ricerca per autore </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ab34dad500b3dd4cdc30bbc8714c7aff8" name="ab34dad500b3dd4cdc30bbc8714c7aff8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab34dad500b3dd4cdc30bbc8714c7aff8">&#9670;&#160;</a></span>ricercaLibro() <span class="overload">[3/3]</span></h2>
+<a id="a3aa33aa5a6fbb3346d3cdd1369594ed9" name="a3aa33aa5a6fbb3346d3cdd1369594ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa33aa5a6fbb3346d3cdd1369594ed9">&#9670;&#160;</a></span>ricercaLibroCodice()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> it.unisa.biblioteca.model.GestioneLibro.ricercaLibro </td>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> it.unisa.biblioteca.model.GestioneLibro.ricercaLibroCodice </td>
           <td>(</td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>titolo</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>codice</em></span></td><td>)</td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo che permette di ricercare un libro nel TreeSet mediante il titolo. </p>
+<p>Metodo che permette di ricercare un libro nel TreeSet mediante il codice identificativo. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>il codice deve essere esistente </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>il valore di ritorno deve essere il libro che corrisponde alla ricerca </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codice</td><td>codice del libro che viene usato per la ricerca </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>il libro che corrisponde alla ricerca per codice </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1ee99046d045270000faf8c58520c6fe" name="a1ee99046d045270000faf8c58520c6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee99046d045270000faf8c58520c6fe">&#9670;&#160;</a></span>ricercaLibroTitolo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt; it.unisa.biblioteca.model.GestioneLibro.ricercaLibroTitolo </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>titolo</em></span></td><td>)</td>
+          <td> throws <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metodo che permette di ricercare un libro o più libri nel TreeSet mediante il titolo Il metodo ritorna un set di libri in quanto possono esserci più libri con lo stesso titolo. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>il titolo deve essere esistente </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>il valore di ritorno deve essere il libro che corrisponde alla ricerca </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">titolo</td><td>attributo del libro che viene usato per la ricerca </td></tr>
+    <tr><td class="paramname">titolo</td><td>titolo del libro che viene usato per la ricerca </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>il libro che corrisponde alla ricerca </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>la collezione costituita dai libri che corrispondono alla ricerca per titolo </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_eccezioni.html">GestioneEccezioni</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -337,11 +531,62 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo che permette di salvare tutti i libri del TreeSet nel file di testo. </p>
-<dl class="section post"><dt>Postcondition</dt><dd>il sistema salverà la collection di libri su file </dd></dl>
+<p>Metodo che permette di salvare tutti i libri del TreeSet in un file binario con estensione .dat. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>I dati relativi ai libri sono stati inseriti nella collezione </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>il sistema salverà la collezione di libri su file </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>il file di testo su cui vengono salvati tutti i libri presenti </td></tr>
+    <tr><td class="paramname">file</td><td>il file binario su cui vengono salvati tutti i libri presenti </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4f2ab4a408d6b4662f95b18df36a3e8f" name="a4f2ab4a408d6b4662f95b18df36a3e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f2ab4a408d6b4662f95b18df36a3e8f">&#9670;&#160;</a></span>setLibroSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestioneLibro.setLibroSet </td>
+          <td>(</td>
+          <td class="paramtype">Set&lt; <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html">Libro</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>libriSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metodo di utilità che permette di modificare l'attributo che rappresenta la collezione (set) di lobri. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">libriSet</td><td>un set di libri </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc0d1b1ca3c753e4828a8f7b9ddea42c" name="adc0d1b1ca3c753e4828a8f7b9ddea42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0d1b1ca3c753e4828a8f7b9ddea42c">&#9670;&#160;</a></span>setNomeFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.biblioteca.model.GestioneLibro.setNomeFile </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>nuovoFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metodo di utilità che permette di cambiare file binario durante i test. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nuovoFile</td><td>il nome del file di test da usare </td></tr>
   </table>
   </dd>
 </dl>
@@ -349,6 +594,30 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a31b01e0a6c83ef409c77a2119aca3a73" name="a31b01e0a6c83ef409c77a2119aca3a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b01e0a6c83ef409c77a2119aca3a73">&#9670;&#160;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a> it.unisa.biblioteca.model.GestioneLibro.instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variabile d'istanza privata e statica che rappresenta l'istanza della classe <a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html">GestioneLibro</a>. </p>
+
+</div>
+</div>
 <a id="aeab38669a20d1f9a6475d979c2e90424" name="aeab38669a20d1f9a6475d979c2e90424"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeab38669a20d1f9a6475d979c2e90424">&#9670;&#160;</a></span>libri</h2>
 
@@ -368,6 +637,32 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Variabile d'istanza privata che rappresenta un set di libri. </p>
+
+</div>
+</div>
+<a id="a39dcb637f42bc594cbaed5e65c4a5004" name="a39dcb637f42bc594cbaed5e65c4a5004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39dcb637f42bc594cbaed5e65c4a5004">&#9670;&#160;</a></span>nomeFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String it.unisa.biblioteca.model.GestioneLibro.nomeFile = &quot;libri.dat&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari libri. </p>
 
 </div>
 </div>

@@ -12,13 +12,29 @@ import java.io.*;
  * @brief Si occupa di definire tutti gli attributi della classe Utente con i setter e getter.
  * Sono specificati inoltre i metodi equals e hashCode che definiscono eventuali duplicati e il metodo compareTo che determina l'ordinamento da tener conto.
  * @date 03/12/2025
- * @author pasqu
  */
 public class Utente implements Serializable, Comparable<Utente> {
+    /**
+     * @brief Variabile di istanza privata che rappresenta il nome dell'utente
+     */
     private String nome;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta il cognome dell'utente
+     */
     private String cognome;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta la matricola dell'utente
+     */
+    
     private int matricola;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta l'email dell'utente
+     */
     private String email;
+    
     /**
      * @brief Costruttore che inizializza un utente
      * @param nome nome dell'utente

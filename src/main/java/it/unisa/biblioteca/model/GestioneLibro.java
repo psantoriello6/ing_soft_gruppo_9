@@ -132,7 +132,7 @@ public class GestioneLibro implements Gestione<Libro> {
     /**
      * @brief Metodo che permette di modificare un attributo di un libro nel TreeSet
      * @pre il libro che verrà inserito deve essere presente nel TreeSet
-     * @post il libro avrà un o più attributi modificati
+     * @post il libro avrà uno o più attributi modificati
      * @param libroModificato libro modificato
      * @throws GestioneEccezioni
      */
@@ -163,7 +163,7 @@ public class GestioneLibro implements Gestione<Libro> {
     
     /**
      * @brief Metodo che permette di eliminare un libro nel TreeSet
-     * @pre il libro che verrà inserito deve essere presente nel TreeSet
+     * @pre il libro che verrà eliminato deve essere presente nel TreeSet
      * @post il libro sarà rimosso dal TreeSet
      * @param libro libro da eliminare
      */
@@ -275,7 +275,8 @@ public class GestioneLibro implements Gestione<Libro> {
     
     /**
      * @brief Metodo che permette di salvare tutti i libri del TreeSet in un file binario con estensione .dat
-     * @post il sistema salverà la collection di libri su file
+     * @pre I dati relativi ai libri sono stati inseriti nella collezione
+     * @post il sistema salverà la collezione di libri su file
      * @param file il file binario su cui vengono salvati tutti i libri presenti
      */
     public void salvaLibri(String file){

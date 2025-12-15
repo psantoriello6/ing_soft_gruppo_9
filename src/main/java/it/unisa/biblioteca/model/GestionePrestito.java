@@ -24,11 +24,35 @@ import java.util.*;
  */
 
 public class GestionePrestito {
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta un'HashMap costituita dai prestiti attivi di un determinato utente
+     */
     private Map<Utente, LinkedList<Libro>> prestitiAttivi;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta un' HashMap costituita dalle scadenze dei prestiti di un determinato utente
+     */
     private Map<String, LocalDate> scadenzePrestiti;
+    
+    /**
+     * @brief Costante che rappresenta il numero massimo di prestiti che un utente può avere contemporaneamente
+     */
     private static final int MAX_PRESTITI = 3;
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari prestiti
+     */
     private String nomeFilePrestiti = "prestiti.dat";
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare le date di scadenza relative ai vari prestiti
+     */
     private String nomeFileDate = "date.dat";
+    
+    /**
+     * @brief Variabile di istanza privata e statica che rappresenta l'istanza della classe GestionePrestito
+     */
     private static GestionePrestito instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
     
     /**
@@ -67,8 +91,9 @@ public class GestionePrestito {
      * @brief Metodo che permette di registrare un prestito
      * @param prestito Il prestito che si vuole registrare
      * 
-     * @pre Il libro che si vuole prestare deve avere almento una copia disponibile
+     * @pre Il libro che si vuole prestare deve avere almeno una copia disponibile
      * @pre L'utente deve avere al massimo due libri in prestito contemporaneamente
+     * @throws GestioneEccezioni
      * 
      * @post Il prestito effettuato è stato registrato ed  inserito nella lista dei prestiti attivi
      */
@@ -124,6 +149,7 @@ public class GestionePrestito {
     /**
      * @brief Metodo che permette di registrare la restituzione di un libro in prestito 
      * @param prestito Il prestito di cui si vuole registrare la restituzione
+     * @throws GestioneEccezioni
      * 
      * @pre La lista dei prestiti attivi non deve essere vuota
      * 
@@ -162,10 +188,8 @@ public class GestionePrestito {
       
     /**
      * @brief Metodo che permette di esportare su un file i dati relativi ad un presitio
-     * @param file Il nome del file su cui devono essere salvati i dati di un prestito
      * 
      * @pre I dati relativi ad un prestito sono stati inseriti nella collezione
-     * 
      * @post I dati relativi ad un prestito sono stati esportati sul file
      *  
      */
@@ -186,7 +210,6 @@ public class GestionePrestito {
      * Serializza l'oggetto `scadenzePrestiti` nel file specificato da `nomeFileDate`.
      * 
      * @pre I dati relativi alle date di restituzione sono stati inseriti nella collezione.
-     * 
      * @post I dati relativi alle date di restituzione sono stati esportati sul file
      */    
     public void salvaDate(){

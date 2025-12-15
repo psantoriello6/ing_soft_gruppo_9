@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['biblioteca_20universitaria_0',['Documentazione Progetto Biblioteca Universitaria',['../index.html',1,'']]]
+  ['biblioteca_20universitaria_0',['Documentazione Progetto Biblioteca Universitaria',['../index.html',1,'']]],
+  ['btannulla_1',['btAnnulla',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_utente_controller.html#ad35aadb3ac4c5f6d56c1c9f19fc3652d',1,'it::unisa::biblioteca::controller::NuovoUtenteController']]],
+  ['btannullanuovolibro_2',['btAnnullaNuovoLibro',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_libro_controller.html#aff604b469f6b5537cf863d9b2e3c3452',1,'it::unisa::biblioteca::controller::NuovoLibroController']]],
+  ['btconferma_3',['btConferma',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_utente_controller.html#a5d497e553e474d2bdd40640a29c1fb29',1,'it::unisa::biblioteca::controller::NuovoUtenteController']]],
+  ['btconfermanuovolibro_4',['btConfermaNuovoLibro',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_libro_controller.html#ae9b4c435ba833127ad657c166fcfd4cc',1,'it::unisa::biblioteca::controller::NuovoLibroController']]],
+  ['btncercalibri_5',['btnCercaLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#ad9a240b68b9d094bef86237a959beea7',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['btncercalibro_6',['btnCercaLibro',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a1f93381064cc8581d4b9977e19cb1491',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['btncercautente_7',['btnCercaUtente',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a4809d1d782acde068b9eff0e1ae3c3b1',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['btncercautenti_8',['btnCercaUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a676054caa43c5d4f9ba00b1923f644c1',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['btnconfermarestituzioneprestiti_9',['btnConfermaRestituzionePrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a7d3842a1e88a5a972769cd88ab7ca373',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['btneliminalibri_10',['btnEliminaLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#ab6a89eb50082b82c54b286004cf856f8',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['btneliminautenti_11',['btnEliminaUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a38b92325bf0eafaa6bc68a8a7496b332',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['btnhomelibri_12',['btnHomeLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a4efa6415a029400a02597494f8e35b9c',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['btnhomeprestiti_13',['btnHomePrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a0b6974d11931820ffc378ff704a73662',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['btnhomeutenti_14',['btnHomeUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#aca79147efdc59a844d69e1e51a30c539',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['btnmodificalibri_15',['btnModificaLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a49996a2ef8ae129487d5ed1233f8bf34',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['btnmodificautenti_16',['btnModificaUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#aee6ef175830f0491724c21edd1e58a1b',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['btnnuovilibri_17',['btnNuoviLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a404dbb580066d213bd1c6e1cb146203f',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['btnnuovoutenti_18',['btnNuovoUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#aa929a8f8f5267ab79ab9195cd871fe7e',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['btnregistraprestito_19',['btnRegistraPrestito',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#ae2953af20db728892436dee088681078',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['buttongestionelibri_20',['buttonGestioneLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_home_controller.html#affe5c255e145d40eb5ba45a9782ee5b1',1,'it::unisa::biblioteca::controller::InterfacciaHomeController']]],
+  ['buttongestioneprestiti_21',['buttonGestionePrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_home_controller.html#a733c29fbb7c3d98713cd031a9e01207a',1,'it::unisa::biblioteca::controller::InterfacciaHomeController']]],
+  ['buttongestioneutenti_22',['buttonGestioneUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_home_controller.html#a9bb4c7c7da889b730f4e82baa2b21a92',1,'it::unisa::biblioteca::controller::InterfacciaHomeController']]]
 ];

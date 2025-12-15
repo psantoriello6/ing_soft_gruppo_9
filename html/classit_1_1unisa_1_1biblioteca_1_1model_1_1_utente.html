@@ -117,7 +117,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06f6aee55872fde87b8b24d7e33bc27a" id="r_a06f6aee55872fde87b8b24d7e33bc27a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06f6aee55872fde87b8b24d7e33bc27a">getEmail</a> ()</td></tr>
 <tr class="memdesc:a06f6aee55872fde87b8b24d7e33bc27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che restituisce l'email dell'utente in questione.  <br /></td></tr>
 <tr class="memitem:aa82794372b3ac7a45a9aa53760398d45" id="r_aa82794372b3ac7a45a9aa53760398d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa82794372b3ac7a45a9aa53760398d45">setEmail</a> (String <a class="el" href="#ac3351bd6f0622b2037f4d27fe5a3fb59">email</a>)</td></tr>
-<tr class="memdesc:aa82794372b3ac7a45a9aa53760398d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette l'inserimento della email Se la email inserita non rispetta il formato standard verrà mostrata un'eccezione.  <br /></td></tr>
+<tr class="memdesc:aa82794372b3ac7a45a9aa53760398d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che permette l'inserimento della email.  <br /></td></tr>
 <tr class="memitem:abf6c352e2dea0086e60ce6032663a084" id="r_abf6c352e2dea0086e60ce6032663a084"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf6c352e2dea0086e60ce6032663a084">compareTo</a> (<a class="el" href="classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html">Utente</a> u)</td></tr>
 <tr class="memdesc:abf6c352e2dea0086e60ce6032663a084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che determina la logica di ordinamento del TreeSet (ordinamento naturale basato prima sul cognome e poi sul nome).  <br /></td></tr>
 <tr class="memitem:acbb511133aba7de8fdbbb72954f4f22a" id="r_acbb511133aba7de8fdbbb72954f4f22a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbb511133aba7de8fdbbb72954f4f22a">hashCode</a> ()</td></tr>
@@ -128,9 +128,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aee9f1749ab60a22d25562bda55b5a901" id="r_aee9f1749ab60a22d25562bda55b5a901"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee9f1749ab60a22d25562bda55b5a901">nome</a></td></tr>
+<tr class="memdesc:aee9f1749ab60a22d25562bda55b5a901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta il nome dell'utente.  <br /></td></tr>
 <tr class="memitem:a1a029be4753df885e52ed9ee9540d387" id="r_a1a029be4753df885e52ed9ee9540d387"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a029be4753df885e52ed9ee9540d387">cognome</a></td></tr>
+<tr class="memdesc:a1a029be4753df885e52ed9ee9540d387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta il cognome dell'utente.  <br /></td></tr>
 <tr class="memitem:a4af0f9001b3130762d71245a0868226c" id="r_a4af0f9001b3130762d71245a0868226c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4af0f9001b3130762d71245a0868226c">matricola</a></td></tr>
+<tr class="memdesc:a4af0f9001b3130762d71245a0868226c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta la matricola dell'utente.  <br /></td></tr>
 <tr class="memitem:ac3351bd6f0622b2037f4d27fe5a3fb59" id="r_ac3351bd6f0622b2037f4d27fe5a3fb59"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3351bd6f0622b2037f4d27fe5a3fb59">email</a></td></tr>
+<tr class="memdesc:ac3351bd6f0622b2037f4d27fe5a3fb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variabile di istanza privata che rappresenta l'email dell'utente.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a351c9a259fabdeb93621d8a83b96ab00" name="a351c9a259fabdeb93621d8a83b96ab00"></a>
@@ -368,7 +372,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo che permette l'inserimento della email Se la email inserita non rispetta il formato standard verrà mostrata un'eccezione. </p>
+<p>Metodo che permette l'inserimento della email. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">email</td><td></td></tr>
@@ -449,6 +453,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Variabile di istanza privata che rappresenta il cognome dell'utente. </p>
+
 </div>
 </div>
 <a id="ac3351bd6f0622b2037f4d27fe5a3fb59" name="ac3351bd6f0622b2037f4d27fe5a3fb59"></a>
@@ -470,6 +476,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta l'email dell'utente. </p>
 
 </div>
 </div>
@@ -493,6 +501,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Variabile di istanza privata che rappresenta la matricola dell'utente. </p>
+
 </div>
 </div>
 <a id="aee9f1749ab60a22d25562bda55b5a901" name="aee9f1749ab60a22d25562bda55b5a901"></a>
@@ -514,6 +524,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Variabile di istanza privata che rappresenta il nome dell'utente. </p>
 
 </div>
 </div>

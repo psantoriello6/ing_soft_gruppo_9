@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['annopubblicazione_0',['annoPubblicazione',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a497d2d6d9406cd194443c8d313f96605',1,'it::unisa::biblioteca::model::Libro']]]
+  ['aggiornatabella_0',['aggiornaTabella',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#ac78a4eabcba75669b3f9d9ac9ccfafb4',1,'it.unisa.biblioteca.controller.InterfacciaLibriController.aggiornaTabella()'],['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a75c529630e0f71a4cb5a1b4b1e44c083',1,'it.unisa.biblioteca.controller.InterfacciaPrestitiController.aggiornaTabella()'],['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a5712af1dcd041dc647da4add75c7d644',1,'it.unisa.biblioteca.controller.InterfacciaUtentiController.aggiornaTabella()']]],
+  ['annopubblicazione_1',['annoPubblicazione',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a497d2d6d9406cd194443c8d313f96605',1,'it::unisa::biblioteca::model::Libro']]],
+  ['aprifinestramodificalibro_2',['apriFinestraModificaLibro',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a51aa485488a69e66fe9d461e771e9349',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['aprifinestramodificautente_3',['apriFinestraModificaUtente',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a071e85fde808911bded37e241600b6a9',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['aprifinestranuovolibro_4',['apriFinestraNuovoLibro',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#aa8133ed4b01f905fbeef5d8954ea8978',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['aprifinestranuovoutente_5',['apriFinestraNuovoUtente',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a1f7f58eeb31b1c5dda6338b4f0e96bf3',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['azionerestituisciprestito_6',['azioneRestituisciPrestito',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a03ada612ceb46a3aa820b58d527b8949',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]]
 ];

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['salvadate_0',['salvaDate',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html#ac335c62e3494b5c2b7f6b4ac263add09',1,'it::unisa::biblioteca::model::GestionePrestito']]],
+  ['salvalibri_1',['salvaLibri',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html#aebd1b8e304d8e7516a8eff95341dec68',1,'it::unisa::biblioteca::model::GestioneLibro']]],
+  ['salvaprestiti_2',['salvaPrestiti',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html#a6bcaf0b8483e096940fe0e3cf7c5387f',1,'it::unisa::biblioteca::model::GestionePrestito']]],
+  ['salvautenti_3',['salvaUtenti',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente.html#aeb7ddb1e0c0fbca0323671ec39d1eda4',1,'it::unisa::biblioteca::model::GestioneUtente']]],
+  ['setannopubblicazione_4',['setAnnoPubblicazione',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ad78c08565bd7c78fd1e07731726f0174',1,'it::unisa::biblioteca::model::Libro']]],
+  ['setcodice_5',['setCodice',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ac86ca87cf218982fc8788485a187217d',1,'it::unisa::biblioteca::model::Libro']]],
+  ['setcognome_6',['setCognome',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html#ad0f66c3f47d2594e2c5e2c5b18dc1018',1,'it::unisa::biblioteca::model::Utente']]],
+  ['setcognomeautore_7',['setCognomeAutore',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#add202131d135067883fa4eb539af8b6e',1,'it::unisa::biblioteca::model::Libro']]],
+  ['setcontroller_8',['setController',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_libro_controller.html#afbae8225a70019273fefb6d470acdfb5',1,'it::unisa::biblioteca::controller::NuovoLibroController']]],
+  ['setcopiedisponibili_9',['setCopieDisponibili',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#aae218c2fc789968bbe5c4b73b840e0a4',1,'it::unisa::biblioteca::model::Libro']]],
+  ['setdatarestituzione_10',['setDataRestituzione',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html#ac7b4eb0950a23897684a1eb7bf460618',1,'it::unisa::biblioteca::model::Prestito']]],
+  ['setemail_11',['setEmail',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html#aa82794372b3ac7a45a9aa53760398d45',1,'it::unisa::biblioteca::model::Utente']]],
+  ['setfilepathsfortest_12',['setFilePathsForTest',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_prestito.html#afc2c04e5efcc111f756a86958adbf734',1,'it::unisa::biblioteca::model::GestionePrestito']]],
+  ['setlibro_13',['setLibro',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html#a2e1be1a8e1c8c352bf9ddb4be94f05f2',1,'it::unisa::biblioteca::model::Prestito']]],
+  ['setlibrodamodificare_14',['setLibroDaModificare',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_libro_controller.html#a1ec4423b0cd1f3b8f3a70cdf7d50b9e0',1,'it::unisa::biblioteca::controller::NuovoLibroController']]],
+  ['setlibroset_15',['setLibroSet',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html#a4f2ab4a408d6b4662f95b18df36a3e8f',1,'it::unisa::biblioteca::model::GestioneLibro']]],
+  ['setmaincontroller_16',['setMainController',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_utente_controller.html#aa5b383265564adf2edf6c4233ad361b6',1,'it::unisa::biblioteca::controller::NuovoUtenteController']]],
+  ['setmatricola_17',['setMatricola',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html#a0f831545fb4e9991addd1739650d0ea7',1,'it::unisa::biblioteca::model::Utente']]],
+  ['setnome_18',['setNome',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html#aa355b5f86a7c3e2dc1262c42100936fb',1,'it::unisa::biblioteca::model::Utente']]],
+  ['setnomeautore_19',['setNomeAutore',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#ad9ae35605af2033034785fd4e4fd1ea3',1,'it::unisa::biblioteca::model::Libro']]],
+  ['setnomefile_20',['setNomeFile',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_libro.html#adc0d1b1ca3c753e4828a8f7b9ddea42c',1,'it.unisa.biblioteca.model.GestioneLibro.setNomeFile()'],['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_gestione_utente.html#a538930368703515f24bf41cd4d4905c4',1,'it.unisa.biblioteca.model.GestioneUtente.setNomeFile()']]],
+  ['settitolo_21',['setTitolo',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a7e44b9134301393dc13de64cd958a582',1,'it::unisa::biblioteca::model::Libro']]],
+  ['setutente_22',['setUtente',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html#a981e5bb44272bd729e2ce4c6dcd0dde7',1,'it::unisa::biblioteca::model::Prestito']]],
+  ['setutentedamodificare_23',['setUtenteDaModificare',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_nuovo_utente_controller.html#a022461e547515d248209c405a819ea1a',1,'it::unisa::biblioteca::controller::NuovoUtenteController']]],
+  ['start_24',['start',['../classit_1_1unisa_1_1biblioteca_1_1_main.html#a56da4eb7cb4a2b58ef4bfb60d94f4653',1,'it::unisa::biblioteca::Main']]]
+];

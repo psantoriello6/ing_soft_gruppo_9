@@ -1,4 +1,23 @@
 var searchData=
 [
-  ['datarestituzione_0',['dataRestituzione',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_prestito.html#a52a7872b8b4fc427f51fbfdff9154d2c',1,'it::unisa::biblioteca::model::Prestito']]]
+  ['codice_0',['codice',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#aa568fbc2dcb6b355f5b3e01ba3548087',1,'it::unisa::biblioteca::model::Libro']]],
+  ['cognome_1',['cognome',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_utente.html#a1a029be4753df885e52ed9ee9540d387',1,'it::unisa::biblioteca::model::Utente']]],
+  ['cognomeautore_2',['cognomeAutore',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a595afe7d5c44fc912a5426159319ae43',1,'it::unisa::biblioteca::model::Libro']]],
+  ['colonnaannolibri_3',['colonnaAnnoLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#aa08f9f5b0b8a199beaeddd90f4a87a81',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['colonnacodicelibri_4',['colonnaCodiceLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a9aa6ee2d92642f101907c9a38f687a1f',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['colonnacodiceprestiti_5',['colonnaCodicePrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a24375e4428c38e1c7e3eaa7fd862a55c',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['colonnacognomelibri_6',['colonnaCognomeLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a236c247446ef6f506693644c3b7ed20d',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['colonnacognomeprestiti_7',['colonnaCognomePrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a86d316b62ef5d83024b64e0cc0d95c56',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['colonnacognomeutenti_8',['colonnaCognomeUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#af6d725ef69fd2257d888bd0cf72923ba',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['colonnacopielibri_9',['colonnaCopieLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a0337cdf4d2ecf6ed157696a41880ef2c',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['colonnadataprestiti_10',['colonnaDataPrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#a0d99e29b61fdc2225dfcab194a71e6f3',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['colonnaemailutenti_11',['colonnaEmailUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a95fa22e000655147bf3806c462e35ff5',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['colonnamatricolaprestiti_12',['colonnaMatricolaPrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#ace145312c45117b90b6b2841986f92d2',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['colonnamatricolautenti_13',['colonnaMatricolaUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a26581e16d15cf2b6a8dcaa006a7ce0f5',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['colonnanomelibri_14',['colonnaNomeLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#a6c06be96063fd38639377b3691cf881f',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['colonnanomeutenti_15',['colonnaNomeUtenti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#a928eda870819eda1622159e2aaa82f58',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]],
+  ['colonnatitololibri_16',['colonnaTitoloLibri',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_libri_controller.html#af3345e9c01793e0260490b893e965307',1,'it::unisa::biblioteca::controller::InterfacciaLibriController']]],
+  ['colonnatitoloprestiti_17',['colonnaTitoloPrestiti',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_prestiti_controller.html#abe9a0962bd5348f950d9646e5ef1968f',1,'it::unisa::biblioteca::controller::InterfacciaPrestitiController']]],
+  ['copiedisponibili_18',['copieDisponibili',['../classit_1_1unisa_1_1biblioteca_1_1model_1_1_libro.html#a4017b8749571d6726c4fbe47cc364bba',1,'it::unisa::biblioteca::model::Libro']]],
+  ['criterioricerca_19',['criterioRicerca',['../classit_1_1unisa_1_1biblioteca_1_1controller_1_1_interfaccia_utenti_controller.html#adfbdef509826d49f61cbfb9d83e1b94b',1,'it::unisa::biblioteca::controller::InterfacciaUtentiController']]]
 ];

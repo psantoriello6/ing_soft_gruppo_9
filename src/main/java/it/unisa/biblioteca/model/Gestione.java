@@ -24,7 +24,8 @@ public interface Gestione<T> {
     * @brief Inserisce un nuovo elemento nella collezione.
     * Il metodo aggiunge alla collezione l'oggetto fornito come parametro. 
     * Gestisce eventuali controlli sull'unicità dei dati (Utente o Libro).
-    *
+    * 
+    *@throws GestioneEccezioni
     * @param elemento Oggetto di tipo T da inserire.
     */
     public void inserisci(T elemento) throws GestioneEccezioni;
@@ -35,6 +36,7 @@ public interface Gestione<T> {
     * Il metodo modifica l'oggetto fornito come parametro. 
     * Gestisce eventuali controlli sull'unicità dei dati inseriti(Utente o Libro).
     *
+    * @throws GestioneEccezioni
     * @param elemento Oggetto di tipo T da modificare, contenente i dati aggiornati.
     */   
     public void modifica(T elemento)throws GestioneEccezioni;

@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  * Documentazione per il sistema di gestione per la Biblioteca Universitaria.
  * Il software permette al bibliotecario di gestire:
  * - Libri: Dati, Elenco, inserimento, ricerca e rimozione.
- * - Utenti: Dati anagarfici, inserimento, ricerca e rimozione.
+ * - Utenti: Dati anagrafici, inserimento, ricerca e rimozione.
  * - Prestiti: Registrazione prestiti e restituzioni.
  * 
  * @date 03 Dicembre, 2025

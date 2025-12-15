@@ -22,8 +22,20 @@ import java.io.*;
  */
 
 public class GestioneUtente implements Gestione<Utente>{
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta un set di utenti
+     */
     private Set<Utente> utenti;
+    
+    /**
+     * @brief Variabile di istanza privata e statica che rappresenta l'istanza della classe GestioneUtente
+     */
     private static GestioneUtente instance = null; //attributo per ottenere lo stesso oggetto in classi diverse (pattern Singleton)
+    
+    /**
+     * @brief Variabile di istanza privata che rappresenta il nome del file binario in cui salvare e da cui caricare informazioni relative ai vari utenti
+     */
     private String nomeFile = "utenti.dat"; //attributo  per indicare il nome del file per la persistenza dei dati
  
     /**
@@ -40,7 +52,7 @@ public class GestioneUtente implements Gestione<Utente>{
     /**
      * @brief Restituisce l'istanza unica della classe (Pattern Singleton).
      * Se l'istanza non esiste, ne crea una nuova.
-     * * @return L'istanza statica di GestioneUtente.
+     * @return L'istanza statica di GestioneUtente.
      */
     //metodo per fornire un accesso pubblico alle altre classi per ottenere l'oggetto.
     public static GestioneUtente getInstance(){
@@ -68,6 +80,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * 
      * @pre L'oggetto utente da inserire non deve essere già presente nella collezione.
      * @post L'oggetto utente viene inserito e la collezione viene aggiornata.
+     * @throws GestioneEccezioni
      * 
      * @param utente Oggetto utente da inserire nella collezione TreeSet.
      *
@@ -97,7 +110,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * 
      * @pre L'oggetto utente da modificare deve essere già presente nella collezione.
      * @post L'oggetto utente viene modificato e la collezione viene aggiornata.
-     * 
+     * @throws GestioneEccezioni
      * @param utenteModificato Oggetto utente da modificare nella collezione TreeSet.
      *
      */
@@ -149,6 +162,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * 
      * @pre La collezione deve presentare almeno un utente.
      * @post L'oggetto utente cercato viene restituito.
+     * @throws GestioneEccezioni
      * 
      * @param matricola numero intero matricola da utilizzare per la ricerca.
      * @return Oggetto utente corrispondente alla matricola inserita.
@@ -171,6 +185,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * 
      * @pre La collezione deve presentare almeno un utente.
      * @post L'oggetto utente cercato viene restituito.
+     * @throws GestioneEccezioni
      * 
      * @param cognome Stringa cognome da utilizzare per la ricerca.
      * @return Lista di utenti corrispondente al cognome inserito.
@@ -236,6 +251,7 @@ public class GestioneUtente implements Gestione<Utente>{
      * @brief Verifica la validità e l'unicità dell'email.
      * Controlla che l'email rispetti il formato "nome.cognome[0-9]@università.it" e che non sia già associata ad un altro utente.
      * @param u L'oggetto Utente di cui validare l'email.
+     * @throws GestioneEccezioni
      * @return true se l'email è valida e unica, altrimnti lancia un'eccezione o ritorna false.
      */
     
@@ -263,7 +279,7 @@ public class GestioneUtente implements Gestione<Utente>{
     /**
      * @brief Restituisce l'intera collezione di utenti.
      * Metodo utile per il popolamento della TableView.
-     * * @return Il Set contenente tutti gli utenti registrati.
+     * @return Il Set contenente tutti gli utenti registrati.
      */
     //metodo utile per compilare la TabelView nel Controller.
     public Set<Utente> getTutti() {
